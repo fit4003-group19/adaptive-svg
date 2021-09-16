@@ -9,10 +9,11 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
       },
-    attribute: { flex: 1, backgroundColor: "white", margin: 10 },
+    attribute: { flex: 4, backgroundColor: "white", margin: 10 },
+    buttons: { flex: 1, backgroundColor: "white", margin: 10, display:"flex", justify:"space-between", flexDirection:"row" },
   }));
 
-function Controls() {
+function Controls({mapPanZoom}) {
     const classes = useStyles();
 
     return (
@@ -25,6 +26,26 @@ function Controls() {
             </div>
             <div className={classes.attribute}>
                 <h1>Hey</h1>
+            </div>
+            <div className={classes.buttons}>
+            {
+                mapPanZoom &&
+                <>
+                    <label>
+                        Zoom In
+                        <button onClick={() => mapPanZoom.zoomIn()}>+</button>
+                    </label>
+                    <label>
+                        Zoom Out
+                        <button onClick={() => mapPanZoom.zoomOut()}>-</button>
+                    </label>
+                    <label>
+                        Reset
+                        <button onClick={() => mapPanZoom.resetZoom()}>x</button>
+                    </label>
+                </>
+
+            }
             </div>
         </div>
     )

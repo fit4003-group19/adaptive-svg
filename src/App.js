@@ -1,3 +1,4 @@
+import React, {useRef, useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,17 +15,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "red",
     flexDirection: "row",
   },
-
-  attribute: { flex: 1, backgroundColor: "white", margin: 10 },
 }));
 
 function App() {
   const classes = useStyles();
   const flexBoxClasses = useStyles()
+
+  const [mapPanZoom, setMapPanZoom] = useState(null)
+
+
+    
+
+
   return (
       <div className={flexBoxClasses.root}>
-        <Map />
-        <Controls />
+        <Map mapPanZoom={mapPanZoom} setMapPanZoom={setMapPanZoom} />
+        <Controls mapPanZoom={mapPanZoom} setMapPanZoom={setMapPanZoom} />
       </div>
   );
 }

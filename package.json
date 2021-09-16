@@ -13,6 +13,7 @@
     "react-dom": "^17.0.2",
     "react-inlinesvg": "^2.3.0",
     "react-scripts": "4.0.3",
+    "svg-pan-zoom": "github:ariutta/svg-pan-zoom",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
