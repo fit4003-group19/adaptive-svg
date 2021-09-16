@@ -1,13 +1,15 @@
 import { makeStyles } from '@material-ui/styles';
-import React, {useRef} from 'react'
+import React, {useRef, useContext} from 'react';
+import {MapContext} from '../context/MapContext'
 import SVG from 'react-inlinesvg';
+import KeyboardEventHandler from 'react-keyboard-event-handler';
 const svgPanZoom = require('svg-pan-zoom')
 
 
-function Map({mapPanZoom, setMapPanZoom}) {
+function Map() {
     // useRef References
     const svgEl = useRef(null);
-
+    const {mapPanZoom, setMapPanZoom, focusRoot} = useContext(MapContext)
     // CSS
     const useStyles = makeStyles((theme)=>({
         map: { flex: 3, backgroundColor: "blue", margin: 10 },
@@ -25,29 +27,32 @@ function Map({mapPanZoom, setMapPanZoom}) {
 
     // Placeholder
     const onLoad = (e) => {
-        setMapPanZoom(
-            svgPanZoom(svgEl.current, {
-                zoomEnabled: true,
-                // controlIconsEnabled: false,
-             }
-            )
+        const foo = svgPanZoom(svgEl.current, {
+            zoomEnabled: true,
+            dblClickZoomEnabled: false
+            // controlIconsEnabled: false,
+         }
         )
-        
+        foo.zoomAtPoint(1, {x: 447, y: 183})
+        setMapPanZoom(foo)
     }
 
     const classes = useStyles();
 
     return (
-        
-        <div className={classes.map}>
-            <SVG 
-                className={classes.svg}
-                src={`${process.env.PUBLIC_URL}/svg/focus-test.svg`} 
-                onError={onError}
-                onLoad={onLoad}
-                innerRef={svgEl}
-            />
-        </div>
+        <KeyboardEventHandler
+        className={classes.map}
+        handleKeys={['esc']}
+        onKeyEvent={focusRoot} >
+                <SVG 
+                    className={classes.svg}
+                    src={`${process.env.PUBLIC_URL}/svg/focus-test.svg`} 
+                    onError={onError}
+                    onLoad={onLoad}
+                    innerRef={svgEl}
+                />
+        </KeyboardEventHandler>
+
 
     )
 }

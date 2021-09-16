@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import Questionnaire from './Questionnaire';
+import {MapContext} from '../context/MapContext';
 
 const useStyles = makeStyles((theme) => ({
     attributes: {
@@ -13,13 +15,18 @@ const useStyles = makeStyles((theme) => ({
     buttons: { flex: 1, backgroundColor: "white", margin: 10, display:"flex", justify:"space-between", flexDirection:"row" },
   }));
 
-function Controls({mapPanZoom}) {
+function Controls() {
     const classes = useStyles();
+    const {mapPanZoom, setMapPanZoom, rootFocus} = useContext(MapContext)
 
     return (
         <div className={classes.attributes}>
             <div className={classes.attribute}>
-                <h1>Hey</h1>
+                <label ref={rootFocus}>
+                    Questionaire
+                    <Questionnaire/>
+                </label>
+
             </div>
             <div className={classes.attribute}>
                 <h1>Hey</h1>

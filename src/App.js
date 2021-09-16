@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Map from './components/Map';
 import Controls from './components/Controls'
+import MapProvider from './context/MapContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,17 +22,14 @@ function App() {
   const classes = useStyles();
   const flexBoxClasses = useStyles()
 
-  const [mapPanZoom, setMapPanZoom] = useState(null)
-
-
-    
-
-
   return (
-      <div className={flexBoxClasses.root}>
-        <Map mapPanZoom={mapPanZoom} setMapPanZoom={setMapPanZoom} />
-        <Controls mapPanZoom={mapPanZoom} setMapPanZoom={setMapPanZoom} />
-      </div>
+      <MapProvider>
+        <div className={flexBoxClasses.root}>
+          <Map />
+          <Controls/>
+        </div>
+      </MapProvider>
+
   );
 }
 
