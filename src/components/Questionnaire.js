@@ -28,13 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const RadioButtonsGroup = () => {
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState("null");
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-
-  console.log("Binary Number", parseInt("0011"));
 
   return (
     <FormControl component="fieldset">
@@ -67,6 +65,11 @@ export default function Questionnaire() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const onButtonPress = (id, response) => {
+    questions[id].response = response;
+    console.log(questions);
   };
 
   let questions = [
@@ -139,7 +142,7 @@ export default function Questionnaire() {
         <List>
           {questions.map((question) => (
             <>
-              <ListItem>
+              <ListItem key={question.id}>
                 <ListItemText primary={question.question} />
                 <RadioButtonsGroup />
               </ListItem>
