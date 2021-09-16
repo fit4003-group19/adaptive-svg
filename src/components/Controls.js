@@ -6,13 +6,13 @@ import {MapContext} from '../context/MapContext';
 const useStyles = makeStyles((theme) => ({
     attributes: {
         flex: 1,
-        backgroundColor: "green",
         margin: 10,
         display: "flex",
         flexDirection: "column",
+        backgroundColor: "whitesmoke"
       },
-    attribute: { flex: 4, backgroundColor: "white", margin: 10 },
-    buttons: { flex: 1, backgroundColor: "white", margin: 10, display:"flex", justify:"space-between", flexDirection:"row" },
+    attribute: { flex: 4, margin: 10 },
+    buttons: { flex: 1, margin: 10, display:"flex", justify:"space-between", flexDirection:"row" },
   }));
 
 function Controls() {

@@ -12,7 +12,10 @@ function Map() {
     const {mapPanZoom, setMapPanZoom, focusRoot} = useContext(MapContext)
     // CSS
     const useStyles = makeStyles((theme)=>({
-        map: { flex: 3, backgroundColor: "blue", margin: 10 },
+        map: { 
+            flex: 3, 
+            margin: 10,
+            border: "8px black" },
         svg: {
             height: "100%",
             width: "100%"
