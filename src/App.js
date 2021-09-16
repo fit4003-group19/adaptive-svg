@@ -3,41 +3,29 @@ import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Map from './components/Map';
+import Controls from './components/Controls'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    minHeight: "100vh"
+    minHeight: "90vh",
+    width: "100%",
+    display: "flex",
+    backgroundColor: "red",
+    flexDirection: "row",
   },
-  paper: {
-    height: "100%",
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  controlsRoot: {
-    height: "100%"
-  }
+
+  attribute: { flex: 1, backgroundColor: "white", margin: 10 },
 }));
 
 function App() {
   const classes = useStyles();
+  const flexBoxClasses = useStyles()
   return (
-    <div>
-      <Grid container spacing={3} className={classes.root}>
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>xs=8</Paper>
-        </Grid>
-        <Grid item xs={4} className={classes.root}>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>xs=8</Paper>
-            </Grid>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>xs=8</Paper>
-            </Grid>
-        </Grid>
-      </Grid>
-    </div>
+      <div className={flexBoxClasses.root}>
+        <Map />
+        <Controls />
+      </div>
   );
 }
 
