@@ -1,13 +1,13 @@
 import { createContext, useState, useRef } from "react";
 
 //create a context, with createContext api
-export const MapContext = createContext();
+export const GlobalContext = createContext();
 
-const MapProvider = (props) => {
+const GlobalProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const rootFocus = useRef(null);
-  const [questionaireBinary, setQuestionnaireBinary] = useState(null);
+  const [questionaireBinary, setQuestionnaireBinary] = useState(0);
 
   const focusRoot = () => {
     if (rootFocus.current) {
@@ -16,7 +16,7 @@ const MapProvider = (props) => {
   };
 
   return (
-    <MapContext.Provider
+    <GlobalContext.Provider
       value={{
         mapPanZoom,
         setMapPanZoom,
@@ -27,8 +27,8 @@ const MapProvider = (props) => {
       }}
     >
       {props.children}
-    </MapContext.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-export default MapProvider;
+export default GlobalProvider;

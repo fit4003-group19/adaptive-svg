@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -16,7 +16,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
+import { GlobalContext } from "../context/MapContext";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -27,10 +27,11 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
 }));
-const RadioButtonsGroup = () => {
+const RadioButtonsGroup = ({ onChange, buttonId }) => {
   const [value, setValue] = React.useState("null");
 
   const handleChange = (event) => {
+    onChange(buttonId, event.target.value);
     setValue(event.target.value);
   };
 
@@ -56,6 +57,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function Questionnaire() {
+  const { setQuestionnaireBinary } = useContext(GlobalContext);
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -68,45 +70,58 @@ export default function Questionnaire() {
   };
 
   const onButtonPress = (id, response) => {
-    questions[id].response = response;
+    questions[id].response = response == "yes" ? 1 : 0;
     console.log(questions);
+    updateBinaryNumber();
+  };
+
+  const updateBinaryNumber = () => {
+    let temp = 0;
+    // Binary number would be {question 7 response}{question 6 response}...{question 1 response}
+    // 000000001 & 10000000 = 0 = 0
+    // 1101 & 1000000101 = 0101 = 5
+    // 13 & 69 = 5
+    questions.forEach((question) => {
+      temp += question.response * 2 ** question.id;
+    });
+    setQuestionnaireBinary(temp);
   };
 
   let questions = [
     {
       id: 0,
       question: "Do you experience a motor impairment?",
-      response: null,
+      response: 0,
     },
     {
       id: 1,
       question: "Do you experience a colour impairment?",
-      response: null,
+      response: 0,
     },
     {
       id: 2,
       question: "Do you have low vision?",
-      response: null,
+      response: 0,
     },
     {
       id: 3,
       question: "Do you experience total blindness?",
-      response: null,
+      response: 0,
     },
     {
       id: 4,
       question: "Do you have difficulty reading?",
-      response: null,
+      response: 0,
     },
     {
       id: 5,
       question: "Do you have difficulties operating doors?",
-      response: null,
+      response: 0,
     },
     {
       id: 6,
       question: "Do obstacles disrupt your indoor navigation?",
-      response: null,
+      response: 0,
     },
   ];
 
@@ -144,7 +159,10 @@ export default function Questionnaire() {
             <>
               <ListItem key={question.id}>
                 <ListItemText primary={question.question} />
-                <RadioButtonsGroup />
+                <RadioButtonsGroup
+                  onChange={onButtonPress}
+                  buttonId={question.id}
+                />
               </ListItem>
               <Divider />
             </>
