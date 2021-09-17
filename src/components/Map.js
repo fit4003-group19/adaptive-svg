@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 import React, { useRef, useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { MapContext } from "../context/MapContext";
 import SVG from "react-inlinesvg";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 const svgPanZoom = require("svg-pan-zoom");
@@ -8,7 +8,7 @@ const svgPanZoom = require("svg-pan-zoom");
 function Map() {
   // useRef References
   const svgEl = useRef(null);
-  const { mapPanZoom, setMapPanZoom, focusRoot } = useContext(GlobalContext);
+  const { mapPanZoom, setMapPanZoom, focusRoot } = useContext(MapContext);
   // CSS
   const useStyles = makeStyles((theme) => ({
     map: {

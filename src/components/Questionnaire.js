@@ -16,7 +16,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import { GlobalContext } from "../context/GlobalContext";
+import { MapContext } from "../context/MapContext";
 import useQuestions from "../hooks/useQuestions";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 
@@ -53,8 +53,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function Questionnaire() {
-  const { setQuestionnaireBinary } = useContext(GlobalContext);
-  const { editableResponse, commitedResponse, editResponse, commitResponse, resetResponse} = useContext(QuestionnaireContext)
+  const { editableResponse, makeEdits, commitEdits, resetEdits} = useContext(QuestionnaireContext)
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -63,13 +62,13 @@ export default function Questionnaire() {
   };
 
   const handleClose = () => {
-    resetResponse();
+    resetEdits();
     setOpen(false);
   };
 
   const handleSave = () => {
     // updatingBinary
-    commitResponse()
+    commitEdits()
     setOpen(false);
   }
 
@@ -111,7 +110,7 @@ export default function Questionnaire() {
                 <ListItem >
                   <ListItemText primary={question.question} />
                   <RadioButtonsGroup
-                    onChange={(e)=>{editResponse(i, e.target.value)}}
+                    onChange={(e)=>{makeEdits(i, e.target.value)}}
                     value={question.response}
                   />
                 </ListItem>

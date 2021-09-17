@@ -5,10 +5,9 @@ import useQuestions from "../hooks/useQuestions";
 export const QuestionnaireContext = createContext();
 
 const QuestionnaireProvider = (props) => {
-  const {editableResponse, commitedResponse, editResponse, _commitResponse, resetResponse} = useQuestions();
-  const [responseBinary, setResponseBinary] = useState(null)
+  const {editableResponse, commitedResponse, makeEdits, commitEdits, resetEdits} = useQuestions();
 
-  const updateBinaryNumber = (response) => {
+  const getBitFlag = (response) => {
     if (response) {
       // acm => Accumulator
       let acm = 0;
@@ -22,22 +21,15 @@ const QuestionnaireProvider = (props) => {
         acm += responseNumber * (2 ** counter);
         counter++;
       }
-      setResponseBinary(acm);
+      return acm;
     } else {
-      setResponseBinary(0)
+      return 0
     }
   };
 
-  const commitResponse = () => {
-    const clonedEditedResponse = editableResponse.map((foo)=>{return {...foo}})
-    _commitResponse(clonedEditedResponse)
-    updateBinaryNumber(clonedEditedResponse)
-  }
-  
-
   return (
     <QuestionnaireContext.Provider
-      value={{editableResponse, commitedResponse, editResponse, commitResponse, resetResponse, responseBinary}}
+      value={{editableResponse, commitedResponse, makeEdits, commitEdits, resetEdits, getBitFlag}}
     >
       {props.children}
     </QuestionnaireContext.Provider>

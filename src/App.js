@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Map from "./components/Map";
 import Controls from "./components/Controls";
-import GlobalProvider from "./context/GlobalContext";
+import MapProvider from "./context/MapContext";
 import QuestionnaireProvider from "./context/QuestionnaireContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,14 +23,14 @@ function App() {
   const flexBoxClasses = useStyles();
 
   return (
-    <GlobalProvider>
+    <MapProvider>
       <QuestionnaireProvider>
         <div className={flexBoxClasses.root}>
           <Map />
           <Controls />
         </div>
       </QuestionnaireProvider>
-    </GlobalProvider>
+    </MapProvider>
   );
 }
 

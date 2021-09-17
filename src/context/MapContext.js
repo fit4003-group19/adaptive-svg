@@ -1,9 +1,9 @@
 import { createContext, useState, useRef } from "react";
 
 //create a context, with createContext api
-export const GlobalContext = createContext();
+export const MapContext = createContext();
 
-const GlobalProvider = (props) => {
+const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const rootFocus = useRef(null);
@@ -15,7 +15,7 @@ const GlobalProvider = (props) => {
   };
 
   return (
-    <GlobalContext.Provider
+    <MapContext.Provider
       value={{
         mapPanZoom,
         setMapPanZoom,
@@ -24,8 +24,8 @@ const GlobalProvider = (props) => {
       }}
     >
       {props.children}
-    </GlobalContext.Provider>
+    </MapContext.Provider>
   );
 };
 
-export default GlobalProvider;
+export default MapProvider;

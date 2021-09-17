@@ -33,24 +33,29 @@ export default function useQuestions() {
           response: null,
         },
       ];
+    // The Questionaire Form is a multi-step form. Users have the option of opting out of any potential 
+    // changes they make. Therefore we need to maintain two separate state variables for the response that
+    // is currently being edited, and the final commited one. Once the user confirms their questionaire response,
+    // we copy the contents of editableResponse, to commitedResponse
     const [editableResponse, setEditableResponse] = useState(null)
     const [commitedResponse, setCommitedResponse] = useState(null)
-    const LOCAL_STORAGE_KEY = 'response'
-
+    const LOCAL_STORAGE_KEY = 'cachedResponse'
 
     useEffect(()=>{
-        // Get Questions From Local Storage
-        const initialResponse = pullResponseLocalStorage() || orginalQuestions
-        const clonedIntitialResponseEditable = initialResponse.map((foo)=>{return {...foo}})
-        const clonedIntitialResponseCommited = initialResponse.map((foo)=>{return {...foo}})
-        setEditableResponse(clonedIntitialResponseEditable)
-        setCommitedResponse(clonedIntitialResponseCommited)
+      // Get Questions From Local Storage
+      // If there is no response from local storage, then make the initial response the original questions
+      // initialResponse needs to be cloned to avoid the same object being referenced by editableResponse 
+      // and commitedResponse. They need to be isolated from one another
+      const initialResponse = pullResponseLocalStorage() || orginalQuestions
+      const clonedIntitialResponseEditable = initialResponse.map((foo)=>{return {...foo}})
+      const clonedIntitialResponseCommited = initialResponse.map((foo)=>{return {...foo}})
+      setEditableResponse(clonedIntitialResponseEditable)
+      setCommitedResponse(clonedIntitialResponseCommited)
+      return () => {}
+    }, [])
 
-        return () => {}
-      }, [])
-
-  
-    const editResponse = (i, response) => {
+    // Make edits to editableResponse
+    const makeEdits = (i, response) => {
       setEditableResponse(
         editableResponse.map((question, j)=>{
           if (i == j) {
@@ -61,16 +66,22 @@ export default function useQuestions() {
       )
     }
 
-    const _commitResponse = (response) => {
-      setCommitedResponse(response)
-      pushResponseLocalStorage(response)
+    // Commit any edits made to editableResponse to commitedResponse
+    // Clone editableResposne to avoid object sharing between state variables
+    const commitEdits = () => {
+      const clonedEditableResponse = editableResponse.map((foo)=>{return {...foo}})
+      setCommitedResponse(clonedEditableResponse)
+      pushResponseLocalStorage(clonedEditableResponse)
     }
 
-    const resetResponse = () => {
+    // Reset any edits made to editableResponse => restore the state of editableResponse
+    // to commitedResponse
+    const resetEdits = () => {
       const clonedCommitedResponse = commitedResponse.map((foo)=>{return {...foo}})
       setEditableResponse(clonedCommitedResponse)
     }
 
+    // Pull the cachedResponse from LocalStorage
     const pullResponseLocalStorage = () => {
         if (typeof localStorage !== 'undefined') {
           try {
@@ -83,9 +94,9 @@ export default function useQuestions() {
         return null
     }
 
+    // Push a response to the localStorage unde the LOCAL_STORAGE_KEY
     const pushResponseLocalStorage = (response) => {
       if (typeof localStorage !== 'undefined') {
-        console.log(response)
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(response));
         return true
       } else {
@@ -93,5 +104,5 @@ export default function useQuestions() {
       }
     }
 
-    return {editableResponse, commitedResponse, editResponse, _commitResponse, resetResponse}
+    return {editableResponse, commitedResponse, makeEdits, commitEdits, resetEdits}
 }
