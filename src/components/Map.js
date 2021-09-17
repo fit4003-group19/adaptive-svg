@@ -30,6 +30,7 @@ function Map() {
     const foo = svgPanZoom(svgEl.current, {
       zoomEnabled: true,
       dblClickZoomEnabled: false,
+      preventMouseEventsDefault: false,
       // controlIconsEnabled: false,
     });
     foo.zoomAtPoint(1, { x: 447, y: 183 });
