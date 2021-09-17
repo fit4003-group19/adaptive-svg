@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 import React, { useRef, useContext } from "react";
-import { GlobalContext } from "../context/MapContext";
+import { GlobalContext } from "../context/GlobalContext";
 import SVG from "react-inlinesvg";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 const svgPanZoom = require("svg-pan-zoom");

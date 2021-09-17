@@ -16,7 +16,9 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import { GlobalContext } from "../context/MapContext";
+import { GlobalContext } from "../context/GlobalContext";
+import useQuestions from "../hooks/useQuestions";
+import { QuestionnaireContext } from "../context/QuestionnaireContext";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -27,13 +29,7 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
 }));
-const RadioButtonsGroup = ({ onChange, buttonId }) => {
-  const [value, setValue] = React.useState("null");
-
-  const handleChange = (event) => {
-    onChange(buttonId, event.target.value);
-    setValue(event.target.value);
-  };
+const RadioButtonsGroup = ({ onChange, value }) => {
 
   return (
     <FormControl component="fieldset">
@@ -42,7 +38,7 @@ const RadioButtonsGroup = ({ onChange, buttonId }) => {
         aria-label="gender"
         name="gender1"
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
         row
       >
         <FormControlLabel value="yes" control={<Radio />} label="Yes" />
@@ -58,6 +54,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function Questionnaire() {
   const { setQuestionnaireBinary } = useContext(GlobalContext);
+  const { editableResponse, commitedResponse, editResponse, commitResponse, resetResponse} = useContext(QuestionnaireContext)
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -66,69 +63,21 @@ export default function Questionnaire() {
   };
 
   const handleClose = () => {
+    resetResponse();
     setOpen(false);
   };
 
-  const onButtonPress = (id, response) => {
-    questions[id].response = response == "yes" ? 1 : 0;
-    console.log(questions);
-    updateBinaryNumber();
-  };
+  const handleSave = () => {
+    // updatingBinary
+    commitResponse()
+    setOpen(false);
+  }
 
-  const updateBinaryNumber = () => {
-    let temp = 0;
-    // Binary number would be {question 7 response}{question 6 response}...{question 1 response}
-    // 000000001 & 10000000 = 0 = 0
-    // 1101 & 1000000101 = 0101 = 5
-    // 13 & 69 = 5
-    questions.forEach((question) => {
-      temp += question.response * 2 ** question.id;
-    });
-    setQuestionnaireBinary(temp);
-  };
-
-  let questions = [
-    {
-      id: 0,
-      question: "Do you experience a motor impairment?",
-      response: 0,
-    },
-    {
-      id: 1,
-      question: "Do you experience a colour impairment?",
-      response: 0,
-    },
-    {
-      id: 2,
-      question: "Do you have low vision?",
-      response: 0,
-    },
-    {
-      id: 3,
-      question: "Do you experience total blindness?",
-      response: 0,
-    },
-    {
-      id: 4,
-      question: "Do you have difficulty reading?",
-      response: 0,
-    },
-    {
-      id: 5,
-      question: "Do you have difficulties operating doors?",
-      response: 0,
-    },
-    {
-      id: 6,
-      question: "Do obstacles disrupt your indoor navigation?",
-      response: 0,
-    },
-  ];
 
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open full-screen dialog
+        Open Questionnaire
       </Button>
       <Dialog
         fullScreen
@@ -149,24 +98,26 @@ export default function Questionnaire() {
             <Typography variant="h6" className={classes.title}>
               Map Questionnaire
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
+            <Button autoFocus color="inherit" onClick={handleSave}>
               save
             </Button>
           </Toolbar>
         </AppBar>
         <List>
-          {questions.map((question) => (
-            <>
-              <ListItem key={question.id}>
-                <ListItemText primary={question.question} />
-                <RadioButtonsGroup
-                  onChange={onButtonPress}
-                  buttonId={question.id}
-                />
-              </ListItem>
-              <Divider />
-            </>
-          ))}
+          {
+          editableResponse &&
+            editableResponse.map((question, i) => (
+              <React.Fragment key={i}>
+                <ListItem >
+                  <ListItemText primary={question.question} />
+                  <RadioButtonsGroup
+                    onChange={(e)=>{editResponse(i, e.target.value)}}
+                    value={question.response}
+                  />
+                </ListItem>
+                <Divider />
+              </React.Fragment>
+            ))}
         </List>
       </Dialog>
     </div>

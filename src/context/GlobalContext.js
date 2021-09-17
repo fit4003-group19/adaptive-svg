@@ -7,7 +7,6 @@ const GlobalProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const rootFocus = useRef(null);
-  const [questionaireBinary, setQuestionnaireBinary] = useState(0);
 
   const focusRoot = () => {
     if (rootFocus.current) {
@@ -21,9 +20,7 @@ const GlobalProvider = (props) => {
         mapPanZoom,
         setMapPanZoom,
         rootFocus,
-        focusRoot,
-        questionaireBinary,
-        setQuestionnaireBinary,
+        focusRoot
       }}
     >
       {props.children}

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Questionnaire from "./Questionnaire";
-import { GlobalContext } from "../context/MapContext";
+import { GlobalContext } from "../context/GlobalContext";
+import { QuestionnaireContext } from "../context/QuestionnaireContext";
 
 const useStyles = makeStyles((theme) => ({
   attributes: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 function Controls() {
   const classes = useStyles();
   const { mapPanZoom, setMapPanZoom, rootFocus } = useContext(GlobalContext);
+  const { responseBinary} = useContext(QuestionnaireContext)
 
   return (
     <div className={classes.attributes}>
@@ -34,10 +36,11 @@ function Controls() {
         </label>
       </div>
       <div className={classes.attribute}>
-        <h1>Hey</h1>
+        <h1>Bit Stuffing</h1>
+        <h1>{responseBinary}</h1>
       </div>
       <div className={classes.attribute}>
-        <h1>Hey</h1>
+        <h1>Example Controls</h1>
       </div>
       <div className={classes.buttons}>
         {mapPanZoom && (
