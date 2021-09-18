@@ -19,6 +19,7 @@ import FormControl from "@material-ui/core/FormControl";
 import { MapContext } from "../context/MapContext";
 import useQuestions from "../hooks/useQuestions";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
+import KeyboardEventHandler from "react-keyboard-event-handler";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -30,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const RadioButtonsGroup = ({ onChange, value }) => {
-
   return (
     <FormControl component="fieldset">
       {/* <FormLabel component="legend">Response</FormLabel> */}
@@ -53,7 +53,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function Questionnaire() {
-  const { editableResponse, makeEdits, commitEdits, resetEdits} = useContext(QuestionnaireContext)
+  const { editableResponse, makeEdits, commitEdits, resetEdits } =
+    useContext(QuestionnaireContext);
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -68,13 +69,18 @@ export default function Questionnaire() {
 
   const handleSave = () => {
     // updatingBinary
-    commitEdits()
+    commitEdits();
     setOpen(false);
-  }
-
+  };
 
   return (
     <div>
+      <KeyboardEventHandler
+        handleFocusableElements={true}
+        className={classes.map}
+        handleKeys={["q"]}
+        onKeyEvent={() => (open ? handleClose() : handleClickOpen())}
+      />
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open Questionnaire
       </Button>
@@ -103,14 +109,15 @@ export default function Questionnaire() {
           </Toolbar>
         </AppBar>
         <List>
-          {
-          editableResponse &&
+          {editableResponse &&
             editableResponse.map((question, i) => (
               <React.Fragment key={i}>
-                <ListItem >
+                <ListItem>
                   <ListItemText primary={question.question} />
                   <RadioButtonsGroup
-                    onChange={(e)=>{makeEdits(i, e.target.value)}}
+                    onChange={(e) => {
+                      makeEdits(i, e.target.value);
+                    }}
                     value={question.response}
                   />
                 </ListItem>
