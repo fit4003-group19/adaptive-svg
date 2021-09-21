@@ -79,7 +79,7 @@ export default function Questionnaire() {
         handleFocusableElements={true}
         className={classes.map}
         handleKeys={["q"]}
-        onKeyEvent={() => (open ? handleClose() : handleClickOpen())}
+        onKeyEvent={handleClickOpen}
       />
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open Questionnaire
@@ -112,7 +112,10 @@ export default function Questionnaire() {
           {editableResponse &&
             editableResponse.map((question, i) => (
               <React.Fragment key={i}>
-                <ListItem>
+                <ListItem
+                  onKeyUp={(e) => console.log(e, "eventUp")}
+                  onKeyPress={(e) => console.log(e, "eventDown")}
+                >
                   <ListItemText primary={question.question} />
                   <RadioButtonsGroup
                     onChange={(e) => {

@@ -20,7 +20,7 @@ const MapProvider = (props) => {
         mapPanZoom,
         setMapPanZoom,
         rootFocus,
-        focusRoot
+        focusRoot,
       }}
     >
       {props.children}
