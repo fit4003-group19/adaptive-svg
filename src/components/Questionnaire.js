@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import AppBar from "@material-ui/core/AppBar";
+import { FormLabel } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
@@ -30,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
 }));
-const RadioButtonsGroup = ({ onChange, value }) => {
+const RadioButtonsGroup = ({ onChange, value, index}) => {
   return (
     <FormControl component="fieldset">
       {/* <FormLabel component="legend">Response</FormLabel> */}
       <RadioGroup
         aria-label="gender"
-        name="gender1"
+        name={"gender"+index}
         value={value}
         onChange={onChange}
         row
@@ -122,12 +123,35 @@ export default function Questionnaire() {
                       makeEdits(i, e.target.value);
                     }}
                     value={question.response}
+                    index={i}
                   />
                 </ListItem>
                 <Divider />
               </React.Fragment>
             ))}
         </List>
+      {/* <FormControl component="fieldset">
+        <FormLabel component="legend">Gender</FormLabel>
+        <RadioGroup
+          aria-label="gender"
+          defaultValue="female"
+          name="radio-buttons-group--age"
+        >
+          <FormControlLabel value="female" control={<Radio />} label="Female" />
+          <FormControlLabel value="male" control={<Radio />} label="Male" />
+          <FormControlLabel value="other" control={<Radio />} label="Other" />
+        </RadioGroup>
+        <FormLabel component="legend">Age</FormLabel>
+        <RadioGroup
+          aria-label="age"
+          defaultValue="10"
+          name="radio-buttons-group--age"
+        >
+          <FormControlLabel value="10" control={<Radio />} label="10" />
+          <FormControlLabel value="20" control={<Radio />} label="20" />
+        </RadioGroup>
+      </FormControl> */}
+        
       </Dialog>
     </div>
   );
