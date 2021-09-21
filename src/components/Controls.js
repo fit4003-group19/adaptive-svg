@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
 
 function Controls() {
   const classes = useStyles();
-  const { mapPanZoom, setMapPanZoom, rootFocus } = useContext(MapContext);
-  const { commitedResponse, getBitFlag} = useContext(QuestionnaireContext)
+  const { mapPanZoom, setMapPanZoom, rootFocus, roomLabel } =
+    useContext(MapContext);
+  const { commitedResponse, bitFlag } = useContext(QuestionnaireContext);
 
   return (
     <div className={classes.attributes}>
@@ -37,10 +38,11 @@ function Controls() {
       </div>
       <div className={classes.attribute}>
         <h1>Bit Stuffing</h1>
-        <h1>{getBitFlag(commitedResponse)}</h1>
+        <h2>{bitFlag}</h2>
       </div>
       <div className={classes.attribute}>
-        <h1>Example Controls</h1>
+        <h1>Seleted Room</h1>
+        <h2>{roomLabel ? roomLabel : "No Room Selected"}</h2>
       </div>
       <div className={classes.buttons}>
         {mapPanZoom && (

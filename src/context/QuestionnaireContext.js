@@ -1,11 +1,18 @@
-import { createContext, useState, useEffect} from "react";
+import { createContext, useState, useEffect } from "react";
 import useQuestions from "../hooks/useQuestions";
 
 //create a context, with createContext api
 export const QuestionnaireContext = createContext();
 
 const QuestionnaireProvider = (props) => {
-  const {editableResponse, commitedResponse, makeEdits, commitEdits, resetEdits} = useQuestions();
+  const {
+    editableResponse,
+    commitedResponse,
+    makeEdits,
+    commitEdits,
+    resetEdits,
+  } = useQuestions();
+  const [bitFlag, setBitflag] = useState(0);
 
   const getBitFlag = (response) => {
     if (response) {
@@ -18,18 +25,30 @@ const QuestionnaireProvider = (props) => {
       let counter = 0;
       while (counter < response.length) {
         let responseNumber = response[counter].response == "yes" ? 1 : 0;
-        acm += responseNumber * (2 ** counter);
+        acm += responseNumber * 2 ** counter;
         counter++;
       }
       return acm;
     } else {
-      return 0
+      return 0;
     }
   };
 
+  useEffect(() => {
+    console.log("useEffect", commitedResponse);
+    setBitflag(commitedResponse ? getBitFlag(commitedResponse) : 0);
+  }, [commitedResponse]);
+
   return (
     <QuestionnaireContext.Provider
-      value={{editableResponse, commitedResponse, makeEdits, commitEdits, resetEdits, getBitFlag}}
+      value={{
+        editableResponse,
+        commitedResponse,
+        makeEdits,
+        commitEdits,
+        resetEdits,
+        bitFlag,
+      }}
     >
       {props.children}
     </QuestionnaireContext.Provider>

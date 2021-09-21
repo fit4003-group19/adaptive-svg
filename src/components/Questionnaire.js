@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
-}));
+}));  
 const RadioButtonsGroup = ({ onChange, value, index}) => {
   return (
     <FormControl component="fieldset">
@@ -50,7 +50,7 @@ const RadioButtonsGroup = ({ onChange, value, index}) => {
 };
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function Questionnaire() {

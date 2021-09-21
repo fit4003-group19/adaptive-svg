@@ -6,6 +6,7 @@ export const MapContext = createContext();
 const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
+  const [roomLabel, setRoomLabel] = useState();
   const rootFocus = useRef(null);
 
   const focusRoot = () => {
@@ -21,6 +22,8 @@ const MapProvider = (props) => {
         setMapPanZoom,
         rootFocus,
         focusRoot,
+        roomLabel,
+        setRoomLabel,
       }}
     >
       {props.children}
