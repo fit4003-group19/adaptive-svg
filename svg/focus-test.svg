@@ -102,14 +102,13 @@
             <title id="room-6--title">Room 6</title>
             <desc id="room-6--desc">Room 6 is grand</desc>
             <path id="Vector" d="M668 4H851V187H668V4Z" data-layer="bg" />
-            <text id="room-6--title" data-layer="txt"><tspan x="692" y="106.98" >Room 6</tspan></text>
-            <!-- path data-layer='ico' ... -->
+            <text data-layer="txt"><tspan x="692" y="106.98">Room 6</tspan></text>
         </g>
         <g id="room-1" tabindex="2" data-layer-flag="3" data-layer="root" class="color-2" data-layer-state="1" role="img" aria-labelledby="room-1--title" aria-describedby="room-1--desc">
             <title id="room-1--title">Room 1</title>
             <desc id="room-1--desc">Room 1 is big</desc>
             <path id="Vector_6" d="M4 4H187V187H4V4Z" fill="#785EF0" data-layer="bg"/>
-            <text id="room-1--title" data-layer="txt"><tspan x="29" y="106.98" >Room 1</tspan></text>
+            <text data-layer="txt"><tspan x="29" y="106.98" >Room 1</tspan></text>
         </g>
         <g id="room-3" tabindex="2" data-layer-flag="4" data-layer="root" class="color-3" data-layer-state="1" role="img" aria-labelledby="room-3--title" aria-describedby="room-3--desc">
             <title id="room-3--title">Room 3</title>
@@ -129,7 +128,7 @@
             <path id="Vector_2" d="M668 222H851V405H668V222Z" data-layer="bg"/>
             <text data-layer="txt"><tspan x="692" y="324.98" >Room 5</tspan></text>
         </g>
-        <g id="room-4" tabindex="3" data-layer="root" data-layer-state="-1" role="img">
+        <g id="room-4" tabindex="3" data-layer="root" data-layer-state="-1" role="img" aria-labelledby="room-4--title" aria-describedby="room-4--desc">
             <title id="room-4--title">Room 4</title>
             <desc id="room-4--desc">Room 4 is red</desc>
             <path d="M447 4H630V408H447V4Z" data-layer="bg"/>
