@@ -9,19 +9,33 @@ const svgPanZoom = require("svg-pan-zoom");
 function Map() {
   // useRef References
   const svgEl = useRef(null);
-  const { mapPanZoom, setMapPanZoom, focusRoot, roomLabel, setRoomLabel } =
-    useContext(MapContext);
+  const {
+    mapPanZoom,
+    setMapPanZoom,
+    focusRoot,
+    setRoomLabel,
+    setRoomDescription,
+  } = useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
 
   useEffect(() => {
     iterateLayers(updateLayer);
   }, [bitFlag]);
 
+  // Tabbing Order
+  // Activated Layers -> Neutral Layers -> Inactive Layers
   const updateLayer = (layer) => {
     const { layerFlag, layerState } = layer.dataset;
     if (layerState > -1) {
+      // We can dynamically set the tab index to prioritise the tabbing of activated layers
+      // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
+      layer.tabIndex = (bitFlag & parseInt(layerFlag)) > 0 ? "1" : "2";
       layer.dataset.layerState =
         (bitFlag & parseInt(layerFlag)) > 0 ? "1" : "0";
+    } else {
+      // A tabbIndex of 3 will be lower on the tabbing priority compared to a tabIndex of 2
+      layer.tabIndex = "3";
+      layer.dataset.layerState = "-1";
     }
   };
 
@@ -73,8 +87,13 @@ function Map() {
   // ****** Focus + Blur Fuctions (START) ******
   const onLayerFocus = (e) => {
     const layer = e.target;
-    const roomLabel = layer.ariaLabel;
+    const roomLabelledBy = layer.getAttribute("aria-labelledby");
+    const roomDescribedBy = layer.getAttribute("aria-describedby");
+    const roomLabel = svgEl.current.getElementById(roomLabelledBy).textContent;
+    const roomDescription =
+      svgEl.current.getElementById(roomDescribedBy).textContent;
     setRoomLabel(roomLabel);
+    setRoomDescription(roomDescription);
   };
 
   const onLayerBlur = (e) => {

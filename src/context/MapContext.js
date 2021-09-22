@@ -7,6 +7,7 @@ const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const [roomLabel, setRoomLabel] = useState();
+  const [roomDescription, setRoomDescription] = useState();
   const rootFocus = useRef(null);
 
   const focusRoot = () => {
@@ -24,6 +25,8 @@ const MapProvider = (props) => {
         focusRoot,
         roomLabel,
         setRoomLabel,
+        roomDescription,
+        setRoomDescription,
       }}
     >
       {props.children}
