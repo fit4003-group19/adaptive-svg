@@ -87,16 +87,16 @@ function Map() {
   // According to W3C draft, the focus event is fired AFTER the previous element has fired the blur event
   // ****** Focus + Blur Fuctions (START) ******
   const onLayerFocus = (e) => {
-    // const layer = e.target;
-    // const { layerFlag } = layer.dataset;
-    // const roomLabelledBy = layer.getAttribute("aria-labelledby");
-    // const roomDescribedBy = layer.getAttribute("aria-describedby");
-    // const roomLabel = svgEl.current.getElementById(roomLabelledBy).textContent;
-    // const roomDescription =
-    //   svgEl.current.getElementById(roomDescribedBy).textContent;
-    // setRoomLabel(roomLabel);
-    // setRoomDescription(roomDescription);
-    // setRoomFlag(layerFlag);
+    const layer = e.target;
+    const { layerFlag } = layer.dataset;
+    const roomLabelledBy = layer.getAttribute("aria-labelledby");
+    const roomDescribedBy = layer.getAttribute("aria-describedby");
+    const roomLabel = svgEl.current.getElementById(roomLabelledBy).textContent;
+    const roomDescription =
+      svgEl.current.getElementById(roomDescribedBy).textContent;
+    setRoomLabel(roomLabel);
+    setRoomDescription(roomDescription);
+    setRoomFlag(layerFlag);
   };
 
   const onLayerBlur = (e) => {
