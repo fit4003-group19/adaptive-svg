@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Questionnaire from "./Questionnaire";
 import { MapContext } from "../context/MapContext";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
+import FileUploader from "./FileUploader";
 
 const useStyles = makeStyles((theme) => ({
   attributes: {
@@ -31,6 +32,7 @@ function Controls() {
     roomLabel,
     roomDescription,
     roomFlag,
+    setSvgPath,
   } = useContext(MapContext);
   const { commitedResponse, bitFlag } = useContext(QuestionnaireContext);
 
@@ -38,8 +40,12 @@ function Controls() {
     <div className={classes.attributes}>
       <div className={classes.attribute}>
         <label ref={rootFocus}>
-          Questionnaire
+          <p>Questionnaire</p>
           <Questionnaire />
+        </label>
+        <label>
+          <p>Change SVG</p>
+          <FileUploader setSvgPath={setSvgPath} />
         </label>
       </div>
       <div className={classes.attribute}>

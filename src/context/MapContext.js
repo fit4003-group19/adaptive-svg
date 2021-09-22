@@ -6,6 +6,9 @@ export const MapContext = createContext();
 const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
+  const [svgPath, setSvgPath] = useState(
+    `${process.env.PUBLIC_URL}/svg/focus-test.svg`
+  );
   const [roomLabel, setRoomLabel] = useState();
   const [roomDescription, setRoomDescription] = useState();
   const [roomFlag, setRoomFlag] = useState();
@@ -30,6 +33,8 @@ const MapProvider = (props) => {
         setRoomDescription,
         roomFlag,
         setRoomFlag,
+        svgPath,
+        setSvgPath,
       }}
     >
       {props.children}

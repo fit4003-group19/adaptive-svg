@@ -16,6 +16,7 @@ function Map() {
     setRoomLabel,
     setRoomDescription,
     setRoomFlag,
+    svgPath,
   } = useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
 
@@ -116,7 +117,7 @@ function Map() {
     >
       <SVG
         className={classes.svg}
-        src={`${process.env.PUBLIC_URL}/svg/focus-test.svg`}
+        src={svgPath}
         onError={onError}
         onLoad={onLoad}
         innerRef={svgEl}

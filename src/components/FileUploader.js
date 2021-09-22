@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function FileUploader({ changeSvgPath }) {
+function FileUploader({ setSvgPath }) {
   const changeHandler = (event) => {
     let fileToUpload = event.target.files[0];
     let reader = new FileReader();
     reader.onload = (event) => {
-      changeSvgPath(event.target.result);
+      setSvgPath(event.target.result);
     };
     reader.readAsDataURL(event.target.files[0]);
   };
