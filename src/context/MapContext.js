@@ -8,6 +8,7 @@ const MapProvider = (props) => {
   const [mapPanZoom, setMapPanZoom] = useState();
   const [roomLabel, setRoomLabel] = useState();
   const [roomDescription, setRoomDescription] = useState();
+  const [roomFlag, setRoomFlag] = useState();
   const rootFocus = useRef(null);
 
   const focusRoot = () => {
@@ -27,6 +28,8 @@ const MapProvider = (props) => {
         setRoomLabel,
         roomDescription,
         setRoomDescription,
+        roomFlag,
+        setRoomFlag,
       }}
     >
       {props.children}

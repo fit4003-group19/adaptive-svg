@@ -15,6 +15,7 @@ function Map() {
     focusRoot,
     setRoomLabel,
     setRoomDescription,
+    setRoomFlag,
   } = useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
 
@@ -87,17 +88,22 @@ function Map() {
   // ****** Focus + Blur Fuctions (START) ******
   const onLayerFocus = (e) => {
     const layer = e.target;
+    const { layerFlag } = layer.dataset;
     const roomLabelledBy = layer.getAttribute("aria-labelledby");
     const roomDescribedBy = layer.getAttribute("aria-describedby");
     const roomLabel = svgEl.current.getElementById(roomLabelledBy).textContent;
     const roomDescription =
       svgEl.current.getElementById(roomDescribedBy).textContent;
+
     setRoomLabel(roomLabel);
     setRoomDescription(roomDescription);
+    setRoomFlag(layerFlag);
   };
 
   const onLayerBlur = (e) => {
     setRoomLabel(null);
+    setRoomDescription(null);
+    setRoomFlag(null);
   };
   // ****** Focus + Blur Fuctions (END) ******
 
