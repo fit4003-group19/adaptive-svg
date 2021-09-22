@@ -129,7 +129,7 @@
             <path id="Vector_2" d="M668 222H851V405H668V222Z" data-layer="bg"/>
             <text data-layer="txt"><tspan x="692" y="324.98" >Room 5</tspan></text>
         </g>
-        <g id="room-4" tabindex="3" data-layer="root" data-layer-state="-1" role="img" aria-labelledby="room-4--title" aria-describedby="room-4--desc">
+        <g id="room-4" tabindex="3" data-layer="root" data-layer-state="-1" role="img">
             <title id="room-4--title">Room 4</title>
             <desc id="room-4--desc">Room 4 is red</desc>
             <path d="M447 4H630V408H447V4Z" data-layer="bg"/>
