@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useMemo } from "react";
 import useQuestions from "../hooks/useQuestions";
 
 //create a context, with createContext api
@@ -12,9 +12,8 @@ const QuestionnaireProvider = (props) => {
     commitEdits,
     resetEdits,
   } = useQuestions();
-  const [bitFlag, setBitflag] = useState(0);
 
-  const getBitFlag = (response) => {
+  const calculateBitFlag = (response) => {
     if (response) {
       // acm => Accumulator
       let acm = 0;
@@ -34,10 +33,10 @@ const QuestionnaireProvider = (props) => {
     }
   };
 
-  useEffect(() => {
-    console.log("useEffect", commitedResponse);
-    setBitflag(commitedResponse ? getBitFlag(commitedResponse) : 0);
-  }, [commitedResponse]);
+  const bitFlag = useMemo(
+    () => (commitedResponse ? calculateBitFlag(commitedResponse) : 0),
+    [commitedResponse]
+  );
 
   return (
     <QuestionnaireContext.Provider

@@ -31,9 +31,9 @@ function Map() {
     if (layerState > -1) {
       // We can dynamically set the tab index to prioritise the tabbing of activated layers
       // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
-      layer.tabIndex = (bitFlag & parseInt(layerFlag)) > 0 ? "1" : "2";
-      layer.dataset.layerState =
-        (bitFlag & parseInt(layerFlag)) > 0 ? "1" : "0";
+      const isActive = (bitFlag & parseInt(layerFlag)) > 0;
+      layer.tabIndex = isActive ? "1" : "2";
+      layer.dataset.layerState = isActive ? "1" : "0";
     } else {
       // A tabbIndex of 3 will be lower on the tabbing priority compared to a tabIndex of 2
       layer.tabIndex = "3";

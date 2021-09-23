@@ -21,6 +21,7 @@ import { MapContext } from "../context/MapContext";
 import useQuestions from "../hooks/useQuestions";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import Questions from "./Questions";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -30,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
-}));  
-const RadioButtonsGroup = ({ onChange, value, index}) => {
+}));
+const RadioButtonsGroup = ({ onChange, value, index }) => {
   return (
     <FormControl component="fieldset">
       {/* <FormLabel component="legend">Response</FormLabel> */}
       <RadioGroup
         aria-label="gender"
-        name={"gender"+index}
+        name={"gender" + index}
         value={value}
         onChange={onChange}
         row
@@ -50,7 +51,7 @@ const RadioButtonsGroup = ({ onChange, value, index}) => {
 };
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function Questionnaire() {
@@ -109,7 +110,7 @@ export default function Questionnaire() {
             </Button>
           </Toolbar>
         </AppBar>
-        <List>
+        {/* <List>
           {editableResponse &&
             editableResponse.map((question, i) => (
               <React.Fragment key={i}>
@@ -129,29 +130,8 @@ export default function Questionnaire() {
                 <Divider />
               </React.Fragment>
             ))}
-        </List>
-      {/* <FormControl component="fieldset">
-        <FormLabel component="legend">Gender</FormLabel>
-        <RadioGroup
-          aria-label="gender"
-          defaultValue="female"
-          name="radio-buttons-group--age"
-        >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-          <FormControlLabel value="other" control={<Radio />} label="Other" />
-        </RadioGroup>
-        <FormLabel component="legend">Age</FormLabel>
-        <RadioGroup
-          aria-label="age"
-          defaultValue="10"
-          name="radio-buttons-group--age"
-        >
-          <FormControlLabel value="10" control={<Radio />} label="10" />
-          <FormControlLabel value="20" control={<Radio />} label="20" />
-        </RadioGroup>
-      </FormControl> */}
-        
+        </List> */}
+        {editableResponse && <Questions response={editableResponse} />}
       </Dialog>
     </div>
   );
