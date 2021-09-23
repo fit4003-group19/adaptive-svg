@@ -7,6 +7,9 @@ import KeyboardEventHandler from "react-keyboard-event-handler";
 const svgPanZoom = require("svg-pan-zoom");
 
 const MapKeyboardControls = ({ mapPanZoom }) => (
+  /**
+   * Could potentially implement key combinations to move diagnolally
+   */
   <>
     <KeyboardEventHandler
       handleFocusableElements={true}

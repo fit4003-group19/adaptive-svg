@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Questionnaire from "./Questionnaire";
 import { MapContext } from "../context/MapContext";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
+import KeyboardShortcuts from "./KeyboardShortcuts";
 import FileUploader from "./FileUploader";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +47,10 @@ function Controls() {
         <label>
           <p>Change SVG</p>
           <FileUploader setSvgPath={setSvgPath} />
+        </label>
+        <label>
+          <p>Short Cuts</p>
+          <KeyboardShortcuts />
         </label>
       </div>
       <div className={classes.attribute}>

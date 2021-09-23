@@ -62,6 +62,7 @@ function Questions({ response, makeEdits }) {
   return response.map((response, i) => (
     <>
       <RadioGroup
+        key={i}
         value={response.response}
         label={response.question}
         onChange={(value) => onRadioChange(value, i)}
