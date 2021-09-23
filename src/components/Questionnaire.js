@@ -79,7 +79,7 @@ export default function Questionnaire() {
     <div>
       <KeyboardEventHandler
         handleFocusableElements={true}
-        className={classes.map}
+        //className={classes.map}
         handleKeys={["q"]}
         onKeyEvent={handleClickOpen}
       />

@@ -6,6 +6,53 @@ import SVG from "react-inlinesvg";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 const svgPanZoom = require("svg-pan-zoom");
 
+const MapKeyboardControls = ({ mapPanZoom }) => (
+  <>
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["="]}
+      onKeyEvent={() => mapPanZoom.zoomIn()}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["-"]}
+      onKeyEvent={() => mapPanZoom.zoomOut()}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["r"]}
+      onKeyEvent={() => mapPanZoom.resetZoom()}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["right"]}
+      onKeyEvent={() => mapPanZoom.panBy({ x: -20, y: 0 })}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["left"]}
+      onKeyEvent={() => mapPanZoom.panBy({ x: 20, y: 0 })}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["up"]}
+      onKeyEvent={() => mapPanZoom.panBy({ x: 0, y: 20 })}
+    />
+    <KeyboardEventHandler
+      handleFocusableElements={true}
+      //className={classes.map}
+      handleKeys={["down"]}
+      onKeyEvent={() => mapPanZoom.panBy({ x: 0, y: -20 })}
+    />
+  </>
+);
+
 function Map() {
   // useRef References
   const svgEl = useRef(null);
@@ -110,19 +157,22 @@ function Map() {
   const classes = useStyles();
 
   return (
-    <KeyboardEventHandler
-      className={classes.map}
-      handleKeys={["esc"]}
-      onKeyEvent={focusRoot}
-    >
-      <SVG
-        className={classes.svg}
-        src={svgPath}
-        onError={onError}
-        onLoad={onLoad}
-        innerRef={svgEl}
-      />
-    </KeyboardEventHandler>
+    <>
+      <MapKeyboardControls mapPanZoom={mapPanZoom} />
+      <KeyboardEventHandler
+        className={classes.map}
+        handleKeys={["esc"]}
+        onKeyEvent={focusRoot}
+      >
+        <SVG
+          className={classes.svg}
+          src={svgPath}
+          onError={onError}
+          onLoad={onLoad}
+          innerRef={svgEl}
+        />
+      </KeyboardEventHandler>
+    </>
   );
 }
 
