@@ -131,7 +131,9 @@ export default function Questionnaire() {
               </React.Fragment>
             ))}
         </List> */}
-        {editableResponse && <Questions response={editableResponse} />}
+        {editableResponse && (
+          <Questions response={editableResponse} makeEdits={makeEdits} />
+        )}
       </Dialog>
     </div>
   );
