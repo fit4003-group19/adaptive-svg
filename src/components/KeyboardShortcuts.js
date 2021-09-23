@@ -89,24 +89,16 @@ export default function KeyboardShortcuts() {
       description: "Move through elements",
     },
     {
-      key: "arrow-keys in questionnaire dialog",
-      description: "Select options in questionnaire dialog",
+      key: "Shift +  - / + / r",
+      description: "Zoom out/in/reset on map",
     },
     {
-      key: "+ / - / r",
-      description: "Zoom in/out/reset on map",
-    },
-    {
-      key: "arrow-keys on main screen",
+      key: "Shift + arrow-keys (on main screen)",
       description: "Pan map",
     },
     {
       key: "esc when focused on map",
       description: "Move focus off map to the control menu",
-    },
-    {
-      key: "esc in any dialog menu",
-      description: "Close dialog",
     },
   ];
 

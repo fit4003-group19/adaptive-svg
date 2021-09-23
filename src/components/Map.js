@@ -14,13 +14,13 @@ const MapKeyboardControls = ({ mapPanZoom }) => (
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["="]}
+      handleKeys={["shift+="]}
       onKeyEvent={() => mapPanZoom.zoomIn()}
     />
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["-"]}
+      handleKeys={["shift+-"]}
       onKeyEvent={() => mapPanZoom.zoomOut()}
     />
     <KeyboardEventHandler
@@ -32,25 +32,25 @@ const MapKeyboardControls = ({ mapPanZoom }) => (
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["right"]}
+      handleKeys={["shift+right"]}
       onKeyEvent={() => mapPanZoom.panBy({ x: -20, y: 0 })}
     />
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["left"]}
+      handleKeys={["shift+left"]}
       onKeyEvent={() => mapPanZoom.panBy({ x: 20, y: 0 })}
     />
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["up"]}
+      handleKeys={["shift+up"]}
       onKeyEvent={() => mapPanZoom.panBy({ x: 0, y: 20 })}
     />
     <KeyboardEventHandler
       handleFocusableElements={true}
       //className={classes.map}
-      handleKeys={["down"]}
+      handleKeys={["shift+down"]}
       onKeyEvent={() => mapPanZoom.panBy({ x: 0, y: -20 })}
     />
   </>
