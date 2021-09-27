@@ -27,7 +27,10 @@ const MapKeyboardControls = ({ mapPanZoom }) => (
       handleFocusableElements={true}
       //className={classes.map}
       handleKeys={["r"]}
-      onKeyEvent={() => mapPanZoom.resetZoom()}
+      onKeyEvent={() => {
+        mapPanZoom.fit();
+        mapPanZoom.center();
+      }}
     />
     <KeyboardEventHandler
       handleFocusableElements={true}

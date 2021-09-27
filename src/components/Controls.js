@@ -76,7 +76,14 @@ function Controls() {
             </label>
             <label>
               Reset
-              <button onClick={() => mapPanZoom.resetZoom()}>x</button>
+              <button
+                onClick={() => {
+                  mapPanZoom.fit();
+                  mapPanZoom.center();
+                }}
+              >
+                x
+              </button>
             </label>
           </>
         )}
