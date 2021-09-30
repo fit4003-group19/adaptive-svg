@@ -70,12 +70,25 @@ function Map() {
     setRoomDescription,
     setRoomFlag,
     svgPath,
+    patterns,
   } = useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
+
+  const setPatterns = (layer) => {
+    layer.querySelectorAll("[data-layer='bg']").forEach((layer) => {
+      if (layer.dataset.layerPattern) {
+        layer.dataset.layerPattern = patterns ? "1" : "0";
+      }
+    });
+  };
 
   useEffect(() => {
     iterateLayers(updateLayer);
   }, [bitFlag]);
+
+  useEffect(() => {
+    iterateLayers(setPatterns);
+  }, [patterns]);
 
   // Tabbing Order
   // Activated Layers -> Neutral Layers -> Inactive Layers
@@ -126,6 +139,7 @@ function Map() {
       layer.addEventListener("focus", onLayerFocus);
       layer.addEventListener("blur", onLayerBlur);
       updateLayer(layer);
+      iterateLayers(setPatterns);
     });
   };
 

@@ -5,6 +5,7 @@ import { MapContext } from "../context/MapContext";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 import KeyboardShortcuts from "./KeyboardShortcuts";
 import FileUploader from "./FileUploader";
+import Switch from "./Switch";
 
 const useStyles = makeStyles((theme) => ({
   attributes: {
@@ -34,6 +35,8 @@ function Controls() {
     roomDescription,
     roomFlag,
     setSvgPath,
+    setPatterns,
+    patterns,
   } = useContext(MapContext);
   const { commitedResponse, bitFlag } = useContext(QuestionnaireContext);
 
@@ -51,6 +54,11 @@ function Controls() {
         <label>
           <p>Short Cuts</p>
           <KeyboardShortcuts />
+        </label>
+        <label>
+          <p>Turn On Patterns</p>
+
+          <Switch onChange={setPatterns} isSelected={patterns} />
         </label>
       </div>
       <div className={classes.attribute}>

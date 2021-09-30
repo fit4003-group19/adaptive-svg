@@ -7,12 +7,13 @@ const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const [svgPath, setSvgPath] = useState(
-    `${process.env.PUBLIC_URL}/svg/focus-test.svg`
+    `${process.env.PUBLIC_URL}/svg/focus-test-pattern.svg`
   );
   const [roomLabel, setRoomLabel] = useState();
   const [roomDescription, setRoomDescription] = useState();
   const [roomFlag, setRoomFlag] = useState();
   const rootFocus = useRef(null);
+  const [patterns, setPatterns] = useState(false);
 
   const focusRoot = () => {
     if (rootFocus.current) {
@@ -35,6 +36,8 @@ const MapProvider = (props) => {
         setRoomFlag,
         svgPath,
         setSvgPath,
+        patterns,
+        setPatterns,
       }}
     >
       {props.children}
