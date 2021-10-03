@@ -1,4 +1,4 @@
-    <svg width="855" height="412" viewBox="0 0 855 412" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="855" height="412" viewBox="0 0 855 412" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <style>
             /*
                 Base Functionality
@@ -128,31 +128,31 @@
             Inactive Layers => tabindex=2
             Unlisted Layers => tabindex=3
         -->
-        <g id="room-6" tabindex="1" data-layer-flag="1"  data-layer="root" class="color-1" data-layer-state="1" role="img" aria-labelledby="room-6--title" aria-describedby="room-6--desc">
+        <g id="room-6" tabindex="1" data-layer-flag="1"  data-layer="root" class="color-1" data-layer-state="1" role="img" aria-labelledby="room-6--title" aria-describedby="room-6--desc" data-pattern="0">
             <title id="room-6--title">Room 6</title>
             <desc id="room-6--desc">Room 6 is grand</desc>
             <path id="Vector" d="M668 4H851V187H668V4Z" data-layer="bg" data-layer-pattern="0"/>
             <text data-layer="txt"><tspan x="692" y="106.98">Room 6</tspan></text>
         </g>
-        <g id="room-1" tabindex="2" data-layer-flag="3" data-layer="root" class="color-2" data-layer-state="1" role="img" aria-labelledby="room-1--title" aria-describedby="room-1--desc">
+        <g id="room-1" tabindex="2" data-layer-flag="3" data-layer="root" class="color-2" data-layer-state="1" role="img" aria-labelledby="room-1--title" aria-describedby="room-1--desc" data-pattern="0">
             <title id="room-1--title">Room 1</title>
             <desc id="room-1--desc">Room 1 is big</desc>
             <path id="Vector_6" d="M4 4H187V187H4V4Z"  data-layer="bg" data-layer-pattern="0"/>
             <text data-layer="txt"><tspan x="29" y="106.98" >Room 1</tspan></text>
         </g>
-        <g id="room-3" tabindex="2" data-layer-flag="4" data-layer="root" class="color-3" data-layer-state="1" role="img" aria-labelledby="room-3--title" aria-describedby="room-3--desc">
+        <g id="room-3" tabindex="2" data-layer-flag="4" data-layer="root" class="color-3" data-layer-state="1" role="img" aria-labelledby="room-3--title" aria-describedby="room-3--desc" data-pattern="0">
             <title id="room-3--title">Room 3</title>
             <desc id="room-3--desc">Room 3 is large</desc>
             <path d="M225 4H408V187H225V4Z" data-layer="bg" data-layer-pattern="0"/>
             <text data-layer="txt"><tspan x="249" y="106.98" >Room 3</tspan></text>
         </g>
-        <g id="room-2" tabindex="2" data-layer-flag="8" data-layer="root" class="color-4" data-layer-state="1" role="img" aria-labelledby="room-2--title" aria-describedby="room-2--desc">
+        <g id="room-2" tabindex="2" data-layer-flag="8" data-layer="root" class="color-4" data-layer-state="1" role="img" aria-labelledby="room-2--title" aria-describedby="room-2--desc" data-pattern="0">
             <title id="room-2--title">Room 2</title>
             <desc id="room-2--desc">Room 2 is small</desc>
             <path d="M4 225H408V408H4V225Z" data-layer="bg" data-layer-pattern="0"/>
             <text data-layer="txt"><tspan x="151" y="327.98" >Room 2</tspan></text>
         </g>
-        <g id="room-5" tabindex="2" data-layer-flag="16" data-layer="root" class="color-1" data-layer-state="0" role="img" aria-labelledby="room-5--title" aria-describedby="room-5--desc">
+        <g id="room-5" tabindex="2" data-layer-flag="16" data-layer="root" class="color-1" data-layer-state="0" role="img" aria-labelledby="room-5--title" aria-describedby="room-5--desc" data-pattern="0">
             <title id="room-5--title">Room 5</title>
             <desc id="room-5--desc">Room 5 is old</desc>           
             <path id="Vector_2" d="M668 222H851V405H668V222Z" data-layer="bg"/>
