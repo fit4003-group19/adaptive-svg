@@ -4,7 +4,7 @@ import Questionnaire from "./Questionnaire";
 import { MapContext } from "../context/MapContext";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 import KeyboardShortcuts from "./KeyboardShortcuts";
-import FileUploader from "./FileUploader";
+import RoomInfo from "./RoomInfo";
 import Switch from "./Switch";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,45 +36,33 @@ const useStyles = makeStyles((theme) => ({
     stroke: "black",
     border: "2px solid black",
     backgroundColor: "#E5E5E5",
+    flexDirection: "column",
+    display: "flex",
+  },
+  option: {
+    flexDirection: "row",
+    display: "flex",
+    justifyContent: "space-between",
   },
 }));
 
 function Controls() {
   const classes = useStyles();
-  const { roomLabel, roomDescription, roomFlag } = useContext(MapContext);
+  const { roomLabel, roomDescription, roomFlag, patterns, setPatterns } =
+    useContext(MapContext);
   return (
     <div className={classes.attributes}>
-      <div className={classes.roomInfo}>
-        <h2>Selected Room</h2>
-        <h3>Name: {roomLabel ? roomLabel : "No Room Selected"}</h3>
-        <h3>Description: {roomDescription && roomDescription}</h3>
-        <h3>Room Flag: {roomFlag && roomFlag}</h3>
-      </div>
+      <RoomInfo />
       <div className={classes.buttons}>
         <Questionnaire />
         <KeyboardShortcuts />
       </div>
-      {/* <div className={classes.attribute}>
-        <label ref={rootFocus}>
-          <p>Questionnaire</p>
-          <Questionnaire />
-        </label>
-        <label>
-          <p>Change SVG</p>
-          <FileUploader setSvgPath={setSvgPath} />
-        </label>
-        <label>
-          <p>Short Cuts</p>
-          <KeyboardShortcuts />
-        </label>
-        <label>
-          <p>Turn On Patterns</p>
-
-          <Switch onChange={setPatterns} isSelected={patterns} />
-        </label>
-      </div> */}
       <div className={classes.options}>
-        <h2>Options</h2>
+        <h3>Options</h3>
+        <div className={classes.option}>
+          <p>Turn On Patterns</p>
+          <Switch onChange={setPatterns} isSelected={patterns} />
+        </div>
       </div>
     </div>
   );
