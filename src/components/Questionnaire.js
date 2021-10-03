@@ -31,24 +31,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
+  button: {
+    flex: 1,
+    backgroundColor: "black",
+    color: "white",
+  },
 }));
-const RadioButtonsGroup = ({ onChange, value, index }) => {
-  return (
-    <FormControl component="fieldset">
-      {/* <FormLabel component="legend">Response</FormLabel> */}
-      <RadioGroup
-        aria-label="gender"
-        name={"gender" + index}
-        value={value}
-        onChange={onChange}
-        row
-      >
-        <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-        <FormControlLabel value="no" control={<Radio />} label="No" />
-      </RadioGroup>
-    </FormControl>
-  );
-};
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -83,7 +71,12 @@ export default function Questionnaire() {
         handleKeys={["q"]}
         onKeyEvent={handleClickOpen}
       />
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button
+        className={classes.button}
+        variant="outlined"
+        color="black"
+        onClick={handleClickOpen}
+      >
         Open Questionnaire
       </Button>
       <Dialog
@@ -110,27 +103,6 @@ export default function Questionnaire() {
             </Button>
           </Toolbar>
         </AppBar>
-        {/* <List>
-          {editableResponse &&
-            editableResponse.map((question, i) => (
-              <React.Fragment key={i}>
-                <ListItem
-                  onKeyUp={(e) => console.log(e, "eventUp")}
-                  onKeyPress={(e) => console.log(e, "eventDown")}
-                >
-                  <ListItemText primary={question.question} />
-                  <RadioButtonsGroup
-                    onChange={(e) => {
-                      makeEdits(i, e.target.value);
-                    }}
-                    value={question.response}
-                    index={i}
-                  />
-                </ListItem>
-                <Divider />
-              </React.Fragment>
-            ))}
-        </List> */}
         {editableResponse && (
           <Questions response={editableResponse} makeEdits={makeEdits} />
         )}

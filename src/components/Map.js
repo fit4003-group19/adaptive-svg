@@ -110,7 +110,7 @@ function Map() {
   // CSS
   const useStyles = makeStyles((theme) => ({
     map: {
-      flex: 3,
+      flex: 4,
       margin: 10,
       border: "8px black",
     },

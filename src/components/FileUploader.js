@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { MapContext } from "../context/MapContext";
 
-function FileUploader({ setSvgPath }) {
+function FileUploader() {
+  const { setSvgPath } = useContext(MapContext);
   const changeHandler = (event) => {
     let fileToUpload = event.target.files[0];
     let reader = new FileReader();
@@ -10,7 +12,7 @@ function FileUploader({ setSvgPath }) {
     reader.readAsDataURL(event.target.files[0]);
   };
 
-  return <input type="file" name="file" onChange={changeHandler} />;
+  return <input type="file" name="Floor Plan" onChange={changeHandler} />;
 }
 
 export default FileUploader;

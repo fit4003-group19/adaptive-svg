@@ -10,39 +10,51 @@ import Switch from "./Switch";
 const useStyles = makeStyles((theme) => ({
   attributes: {
     flex: 1,
-    margin: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "whitesmoke",
   },
-  attribute: { flex: 4, margin: 10, stroke: "black", strokeWidth: 5 },
+  roomInfo: {
+    flex: 3,
+    margin: 10,
+    stroke: "black",
+    border: "2px solid black",
+    backgroundColor: "#E5E5E5",
+  },
   buttons: {
+    display: "flex",
     flex: 1,
     margin: 10,
     display: "flex",
-    justify: "space-between",
-    flexDirection: "row",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  options: {
+    flex: 5,
+    margin: 10,
+    stroke: "black",
+    border: "2px solid black",
+    backgroundColor: "#E5E5E5",
   },
 }));
 
 function Controls() {
   const classes = useStyles();
-  const {
-    mapPanZoom,
-    setMapPanZoom,
-    rootFocus,
-    roomLabel,
-    roomDescription,
-    roomFlag,
-    setSvgPath,
-    setPatterns,
-    patterns,
-  } = useContext(MapContext);
-  const { commitedResponse, bitFlag } = useContext(QuestionnaireContext);
-
+  const { roomLabel, roomDescription, roomFlag } = useContext(MapContext);
   return (
     <div className={classes.attributes}>
-      <div className={classes.attribute}>
+      <div className={classes.roomInfo}>
+        <h2>Selected Room</h2>
+        <h3>Name: {roomLabel ? roomLabel : "No Room Selected"}</h3>
+        <h3>Description: {roomDescription && roomDescription}</h3>
+        <h3>Room Flag: {roomFlag && roomFlag}</h3>
+      </div>
+      <div className={classes.buttons}>
+        <Questionnaire />
+        <KeyboardShortcuts />
+      </div>
+      {/* <div className={classes.attribute}>
         <label ref={rootFocus}>
           <p>Questionnaire</p>
           <Questionnaire />
@@ -60,41 +72,9 @@ function Controls() {
 
           <Switch onChange={setPatterns} isSelected={patterns} />
         </label>
-      </div>
-      <div className={classes.attribute}>
-        <h1>Bit Stuffing</h1>
-        <h2>{bitFlag}</h2>
-      </div>
-      <div className={classes.attribute}>
-        <h1>Selected Room</h1>
-        <h3>Name: {roomLabel ? roomLabel : "No Room Selected"}</h3>
-        <h3>Description: {roomDescription && roomDescription}</h3>
-        <h3>Room Flag: {roomFlag && roomFlag}</h3>
-      </div>
-      <div className={classes.buttons}>
-        {mapPanZoom && (
-          <>
-            <label>
-              Zoom In
-              <button onClick={() => mapPanZoom.zoomIn()}>+</button>
-            </label>
-            <label>
-              Zoom Out
-              <button onClick={() => mapPanZoom.zoomOut()}>-</button>
-            </label>
-            <label>
-              Reset
-              <button
-                onClick={() => {
-                  mapPanZoom.fit();
-                  mapPanZoom.center();
-                }}
-              >
-                x
-              </button>
-            </label>
-          </>
-        )}
+      </div> */}
+      <div className={classes.options}>
+        <h2>Options</h2>
       </div>
     </div>
   );

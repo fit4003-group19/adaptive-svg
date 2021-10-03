@@ -55,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
   },
+  button: {
+    flex: 1,
+    backgroundColor: "white",
+    color: "black",
+  },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -110,7 +115,12 @@ export default function KeyboardShortcuts() {
         handleKeys={["k"]}
         onKeyEvent={handleClickOpen}
       />
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button
+        variant="outlined"
+        color="black"
+        onClick={handleClickOpen}
+        className={classes.button}
+      >
         Open Keyboard Shortcuts
       </Button>
       <Dialog
