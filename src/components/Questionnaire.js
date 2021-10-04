@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
+import { Card, CardContent, CardHeader } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import AppBar from "@material-ui/core/AppBar";
 import { FormLabel } from "@material-ui/core";
@@ -26,15 +27,22 @@ import Questions from "./Questions";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: "relative",
+    backgroundColor: "black",
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
   button: {
-    flex: 1,
     backgroundColor: "black",
     color: "white",
+    marginTop: 5,
+    marginBottom: 10,
+  },
+  card: {
+    backgroundColor: "whitesmoke",
+    width: "75%",
+    alignSelf: "center",
   },
 }));
 
@@ -64,7 +72,7 @@ export default function Questionnaire() {
   };
 
   return (
-    <div>
+    <>
       <KeyboardEventHandler
         handleFocusableElements={true}
         //className={classes.map}
@@ -76,6 +84,7 @@ export default function Questionnaire() {
         variant="outlined"
         color="black"
         onClick={handleClickOpen}
+        fullWidth={true}
       >
         Open Questionnaire
       </Button>
@@ -103,10 +112,15 @@ export default function Questionnaire() {
             </Button>
           </Toolbar>
         </AppBar>
-        {editableResponse && (
-          <Questions response={editableResponse} makeEdits={makeEdits} />
-        )}
+        <Card sx={{ width: 275 }} className={classes.card}>
+          <CardHeader title="Answer the following questions" />
+          <CardContent>
+            {editableResponse && (
+              <Questions response={editableResponse} makeEdits={makeEdits} />
+            )}
+          </CardContent>
+        </Card>
       </Dialog>
-    </div>
+    </>
   );
 }

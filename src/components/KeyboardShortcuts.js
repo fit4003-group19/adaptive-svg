@@ -26,6 +26,7 @@ import Questions from "./Questions";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: "relative",
+    backgroundColor: "black",
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -59,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
     backgroundColor: "white",
     color: "black",
+    marginTop: 10,
+    marginBottom: 5,
   },
 }));
 
@@ -108,7 +111,7 @@ export default function KeyboardShortcuts() {
   ];
 
   return (
-    <div>
+    <>
       <KeyboardEventHandler
         handleFocusableElements={true}
         //className={classes.map}
@@ -120,6 +123,7 @@ export default function KeyboardShortcuts() {
         color="black"
         onClick={handleClickOpen}
         className={classes.button}
+        fullWidth={true}
       >
         Open Keyboard Shortcuts
       </Button>
@@ -160,6 +164,6 @@ export default function KeyboardShortcuts() {
           ))}
         </>
       </Dialog>
-    </div>
+    </>
   );
 }
