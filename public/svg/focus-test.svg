@@ -74,7 +74,7 @@
             } -->
 
             [data-layer="root"]:focus [data-layer="bg"] {
-                fill: #FE6100;
+                fill: black;
             }
 
             [data-layer="root"]:focus [data-layer="txt"] {

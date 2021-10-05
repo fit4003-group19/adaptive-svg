@@ -62,11 +62,17 @@ const Map = ({ className }) => {
   // Tabbing Order
   // Activated Layers -> Neutral Layers -> Inactive Layers
   const updateLayers = (layer) => {
-    const { layerFlag, layerState } = layer.dataset;
+    let { layerFlag, layerState } = layer.dataset;
+    layerFlag = parseInt(layerFlag);
+    layerState = parseInt(layerState);
+
     if (layerState > -1) {
       // We can dynamically set the tab index to prioritise the tabbing of activated layers
       // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
-      const isActive = (bitFlag & parseInt(layerFlag)) > 0;
+      let isActive = false;
+      if (layerFlag) {
+        isActive = (bitFlag & layerFlag) > 0;
+      }
       layer.tabIndex = isActive ? "1" : "2";
       layer.dataset.layerState = isActive ? "1" : "0";
     } else {
@@ -83,11 +89,11 @@ const Map = ({ className }) => {
     const { layerFlag } = layer.dataset;
     const roomLabelledBy = layer.getAttribute("aria-labelledby");
     const roomDescribedBy = layer.getAttribute("aria-describedby");
-    const roomLabel = svgEl.current.getElementById(roomLabelledBy).textContent;
-    const roomDescription =
-      svgEl.current.getElementById(roomDescribedBy).textContent;
-    setRoomLabel(roomLabel);
-    setRoomDescription(roomDescription);
+    const roomTitle = svgEl.current.getElementById(roomLabelledBy);
+    const roomDesc = svgEl.current.getElementById(roomDescribedBy);
+
+    setRoomLabel(roomTitle ? roomTitle.textContent : "Untitled");
+    setRoomDescription(roomDesc ? roomDesc.textContent : "Untitled");
     setRoomFlag(layerFlag);
   };
 

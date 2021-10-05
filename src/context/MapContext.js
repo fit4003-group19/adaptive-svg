@@ -7,7 +7,7 @@ const MapProvider = (props) => {
   // this state will be shared with all components
   const [mapPanZoom, setMapPanZoom] = useState();
   const [svgPath, setSvgPath] = useState(
-    `${process.env.PUBLIC_URL}/svg/focus-test-pattern.svg`
+    `${process.env.PUBLIC_URL}/svg/focus-test--v2.svg`
   );
   const [roomLabel, setRoomLabel] = useState();
   const [roomDescription, setRoomDescription] = useState();

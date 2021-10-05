@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import Switch from "../../Switch";
-const OptionsPattern = ({ onChange, isSelected }) => {
+import { MapContext } from "../../../context/MapContext";
+const OptionsPattern = () => {
+  const { patterns, setPatterns } = useContext(MapContext);
   return (
-    <label className="input-group">
-      <span className="u-margin-right-auto">Turn On Patterns</span>
-      <Switch onChange={onChange} isSelected={isSelected} />
-    </label>
+    <div>
+      <label className="input-group">
+        <span className="u-margin-right-auto">Turn On Patterns</span>
+        <Switch
+          onChange={() => {
+            setPatterns((foo) => !foo);
+          }}
+          isSelected={patterns}
+        />
+      </label>
+    </div>
   );
 };
 
