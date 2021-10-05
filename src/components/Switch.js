@@ -11,7 +11,7 @@ function Switch(props) {
   let { isFocusVisible, focusProps } = useFocusRing();
 
   return (
-    <label style={{ display: "flex", alignItems: "center" }}>
+    <>
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={ref} />
       </VisuallyHidden>
@@ -39,7 +39,7 @@ function Switch(props) {
         )}
       </svg>
       {props.children}
-    </label>
+    </>
   );
 }
 

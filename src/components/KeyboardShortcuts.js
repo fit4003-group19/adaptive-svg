@@ -2,26 +2,15 @@ import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import AppBar from "@material-ui/core/AppBar";
-import { FormLabel } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import { MapContext } from "../context/MapContext";
-import useQuestions from "../hooks/useQuestions";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 import KeyboardEventHandler from "react-keyboard-event-handler";
-import Questions from "./Questions";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -57,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row",
   },
   button: {
-    flex: 1,
     backgroundColor: "white",
     color: "black",
     marginTop: 10,
