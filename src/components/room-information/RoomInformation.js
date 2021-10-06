@@ -3,10 +3,10 @@ import "./RoomInformation.scss";
 import { makeStyles } from "@material-ui/styles";
 import SVG from "react-inlinesvg";
 import { LayerContext } from "../../context/LayerContext";
+import { DualColorLabel } from "../color/DualColorLabel";
 
 const RoomInformation = ({ className }) => {
-  const svgPath = `${process.env.PUBLIC_URL}/icons/tactile--icon.svg`;
-  const { layerInfo } = useContext(LayerContext);
+  const { layerInfo, getTranslation, layerColors } = useContext(LayerContext);
   const [iconColor, setIconColor] = useState("blue");
 
   const useStyles = makeStyles((theme) => ({
@@ -29,12 +29,17 @@ const RoomInformation = ({ className }) => {
           {layerInfo.description || "Nothing Selected"}
         </span>
       </div>
-      <div className={`room-information-icon ${classes.icon}`}>
-        <SVG src={svgPath} />
-        <span className={"room-information-icon-text"}>
-          {layerInfo.class || "Nothing Selected"}
-        </span>
-      </div>
+      {layerInfo.class && (
+        <div className={`room-information-icon`}>
+          <SVG src={getTranslation(layerInfo.class).icon} />
+          <DualColorLabel
+            left={layerColors[layerInfo.class].primary}
+            right={layerColors[layerInfo.class].secondary}
+          >
+            {getTranslation(layerInfo.class).fullName}
+          </DualColorLabel>
+        </div>
+      )}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import "./DualColorLabel.scss";
 import { makeStyles } from "@material-ui/styles";
 
-export const DualColorLabel = ({ children, left, right }) => {
+export const DualColorLabel = ({ children, left, right, className }) => {
   // left => Left Left
   // right => Right Edge
   const edgeWidth = "1rem";
@@ -15,5 +15,9 @@ export const DualColorLabel = ({ children, left, right }) => {
 
   const classes = useStyles();
 
-  return <span class={`${classes.label} dual-color-label`}>{children}</span>;
+  return (
+    <span class={`${classes.label} dual-color-label ${className}`}>
+      {children}
+    </span>
+  );
 };
