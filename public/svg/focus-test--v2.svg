@@ -34,34 +34,42 @@
 
         <!-- COLOR VARIABLES -->
         <!-- Solid Colors -->
-        <linearGradient id="solid--0" >
+        <linearGradient id="gradient--ramp" >
             <stop offset="0%"  stop-color="#648FFF" />
             <stop offset="100%" stop-color="#648FFF" />
         </linearGradient>
-        <linearGradient id="solid--1" >
+        <linearGradient id="gradient--lift" >
             <stop offset="0%"  stop-color="#785EF0" />
             <stop offset="100%" stop-color="#785EF0" />
         </linearGradient>
-        <linearGradient id="solid--2" >
+        <linearGradient id="gradient--obstacle" >
             <stop offset="0%"  stop-color="#DC267F" />
             <stop offset="100%" stop-color="#DC267F" />
         </linearGradient>
-        <linearGradient id="solid--3" >
+        <linearGradient id="gradient--stairs" >
             <stop offset="0%"  stop-color="#FE6100" />
             <stop offset="100%" stop-color="#FE6100" />
         </linearGradient>
-        <linearGradient id="solid--4" >
+        <linearGradient id="gradient--tactile" >
             <stop offset="0%"  stop-color="#FFB000" />
             <stop offset="100%" stop-color="#FFB000" />
         </linearGradient>
+        <linearGradient id="gradient--inactive" >
+            <stop offset="0%"  stop-color="#a5a5a5" />
+            <stop offset="100%" stop-color="#a5a5a5" />
+        </linearGradient>
+        <linearGradient id="gradient--unlisted" >
+            <stop offset="0%"  stop-color="#e5e5e5" />
+            <stop offset="100%" stop-color="#e5e5e5" />
+        </linearGradient>
         <!-- Half Colors -->
-        <linearGradient id="half--0-4" gradientTransform="rotate(90)">
+        <linearGradient id="gradient--toilet" gradientTransform="rotate(90)">
             <stop offset="0%"  stop-color="#648FFF" />
             <stop offset="50%" stop-color="#648FFF" />
             <stop offset="50%"  stop-color="#FFB000" />
             <stop offset="100%" stop-color="#FFB000" />
         </linearGradient>
-        <linearGradient id="half--1-3" >
+        <linearGradient id="gradient--support-center" >
             <stop offset="0%"  stop-color="#785EF0" />
             <stop offset="50%" stop-color="#785EF0" />
             <stop offset="50%"  stop-color="#FE6100" />
@@ -89,7 +97,7 @@
 
         /* Color Controller */
         .ramp {
-            fill: url(#solid--0)
+            fill: url(#gradient--ramp)
         }
 
         [data-layer-pattern="1"] .ramp{
@@ -97,19 +105,19 @@
         }
 
         .lift {
-            fill: url(#solid--1)
+            fill: url(#gradient--lift)
         }
 
         [data-layer-pattern="1"] .lift{
             fill: url(#pattern--lift)
         }
 
-        .obstacle{
-            fill: url(#solid--2)
+        .obstacle {
+            fill: url(#gradient--obstacle)
         }
 
         .stairs{
-            fill: url(#solid--3)
+            fill: url(#gradient--stairs)
         }
 
         [data-layer-pattern="1"] .stairs {
@@ -117,11 +125,11 @@
         }
 
         .tactile{
-            fill: url(#solid--4)
+            fill: url(#gradient--tactile)
         }
 
         .toilet{
-            fill: url(#half--0-4)
+            fill: url(#gradient--toilet)
         }
 
         [data-layer-pattern="1"] .toilet {
@@ -129,7 +137,7 @@
         }
 
         .support-center{
-            fill: url(#half--1-3)
+            fill: url(#gradient--support-center)
         }
 
         [data-layer-pattern="1"] .support-center {
@@ -137,15 +145,17 @@
         }
 
         [data-layer-state="0"], .inactive {
-            fill: #a5a5a5;
+            fill: url(#gradient--inactive)
         }
 
-        [data-layer-pattern="1"] [data-layer-state="0"] {
+        // Do not activate pattern on obstacle or tactile flooring as the icon is
+        // significant differientiation
+        [data-layer-pattern="1"] [data-layer-state="0"]:not(.obstacle):not(.tactile) {
             fill: url(#pattern--inactive)
         }
 
         .unlisted {
-            fill:#e5e5e5;
+            fill: url(#gradient--unlisted)
         }
 
         [data-layer-type="layer"]:focus  {

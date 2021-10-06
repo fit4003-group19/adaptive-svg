@@ -9,9 +9,7 @@ const MapProvider = (props) => {
   const [svgPath, setSvgPath] = useState(
     `${process.env.PUBLIC_URL}/svg/focus-test--v2.svg`
   );
-  const [roomLabel, setRoomLabel] = useState();
-  const [roomDescription, setRoomDescription] = useState();
-  const [roomFlag, setRoomFlag] = useState();
+  // TODO Move some state variables to LayerContext
   const rootFocus = useRef(null);
   const [patterns, setPatterns] = useState(false);
 
@@ -28,12 +26,6 @@ const MapProvider = (props) => {
         setMapPanZoom,
         rootFocus,
         focusRoot,
-        roomLabel,
-        setRoomLabel,
-        roomDescription,
-        setRoomDescription,
-        roomFlag,
-        setRoomFlag,
         svgPath,
         setSvgPath,
         patterns,

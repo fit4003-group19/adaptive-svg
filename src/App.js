@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import MapProvider from "./context/MapContext";
 import QuestionnaireProvider from "./context/QuestionnaireContext";
+import LayerProvider from "./context/LayerContext";
 
 import Map from "./components/map/Map";
 import Controls from "./components/controls/Controls";
@@ -15,14 +16,16 @@ function App() {
   return (
     <MapProvider>
       <QuestionnaireProvider>
-        <div className="root">
-          <Title className="root-title"></Title>
-          <Map className="root-map"></Map>
-          <Controls className="root-controls"></Controls>
-          <RoomInformation className="root-description"></RoomInformation>
-          <Shortcuts className="root-shortcuts"></Shortcuts>
-          <Options className="root-options"></Options>
-        </div>
+        <LayerProvider>
+          <div className="root">
+            <Title className="root-title"></Title>
+            <Map className="root-map"></Map>
+            <Controls className="root-controls"></Controls>
+            <RoomInformation className="root-description"></RoomInformation>
+            <Shortcuts className="root-shortcuts"></Shortcuts>
+            <Options className="root-options"></Options>
+          </div>
+        </LayerProvider>
       </QuestionnaireProvider>
     </MapProvider>
   );

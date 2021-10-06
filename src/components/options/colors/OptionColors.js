@@ -1,36 +1,59 @@
-import React from "react";
+import React, { useContext, useRef, useEffect } from "react";
+import { LayerContext } from "../../../context/LayerContext";
+
+// Change Per Second Limiter (cps)
+// Limits the number of color changes that can be made per second. Prevents
+// overloading the React Update Queue with too many color change requests
+const _cpsLimiter = 30;
+// Calculates the length of the change window to facilitate the cps, in milliseconds
+const cpsLimiterMs = (1 / _cpsLimiter) * 1000;
 
 const OptionColors = () => {
+  const { colorPalette, setColorPallete } = useContext(LayerContext);
+  const colorChangeTimeout = useRef(null);
+
+  const onChange = (e, i) => {
+    if (!colorChangeTimeout.current) {
+      colorChangeTimeout.current = setTimeout(() => {
+        colorChangeTimeout.current = null;
+      }, cpsLimiterMs);
+
+      setColorPallete((foo) => {
+        return foo.map((bar, j) => {
+          if (i == j) {
+            return e.target.value;
+          } else {
+            return bar;
+          }
+        });
+      });
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (colorChangeTimeout.current) {
+        clearTimeout(colorChangeTimeout.current);
+        colorChangeTimeout.current = null;
+      }
+    };
+  }, []);
+
   return (
     <div>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Ramp</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Lift</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Obstacle</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Stairs</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Tactile Flooring</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Disabled Toilet</span>
-        <input type="color"></input>
-      </label>
-      <label className="input-group">
-        <span className="u-margin-right-auto">Support Center</span>
-        <input type="color"></input>
-      </label>
+      {colorPalette &&
+        colorPalette.map((color, i) => (
+          <label className="input-group" key={`color-options-${i}`}>
+            <span className="u-margin-right-auto">Color #{i}</span>
+            <input
+              type="color"
+              value={color}
+              onChange={(e) => {
+                onChange(e, i);
+              }}
+            ></input>
+          </label>
+        ))}
     </div>
   );
 };

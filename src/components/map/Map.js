@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/styles";
 import React, { useRef, useContext, useEffect } from "react";
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
+import { LayerContext } from "../../context/LayerContext";
 import SVG from "react-inlinesvg";
 import MapKeyboardEventHandler from "../MapKeyboardEventHandler";
 import KeyboardEventHandler from "react-keyboard-event-handler";
@@ -11,25 +12,32 @@ const Map = ({ className }) => {
   // useRef References
   const svgEl = useRef(null);
   const rootGroupEl = useRef(null);
-  const {
-    mapPanZoom,
-    setMapPanZoom,
-    focusRoot,
-    setRoomLabel,
-    setRoomDescription,
-    setRoomFlag,
-    svgPath,
-    patterns,
-  } = useContext(MapContext);
+  const { mapPanZoom, setMapPanZoom, focusRoot, svgPath, patterns } =
+    useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
+  const {
+    setLayerInfo,
+    layerColors,
+    pullLayerStylesFromSVG,
+    pushLayerStylesToSVG,
+    updateLayer,
+  } = useContext(LayerContext);
 
   useEffect(() => {
-    iterateLayers(updateLayers);
+    iterateLayers((layer) => {
+      updateLayer(bitFlag, layer);
+    });
   }, [bitFlag]);
 
   useEffect(() => {
     updatePatterns();
   }, [patterns]);
+
+  useEffect(() => {
+    if (svgEl.current && layerColors) {
+      pushLayerStylesToSVG(svgEl.current, layerColors);
+    }
+  }, [layerColors]);
 
   // CSS
   const useStyles = makeStyles((theme) => ({
@@ -59,29 +67,6 @@ const Map = ({ className }) => {
     }
   };
 
-  // Tabbing Order
-  // Activated Layers -> Neutral Layers -> Inactive Layers
-  const updateLayers = (layer) => {
-    let { layerFlag, layerState } = layer.dataset;
-    layerFlag = parseInt(layerFlag);
-    layerState = parseInt(layerState);
-
-    if (layerState > -1) {
-      // We can dynamically set the tab index to prioritise the tabbing of activated layers
-      // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
-      let isActive = false;
-      if (layerFlag) {
-        isActive = (bitFlag & layerFlag) > 0;
-      }
-      layer.tabIndex = isActive ? "1" : "2";
-      layer.dataset.layerState = isActive ? "1" : "0";
-    } else {
-      // A tabbIndex of 3 will be lower on the tabbing priority compared to a tabIndex of 2
-      layer.tabIndex = "3";
-      layer.dataset.layerState = "-1";
-    }
-  };
-
   // According to W3C draft, the focus event is fired AFTER the previous element has fired the blur event
   // ****** Focus + Blur Fuctions (START) ******
   const onLayerFocus = (e) => {
@@ -92,15 +77,19 @@ const Map = ({ className }) => {
     const roomTitle = svgEl.current.getElementById(roomLabelledBy);
     const roomDesc = svgEl.current.getElementById(roomDescribedBy);
 
-    setRoomLabel(roomTitle ? roomTitle.textContent : "Untitled");
-    setRoomDescription(roomDesc ? roomDesc.textContent : "Untitled");
-    setRoomFlag(layerFlag);
+    setLayerInfo({
+      label: roomTitle ? roomTitle.textContent : null,
+      description: roomDesc ? roomDesc.textContent : null,
+      class: layer.classList.length === 1 ? layer.classList[0] : null,
+    });
   };
 
   const onLayerBlur = (e) => {
-    setRoomLabel(null);
-    setRoomDescription(null);
-    setRoomFlag(null);
+    setLayerInfo({
+      label: null,
+      description: null,
+      class: null,
+    });
   };
   // ****** Focus + Blur Fuctions (END) ******
   // Placeholder
@@ -122,12 +111,18 @@ const Map = ({ className }) => {
     foo.zoomAtPoint(1, { x: 447, y: 183 });
     setMapPanZoom(foo);
 
+    // Pull SVG Color Information
+    pullLayerStylesFromSVG(svgEl.current);
+    // pushLayerStyles(svgEl.current);
+    // Set Layer Event Listeners
     iterateLayers((layer) => {
       layer.addEventListener("focus", onLayerFocus);
       layer.addEventListener("blur", onLayerBlur);
-      updateLayers(layer);
-      updatePatterns();
+      updateLayer(bitFlag, layer);
     });
+
+    // Update Global
+    updatePatterns();
   };
 
   const classes = useStyles();
