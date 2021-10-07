@@ -20,8 +20,10 @@ const Map = ({ className }) => {
     layerColors,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
-    updateLayer,
+    fontStyleSheet,
   } = useContext(LayerContext);
+
+  console.log(fontStyleSheet);
 
   useEffect(() => {
     iterateLayers((layer) => {
@@ -45,6 +47,7 @@ const Map = ({ className }) => {
       height: "100%",
       width: "100%",
     },
+    font: fontStyleSheet,
   }));
 
   // Layer Iterator
@@ -125,6 +128,29 @@ const Map = ({ className }) => {
     updatePatterns();
   };
 
+  // Tabbing Order
+  // Activated Layers -> Neutral Layers -> Inactive Layers
+  const updateLayer = (bitFlag, layer) => {
+    let { layerFlag, layerState } = layer.dataset;
+    layerFlag = parseInt(layerFlag);
+    layerState = parseInt(layerState);
+
+    if (layerState > -1) {
+      // We can dynamically set the tab index to prioritise the tabbing of activated layers
+      // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
+      let isActive = false;
+      if (layerFlag) {
+        isActive = (bitFlag & layerFlag) > 0;
+      }
+      layer.tabIndex = isActive ? "1" : "2";
+      layer.dataset.layerState = isActive ? "1" : "0";
+    } else {
+      // A tabbIndex of 3 will be lower on the tabbing priority compared to a tabIndex of 2
+      layer.tabIndex = "-1";
+      layer.dataset.layerState = "-1";
+    }
+  };
+
   const classes = useStyles();
 
   return (
@@ -132,7 +158,7 @@ const Map = ({ className }) => {
       <MapKeyboardEventHandler mapPanZoom={mapPanZoom} />
       <KeyboardEventHandler handleKeys={["esc"]} onKeyEvent={focusRoot}>
         <SVG
-          className={classes.svg}
+          className={`${classes.svg} ${classes.font}`}
           src={svgPath}
           onError={onError}
           onLoad={onLoad}

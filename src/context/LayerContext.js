@@ -1,5 +1,6 @@
 import { createContext, useState, useRef } from "react";
-import useLayerUtilities from "../hooks/useLayerUtilities";
+import useLayerColors from "../hooks/useLayerColors";
+import useLayerStyles from "../hooks/useLayerStyles";
 
 //create a context, with createContext api
 export const LayerContext = createContext();
@@ -18,9 +19,17 @@ const LayerProvider = (props) => {
     setColorPallete,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
-    updateLayer,
-    getTranslation,
-  } = useLayerUtilities();
+  } = useLayerColors();
+
+  const {
+    layerFontFamilies,
+    selectedFontFamily,
+    setSelectedFontFamily,
+    layerFontWeights,
+    selectedFontWeight,
+    setSelectedFontWeight,
+    fontStyleSheet,
+  } = useLayerStyles();
   //   const [colorPalette, setColorPalette] = useState([
   //     "#648FFF",
   //     "#785EF0",
@@ -36,12 +45,17 @@ const LayerProvider = (props) => {
         setLayerInfo,
         layerColors,
         setLayerColors,
+        layerFontWeights,
+        selectedFontWeight,
+        setSelectedFontWeight,
         colorPalette,
         setColorPallete,
         pullLayerStylesFromSVG,
         pushLayerStylesToSVG,
-        updateLayer,
-        getTranslation,
+        layerFontFamilies,
+        selectedFontFamily,
+        setSelectedFontFamily,
+        fontStyleSheet,
         // colorPalette,
         // setColorPalette,
       }}
