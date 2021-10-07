@@ -1,10 +1,17 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, {
+  useRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
 import { LayerContext } from "../../context/LayerContext";
 import SVG from "react-inlinesvg";
 import MapKeyboardEventHandler from "../MapKeyboardEventHandler";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import { makeStyles } from "@material-ui/core";
 const svgPanZoom = require("svg-pan-zoom");
 
 const Map = ({ className }) => {
@@ -47,17 +54,18 @@ const Map = ({ className }) => {
   }, [layerColors]);
 
   // CSS
-  const classes = {
-    svg: {
-      height: "100%",
-      width: "100%",
-    },
-<<<<<<< HEAD
-    font: fontStyleSheet,
-  }));
-=======
-  };
->>>>>>> 5664c05f2bdf3ae3d744ea363dec4181bc2eeaec
+
+  const svgStyles = makeStyles((theme) => {
+    return {
+      svg: {
+        height: "100%",
+        width: "100%",
+      },
+      font: fontStyleSheet,
+    };
+  });
+
+  const classes = useMemo(() => svgStyles(), [svgStyles]);
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
@@ -164,8 +172,6 @@ const Map = ({ className }) => {
       layer.dataset.layerState = "-1";
     }
   };
-
-  const classes = useStyles();
 
   return (
     <div className={`${className} map`}>
