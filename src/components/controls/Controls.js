@@ -11,8 +11,8 @@ import {
   ArrowBack,
   ArrowDownward,
   ArrowForward,
+  Restore,
 } from "@material-ui/icons";
-import RestoreIcon from "@mui/icons-material/Restore";
 
 const Controls = ({ className }) => {
   const { mapPanZoom, rootFocus } = useContext(MapContext);
@@ -69,7 +69,7 @@ const Controls = ({ className }) => {
             }}
             aria-label="Restore Map Zoom"
           >
-            <RestoreIcon />
+            <Restore />
           </Button>
         </div>
       )}
