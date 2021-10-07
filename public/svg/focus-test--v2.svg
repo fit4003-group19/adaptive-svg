@@ -102,7 +102,7 @@
             fill: url(#gradient--ramp)
         }
 
-        [data-layer-pattern="1"] [data-layer-state="1"].ramp{
+        [data-layer-pattern="1"] [data-layer-state="1"].ramp {
             fill: url(#pattern--ramp)
         }
 
@@ -160,12 +160,12 @@
             fill: url(#gradient--unlisted)
         }
 
-        [data-layer-type="layer"]:focus  {
+        [data-layer-type="layer"]:focus path {
             fill: black;
         }
 
         /* Focus Controller */
-        [data-layer-type="layer"]:focus {
+        [data-layer-type="layer"]:focus path{
             animation: focus-flash 3s infinite;
         }
 

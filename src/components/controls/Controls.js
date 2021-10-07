@@ -13,15 +13,17 @@ import RestoreIcon from "@mui/icons-material/Restore";
 
 const Controls = ({ className }) => {
   const { mapPanZoom, rootFocus } = useContext(MapContext);
+  console.log(rootFocus);
 
   return (
     <div className={`${className} controls`}>
-      <h1>Controls</h1>
+      <h1 tabIndex="0" ref={rootFocus}>
+        Controls
+      </h1>
       {mapPanZoom && (
         <div className="controls-buttons">
           <Button
             // Root Focus Defines What Element We Automatically Tab To When ESC is pressed
-            ref={rootFocus}
             onPress={() => mapPanZoom.panBy({ x: 20, y: 0 })}
             aria-label="Pan Map Left"
           >

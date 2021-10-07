@@ -234,7 +234,7 @@ export default function KeyboardShortcuts() {
                         ))}
                       </div>
                     </Cell>
-                    <Cell>{description}</Cell>
+                    <Cell aria-hidden={category == ""}>{description}</Cell>
                   </Row>
                 ))}
               </TableBody>

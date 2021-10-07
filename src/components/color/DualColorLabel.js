@@ -16,7 +16,7 @@ export const DualColorLabel = ({ children, left, right, className }) => {
   const classes = useStyles();
 
   return (
-    <span class={`${classes.label} dual-color-label ${className}`}>
+    <span tabIndex="0" class={`${classes.label} dual-color-label ${className}`}>
       {children}
     </span>
   );
