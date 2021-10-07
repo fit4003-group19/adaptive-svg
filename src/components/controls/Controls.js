@@ -3,6 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import { MapContext } from "../../context/MapContext";
 import FileUploader from "../FileUploader";
 import "./Controls.scss";
+import Button from "../Button";
+import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import ZoomInIcon from "@mui/icons-material/ZoomIn";
+import ZoomOutIcon from "@mui/icons-material/ZoomOut";
+import RestoreIcon from "@mui/icons-material/Restore";
 
 const Controls = ({ className }) => {
   const { mapPanZoom, rootFocus } = useContext(MapContext);
@@ -12,30 +19,53 @@ const Controls = ({ className }) => {
       <h1>Controls</h1>
       {mapPanZoom && (
         <div className="controls-buttons">
-          <button
+          <Button
             // Root Focus Defines What Element We Automatically Tab To When ESC is pressed
             ref={rootFocus}
-            onClick={() => mapPanZoom.panBy({ x: -20, y: 0 })}
+            onPress={() => mapPanZoom.panBy({ x: 20, y: 0 })}
+            aria-label="Pan Map Left"
           >
-            {"<-"}
-          </button>
-          <button onClick={() => mapPanZoom.panBy({ x: 0, y: 20 })}>Up</button>
-          <button onClick={() => mapPanZoom.panBy({ x: 0, y: -20 })}>
-            Down
-          </button>
-          <button onClick={() => mapPanZoom.panBy({ x: 20, y: 0 })}>
-            {"->"}
-          </button>
-          <button onClick={() => mapPanZoom.zoomIn()}>+</button>
-          <button onClick={() => mapPanZoom.zoomOut()}>-</button>
-          <button
-            onClick={() => {
+            <ArrowLeft />
+          </Button>
+          <Button
+            onPress={() => mapPanZoom.panBy({ x: 0, y: 20 })}
+            aria-label="Pan Map Up"
+          >
+            <ArrowDropUpIcon />
+          </Button>
+          <Button
+            onPress={() => mapPanZoom.panBy({ x: 0, y: -20 })}
+            aria-label="Pan Map Down"
+          >
+            <ArrowDropDownIcon />
+          </Button>
+          <Button
+            onPress={() => mapPanZoom.panBy({ x: -20, y: 0 })}
+            aria-label="Pan Map Right"
+          >
+            <ArrowRight />
+          </Button>
+          <Button
+            onPress={() => mapPanZoom.zoomIn()}
+            aria-label="Zoom In on Map"
+          >
+            <ZoomInIcon />
+          </Button>
+          <Button
+            onPress={() => mapPanZoom.zoomOut()}
+            aria-label="Zoom Out on Map"
+          >
+            <ZoomOutIcon />
+          </Button>
+          <Button
+            onPress={() => {
               mapPanZoom.fit();
               mapPanZoom.center();
             }}
+            aria-label="Restore Map Zoom"
           >
-            x
-          </button>
+            <RestoreIcon />
+          </Button>
         </div>
       )}
       <FileUploader className={"controls-file-uploader"} />

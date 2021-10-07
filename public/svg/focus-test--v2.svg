@@ -173,6 +173,12 @@
             }          
         }
     </style>
+     <!-- 
+            The chronological order of tabbing for layers can be manipulated via tab index values
+            Active Layers => tabindex=1
+            Inactive Layers => tabindex=2
+            Unlisted Layers => tabindex=3
+        -->
     <g data-layer-pattern="0" data-layer-type="root">
         <g id="bank-001" class="inactive" data-layer-type="layer" data-layer-state="0" tabindex="2" role="img" aria-labelledby="bank-001--title" aria-describedby="bank-001--desc">
             <title id="bank-001--title">Bank</title>
