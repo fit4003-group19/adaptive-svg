@@ -20,7 +20,6 @@ import {
   TableHeader,
 } from "@react-stately/table";
 import { Card, CardContent, CardHeader } from "@material-ui/core";
-import { ShortcutSharp } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -235,7 +234,7 @@ export default function KeyboardShortcuts() {
                         ))}
                       </div>
                     </Cell>
-                    <Cell>{description}</Cell>
+                    <Cell aria-hidden={category == ""}>{description}</Cell>
                   </Row>
                 ))}
               </TableBody>

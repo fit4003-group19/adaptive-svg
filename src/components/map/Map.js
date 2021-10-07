@@ -1,4 +1,3 @@
-import { makeStyles } from "@material-ui/styles";
 import React, { useRef, useContext, useEffect } from "react";
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
@@ -12,8 +11,14 @@ const Map = ({ className }) => {
   // useRef References
   const svgEl = useRef(null);
   const rootGroupEl = useRef(null);
-  const { mapPanZoom, setMapPanZoom, focusRoot, svgPath, patterns } =
-    useContext(MapContext);
+  const {
+    mapPanZoom,
+    setMapPanZoom,
+    focusRoot,
+    svgPath,
+    patterns,
+    setMapTitle,
+  } = useContext(MapContext);
   const { bitFlag } = useContext(QuestionnaireContext);
   const {
     setLayerInfo,
@@ -42,13 +47,17 @@ const Map = ({ className }) => {
   }, [layerColors]);
 
   // CSS
-  const useStyles = makeStyles((theme) => ({
+  const classes = {
     svg: {
       height: "100%",
       width: "100%",
     },
+<<<<<<< HEAD
     font: fontStyleSheet,
   }));
+=======
+  };
+>>>>>>> 5664c05f2bdf3ae3d744ea363dec4181bc2eeaec
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
@@ -100,6 +109,11 @@ const Map = ({ className }) => {
 
   // Placeholder
   const onLoad = (e) => {
+    setMapTitle(
+      svgEl.current.getElementById("svg--title")
+        ? svgEl.current.getElementById("svg--title").textContent
+        : "Untitled"
+    );
     // Initialize SVG Pan Zoom
     // Set a reference to the root group so that we can interact with it to affect global properties
     rootGroupEl.current = svgEl.current.querySelector(
