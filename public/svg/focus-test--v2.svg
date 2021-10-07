@@ -1,4 +1,6 @@
 <svg width="858" height="622" viewBox="0 0 870 622"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title id="svg--title">Demo SVG</title>
+    <desc id="svg--desc">Demo SVG</desc>
     <defs>
         <!-- PATTERN VARIABLES -->            
         <pattern id="pattern--ramp" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
