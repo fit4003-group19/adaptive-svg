@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-const layerFontFamilies = ["Arial", "Atkinson Hyperlegible"];
+const layerFontFamilies = ["Arial", "Atkinson Hyperlegible", "OpenDyslexic"];
 const layerFontWeights = ["bold", "normal"];
 
 const useLayerStyles = () => {
