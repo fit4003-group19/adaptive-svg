@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MapContext } from "../../context/MapContext";
 import "./Title.scss";
 
 export const Title = ({ className }) => {
+  const { mapTitle } = useContext(MapContext);
   return (
     <div className={`${className} title`}>
-      <h1>Monash Campus Centre</h1>
+      <h1>{mapTitle}</h1>
     </div>
   );
 };

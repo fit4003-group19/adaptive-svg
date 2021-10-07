@@ -13,6 +13,8 @@ const MapProvider = (props) => {
   const rootFocus = useRef(null);
   const [patterns, setPatterns] = useState(false);
 
+  const [mapTitle, setMapTitle] = useState("No map selected!");
+
   const focusRoot = () => {
     if (rootFocus.current) {
       rootFocus.current.focus();
@@ -30,6 +32,8 @@ const MapProvider = (props) => {
         setSvgPath,
         patterns,
         setPatterns,
+        mapTitle,
+        setMapTitle,
       }}
     >
       {props.children}

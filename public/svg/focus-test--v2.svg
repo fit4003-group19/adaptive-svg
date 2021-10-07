@@ -102,7 +102,7 @@
             fill: url(#gradient--ramp)
         }
 
-        [data-layer-pattern="1"] .ramp{
+        [data-layer-pattern="1"] [data-layer-state="1"].ramp{
             fill: url(#pattern--ramp)
         }
 
@@ -110,7 +110,7 @@
             fill: url(#gradient--lift)
         }
 
-        [data-layer-pattern="1"] .lift{
+        [data-layer-pattern="1"] [data-layer-state="1"].lift{
             fill: url(#pattern--lift)
         }
 
@@ -122,7 +122,7 @@
             fill: url(#gradient--stairs)
         }
 
-        [data-layer-pattern="1"] .stairs {
+        [data-layer-pattern="1"] [data-layer-state="1"].stairs {
             fill: url(#pattern--stairs)
         }
 
@@ -134,7 +134,7 @@
             fill: url(#gradient--toilet)
         }
 
-        [data-layer-pattern="1"] .toilet {
+        [data-layer-pattern="1"] [data-layer-state="1"].toilet {
             fill: url(#pattern--toilet)
         }
 
@@ -142,12 +142,12 @@
             fill: url(#gradient--support-center)
         }
 
-        [data-layer-pattern="1"] .support-center {
+        [data-layer-pattern="1"] [data-layer-state="1"].support-center {
             fill: url(#pattern--support-center)
         }
 
         [data-layer-state="0"], .inactive {
-            fill: url(#gradient--inactive)
+            fill: url(#gradient--inactive) 
         }
 
         // Do not activate pattern on obstacle or tactile flooring as the icon is
