@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { MapContext } from "../../context/MapContext";
 import FileUploader from "../FileUploader";
 import "./Controls.scss";
-import Button from "../Button";
+import Button from "../aria-components/Button";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";

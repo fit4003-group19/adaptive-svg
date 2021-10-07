@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Switch from "../../Switch";
+import Switch from "../../aria-components/Switch";
 import { MapContext } from "../../../context/MapContext";
 import "./OptionsPattern.scss";
 

@@ -11,6 +11,16 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import { QuestionnaireContext } from "../context/QuestionnaireContext";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import Table from "./aria-components/table/Table";
+import {
+  Cell,
+  Column,
+  Row,
+  TableBody,
+  TableHeader,
+} from "@react-stately/table";
+import { Card, CardContent, CardHeader } from "@material-ui/core";
+import { ShortcutSharp } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -51,7 +61,38 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 10,
     marginBottom: 5,
   },
+  card: {
+    backgroundColor: "whitesmoke",
+    //width: "75%",
+    alignSelf: "center",
+    //height: "100%",
+    padding: 50,
+  },
+  cardContent: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 }));
+
+const Key = ({ children }) => (
+  <div
+    style={{
+      backgroundColor: "white",
+      boxShadow: "0 1px 1px",
+      borderRadius: 3,
+      minWidth: 30,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 4,
+      marginLeft: 8,
+      marginRight: 8,
+    }}
+  >
+    {children}
+  </div>
+);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -73,28 +114,49 @@ export default function KeyboardShortcuts() {
 
   const shortcuts = [
     {
-      key: "q",
-      description: "Open questionnaire dialog",
+      category: "Map Controls",
+      keys: ["shift", "arrow"],
+      description: "Pan Map in that direction",
     },
     {
-      key: "k",
-      description: "Open keyboard shortcuts dialog",
+      category: "",
+      keys: ["shift", "+"],
+      description: "Zoom in on map",
     },
     {
-      key: "tab",
-      description: "Move through elements",
+      category: "",
+      keys: ["shift", "-"],
+      description: "Zoom out on map",
     },
     {
-      key: "Shift +  - / + / r",
-      description: "Zoom out/in/reset on map",
+      category: "",
+      keys: ["R"],
+      description: "Reset Zoom on map",
     },
     {
-      key: "Shift + arrow-keys (on main screen)",
-      description: "Pan map",
+      category: "",
+      keys: ["esc"],
+      description: "Exit Map focus and return to controls menu",
     },
     {
-      key: "esc when focused on map",
-      description: "Move focus off map to the control menu",
+      category: "",
+      keys: [],
+      description: "",
+    },
+    {
+      category: "Dialog Control",
+      keys: ["Q"],
+      description: "Open the questionnaire dialog",
+    },
+    {
+      category: "",
+      keys: ["K"],
+      description: "Open the keyboard keys dialog",
+    },
+    {
+      category: "",
+      keys: ["esc"],
+      description: "Close dialog menu",
     },
   ];
 
@@ -136,8 +198,51 @@ export default function KeyboardShortcuts() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <>
-          <div className={classes.header}>
+        <Card sx={{ width: 275 }} className={classes.card}>
+          <CardContent className={classes.cardContent}>
+            <Table
+              aria-label="Keyboard Shortcuts for the Tool"
+              style={{ height: "500px", width: "100%" }}
+            >
+              <TableHeader>
+                <Column>Category</Column>
+                <Column>Shortcut</Column>
+                <Column>Description</Column>
+              </TableHeader>
+              <TableBody>
+                {shortcuts.map(({ category, keys, description }) => (
+                  <Row>
+                    <Cell>{category}</Cell>
+                    <Cell>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          justifyContent: "center",
+                        }}
+                      >
+                        {keys.map((shortcut, i) => (
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Key>{shortcut}</Key>
+                            {i + 1 != keys.length && " + "}
+                          </div>
+                        ))}
+                      </div>
+                    </Cell>
+                    <Cell>{description}</Cell>
+                  </Row>
+                ))}
+              </TableBody>
+            </Table>
+          </CardContent>
+        </Card>
+        {/* <div className={classes.header}>
             <span>Key</span>
             <span>Description</span>
           </div>
@@ -149,8 +254,7 @@ export default function KeyboardShortcuts() {
               </div>
               <Divider />
             </React.Fragment>
-          ))}
-        </>
+          ))} */}
       </Dialog>
     </>
   );
