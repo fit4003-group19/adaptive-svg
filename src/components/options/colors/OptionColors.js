@@ -4,7 +4,7 @@ import { LayerContext } from "../../../context/LayerContext";
 // Change Per Second Limiter (cps)
 // Limits the number of color changes that can be made per second. Prevents
 // overloading the React Update Queue with too many color change requests
-const _cpsLimiter = 30;
+const _cpsLimiter = 45;
 // Calculates the length of the change window to facilitate the cps, in milliseconds
 const cpsLimiterMs = (1 / _cpsLimiter) * 1000;
 

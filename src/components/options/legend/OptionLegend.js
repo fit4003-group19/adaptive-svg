@@ -11,6 +11,7 @@ export const OptionLegend = () => {
       {layerColors &&
         Object.keys(layerColors).map((key, i) => (
           <DualColorLabel
+            className="option-legend-label-margin"
             left={layerColors[key].primary}
             right={layerColors[key].secondary}
           >
