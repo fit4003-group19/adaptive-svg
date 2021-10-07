@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/adaptive-svg/static/css/main.7cdb91f6.chunk.css",
-    "main.js": "/adaptive-svg/static/js/main.1e10bb28.chunk.js",
-    "main.js.map": "/adaptive-svg/static/js/main.1e10bb28.chunk.js.map",
-    "runtime-main.js": "/adaptive-svg/static/js/runtime-main.893f33f6.js",
-    "runtime-main.js.map": "/adaptive-svg/static/js/runtime-main.893f33f6.js.map",
-    "static/js/2.78a5cbb6.chunk.js": "/adaptive-svg/static/js/2.78a5cbb6.chunk.js",
-    "static/js/2.78a5cbb6.chunk.js.map": "/adaptive-svg/static/js/2.78a5cbb6.chunk.js.map",
-    "static/js/3.8139230d.chunk.js": "/adaptive-svg/static/js/3.8139230d.chunk.js",
-    "static/js/3.8139230d.chunk.js.map": "/adaptive-svg/static/js/3.8139230d.chunk.js.map",
+    "main.css": "/adaptive-svg/static/css/main.7c3e4516.chunk.css",
+    "main.js": "/adaptive-svg/static/js/main.c6524675.chunk.js",
+    "main.js.map": "/adaptive-svg/static/js/main.c6524675.chunk.js.map",
+    "runtime-main.js": "/adaptive-svg/static/js/runtime-main.047a5ed7.js",
+    "runtime-main.js.map": "/adaptive-svg/static/js/runtime-main.047a5ed7.js.map",
+    "static/js/2.1ecfee87.chunk.js": "/adaptive-svg/static/js/2.1ecfee87.chunk.js",
+    "static/js/2.1ecfee87.chunk.js.map": "/adaptive-svg/static/js/2.1ecfee87.chunk.js.map",
+    "static/js/3.326afd33.chunk.js": "/adaptive-svg/static/js/3.326afd33.chunk.js",
+    "static/js/3.326afd33.chunk.js.map": "/adaptive-svg/static/js/3.326afd33.chunk.js.map",
     "index.html": "/adaptive-svg/index.html",
-    "static/css/main.7cdb91f6.chunk.css.map": "/adaptive-svg/static/css/main.7cdb91f6.chunk.css.map",
-    "static/js/2.78a5cbb6.chunk.js.LICENSE.txt": "/adaptive-svg/static/js/2.78a5cbb6.chunk.js.LICENSE.txt",
+    "static/css/main.7c3e4516.chunk.css.map": "/adaptive-svg/static/css/main.7c3e4516.chunk.css.map",
+    "static/js/2.1ecfee87.chunk.js.LICENSE.txt": "/adaptive-svg/static/js/2.1ecfee87.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/adaptive-svg/static/media/OpenDyslexicThree-Regular.e83fb3b5.woff",
     "static/media/logo.6ce24c58.svg": "/adaptive-svg/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.893f33f6.js",
-    "static/js/2.78a5cbb6.chunk.js",
-    "static/css/main.7cdb91f6.chunk.css",
-    "static/js/main.1e10bb28.chunk.js"
+    "static/js/runtime-main.047a5ed7.js",
+    "static/js/2.1ecfee87.chunk.js",
+    "static/css/main.7c3e4516.chunk.css",
+    "static/js/main.c6524675.chunk.js"
   ]
 }

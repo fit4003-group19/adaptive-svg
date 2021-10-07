@@ -1,0 +1,223 @@
+    <svg width="855" height="412" viewBox="0 0 855 412" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <style>
+            /*
+                Base Functionality
+                    These CSS values provide a rudimentary level of accessibility to indoor maps. This is in the case that
+                    a user opens the raw SVG in their browser, without any assistive tools. 
+            */
+
+            /* Stroke Controller */
+            [data-layer-type="bg"] {
+                stroke: black;
+                stroke-width: 8;
+            }
+
+            /* Font Controller */
+            [data-layer-type="txt"] {
+                font: bold 36px Arial;
+                letter-spacing: 0.02em;
+                fill: white;
+                paint-order: stroke;
+                stroke: #000000;
+                stroke-width: 7px;
+                stroke-linecap: butt;
+                stroke-linejoin: bevel;
+            }
+
+            /* Color Controller */
+            .ramp {
+                fill: url(#solid--0)
+            }
+
+            [data-layer-pattern="1"] .ramp{
+                fill: url(#pattern--ramp)
+            }
+
+            .lift {
+                fill: url(#solid--1)
+            }
+
+            [data-layer-pattern="1"] .lift{
+                fill: url(#pattern--lift)
+            }
+
+            .obstacle{
+                fill: url(#solid--2)
+            }
+
+            [data-layer-pattern="1"] .obstacle{
+                fill: url(#pattern--obstacle)
+            }
+
+            .stairs{
+                fill: url(#solid--3)
+            }
+
+            [data-layer-pattern="1"] .stairs {
+                fill: url(#pattern--stairs)
+            }
+
+            .tactile{
+                fill: url(#solid--4)
+            }
+
+            [data-layer-pattern="1"] .tactile {
+                fill: url(#pattern--tactile)
+            }
+
+            .toilet{
+                fill: url(#half--0-4)
+            }
+
+            [data-layer-pattern="1"] .toilet {
+                fill: url(#pattern--toilet)
+            }
+
+            .support-center{
+                fill: url(#half--1-3)
+            }
+
+            [data-layer-pattern="1"] .support-center {
+                fill: url(#pattern--support-center)
+            }
+   
+            [data-layer-state="-1"] {
+                fill: white !important;
+            }
+
+            [data-layer-state="0"] {
+                fill: #767676;
+            }
+
+        
+            [data-layer-type="layer"]:focus  {
+                fill: black;
+            }
+
+            /* Focus Controller */
+            [data-layer-type="layer"]:focus {
+                animation: focus-flash 3s infinite;
+            }
+
+            @keyframes focus-flash {
+                50% {
+                    fill: white;
+                }          
+            }
+        </style>
+        <defs>            
+            <pattern id="pattern--ramp" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect fill="url(#solid--0)" x="0" y="0" width="15" height="15" ></rect>
+            </pattern>
+           <pattern id="pattern--lift" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle fill="url(#solid--1)" cx="12" cy="12" r="10"></circle>
+            </pattern>
+            <pattern id="pattern--obstacle" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
+                <g id="hexagon" fill="url(#solid--2)">
+                    <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"></path>
+                    <path d="M112-222.5c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2l-53.4,30.5 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C111-222.4,111.5-222.5,112-222.5L112-222.5z"></path>
+                    <path d="M168-317.8c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-191 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C167-317.7,167.5-317.8,168-317.8L168-317.8z"></path>
+                </g>
+            </pattern>
+            <pattern id="pattern--stairs" x="0" y="0" patternUnits="userSpaceOnUse" width="100" height="180" viewBox="0 0 10 18"> 
+                <g id="chevron" >
+                    <path fill="url(#solid--3)" d="M0 0l5 3v5l-5 -3z"></path>
+                    <path fill="url(#solid--3)" d="M10 0l-5 3v5l5 -3"></path>
+                </g>
+                 <use x="0" y="9" xlink:href="#chevron" />
+            </pattern>
+            <pattern id="pattern--tactile" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <rect fill="url(#solid--4)" x="0" y="0" width="30" height="30" ></rect>
+            </pattern>
+            <pattern id="pattern--toilet" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" >
+                <rect fill="url(#half--0-4)" x="0" y="0" width="40" height="40" ></rect>
+            </pattern>
+
+            <pattern id="pattern--support-center" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <rect fill="url(#half--1-3)" x="0" y="0" width="40" height="40" ></rect>
+            </pattern>
+
+
+                <!-- Define the pattern -->
+            <!-- Solid Colors -->
+            <linearGradient id="solid--0" >
+                <stop offset="0%"  stop-color="#648FFF" />
+                <stop offset="100%" stop-color="#648FFF" />
+            </linearGradient>
+            <linearGradient id="solid--1" >
+                <stop offset="0%"  stop-color="#785EF0" />
+                <stop offset="100%" stop-color="#785EF0" />
+            </linearGradient>
+            <linearGradient id="solid--2" >
+                <stop offset="0%"  stop-color="#DC267F" />
+                <stop offset="100%" stop-color="#DC267F" />
+            </linearGradient>
+            <linearGradient id="solid--3" >
+                <stop offset="0%"  stop-color="#FE6100" />
+                <stop offset="100%" stop-color="#FE6100" />
+            </linearGradient>
+            <linearGradient id="solid--4" >
+                <stop offset="0%"  stop-color="#FFB000" />
+                <stop offset="100%" stop-color="#FFB000" />
+            </linearGradient>
+            <!-- Half Colors -->
+            <linearGradient id="half--0-4" gradientTransform="rotate(90)">
+                <stop offset="0%"  stop-color="#648FFF" />
+                <stop offset="50%" stop-color="#648FFF" />
+                <stop offset="50%"  stop-color="#FFB000" />
+                <stop offset="100%" stop-color="#FFB000" />
+            </linearGradient>
+            <linearGradient id="half--1-3" >
+                <stop offset="0%"  stop-color="#785EF0" />
+                <stop offset="50%" stop-color="#785EF0" />
+                <stop offset="50%"  stop-color="#FE6100" />
+                <stop offset="100%" stop-color="#FE6100" />
+            </linearGradient>
+        </defs>
+        <!-- 
+            The chronological order of tabbing for layers can be manipulated via tab index values
+            Active Layers => tabindex=1
+            Inactive Layers => tabindex=2
+            Unlisted Layers => tabindex=3
+        -->
+        <g data-layer-pattern="0" data-layer-type="root">
+            <g id="room-6" tabindex="1" data-layer-flag="1"  data-layer-type="layer"  class="ramp" data-layer-state="1" role="img" aria-labelledby="room-6--title" aria-describedby="room-6--desc" data-pattern="0">
+                <title id="room-6--title">Room 6</title>
+                <desc id="room-6--desc">Room 6 is grand</desc>
+                <path id="Vector" d="M668 4H851V187H668V4Z" data-layer-type="bg" />
+                <text data-layer-type="txt"><tspan x="692" y="106.98">Room 6</tspan></text>
+            </g>
+            <g id="room-1" tabindex="2" data-layer-flag="3" data-layer-type="layer" class="lift" data-layer-state="1" role="img" aria-labelledby="room-1--title" aria-describedby="room-1--desc" data-pattern="0">
+                <title id="room-1--title">Room 1</title>
+                <desc id="room-1--desc">Room 1 is big</desc>
+                <path id="Vector_6" d="M4 4H187V187H4V4Z"  data-layer-type="bg" />
+                <text data-layer-type="txt"><tspan x="29" y="106.98" >Room 1</tspan></text>
+            </g>
+            <g id="room-3" tabindex="2" data-layer-flag="4" data-layer-type="layer" class="obstacle" data-layer-state="1" role="img" aria-labelledby="room-3--title" aria-describedby="room-3--desc" data-pattern="0">
+                <title id="room-3--title">Room 3</title>
+                <desc id="room-3--desc">Room 3 is large</desc>
+                <path d="M225 4H408V187H225V4Z" data-layer-type="bg" />
+                <text data-layer-type="txt"><tspan x="249" y="106.98" >Room 3</tspan></text>
+            </g>
+            <g id="room-2" tabindex="2" data-layer-flag="8" data-layer-type="layer" class="support-center" data-layer-state="1" role="img" aria-labelledby="room-2--title" aria-describedby="room-2--desc" data-pattern="0">
+                <title id="room-2--title">Room 2</title>
+                <desc id="room-2--desc">Room 2 is small</desc>
+                <path d="M4 225H408V408H4V225Z" data-layer-type="bg" />
+                <text data-layer-type="txt"><tspan x="151" y="327.98" >Room 2</tspan></text>
+            </g>
+            <g id="room-5" tabindex="2" data-layer-flag="16" data-layer-type="layer" class="tactile" data-layer-state="0" role="img" aria-labelledby="room-5--title" aria-describedby="room-5--desc" data-pattern="0">
+                <title id="room-5--title">Room 5</title>
+                <desc id="room-5--desc">Room 5 is old</desc>           
+                <path id="Vector_2" d="M668 222H851V405H668V222Z" data-layer-type="bg"/>
+                <text data-layer-type="txt"><tspan x="692" y="324.98" >Room 5</tspan></text>
+            </g>
+            <g id="room-4" tabindex="3" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="room-4--title" aria-describedby="room-4--desc">
+                <title id="room-4--title">Room 4</title>
+                <desc id="room-4--desc">Room 4 is red</desc>
+                <path d="M447 4H630V408H447V4Z" data-layer-type="bg"/>
+                <text data-layer-type="txt"><tspan x="467" y="217.98" >Room 4</tspan></text>
+            </g>
+
+        </g>
+
+    </svg> 
