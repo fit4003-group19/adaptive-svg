@@ -4,7 +4,7 @@ export default function useQuestions() {
   // original questions
   const orginalResponses = [
     {
-      question: "Do you experience a motor impairment?",
+      question: "Do you experience a mobility impairment?",
       response: null,
     },
     {
@@ -13,10 +13,6 @@ export default function useQuestions() {
     },
     {
       question: "Do you have low vision?",
-      response: null,
-    },
-    {
-      question: "Do you experience total blindness?",
       response: null,
     },
     {

@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-const layerFontFamilies = ["Arial", "Atkinson Hyperlegible"];
+const layerFontFamilies = ["Arial", "Atkinson Hyperlegible", "OpenDyslexic"];
 const layerFontWeights = ["bold", "normal"];
 
 const useLayerStyles = () => {
@@ -13,11 +13,11 @@ const useLayerStyles = () => {
   const fontStyleSheet = useMemo(() => {
     return {
       "& [data-layer-type='txt']": {
-        fontFamily: selectedFontFamily,
+        fontFamily: "inherit",
         fontWeight: selectedFontWeight,
       },
     };
-  }, [selectedFontFamily, selectedFontWeight]);
+  }, [selectedFontWeight]);
 
   return {
     selectedFontFamily,

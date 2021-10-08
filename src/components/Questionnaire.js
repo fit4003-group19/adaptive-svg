@@ -75,7 +75,7 @@ export default function Questionnaire() {
         onClick={handleClickOpen}
         fullWidth={true}
       >
-        Open Questionnaire
+        Open User Profile
       </Button>
       <Dialog
         fullScreen
@@ -94,7 +94,7 @@ export default function Questionnaire() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Map Questionnaire
+              Map User Profile
             </Typography>
             <Button autoFocus color="inherit" onClick={handleSave}>
               save

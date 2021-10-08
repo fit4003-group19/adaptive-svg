@@ -5,6 +5,8 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
+import "./Map.scss";
+
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
 import { LayerContext } from "../../context/LayerContext";
@@ -35,8 +37,6 @@ const Map = ({ className }) => {
     fontStyleSheet,
   } = useContext(LayerContext);
 
-  console.log(fontStyleSheet);
-
   useEffect(() => {
     iterateLayers((layer) => {
       updateLayer(bitFlag, layer);
@@ -65,7 +65,7 @@ const Map = ({ className }) => {
     };
   });
 
-  const classes = useMemo(() => svgStyles(), [svgStyles]);
+  const classes = svgStyles();
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
