@@ -54,11 +54,11 @@
 			<stop offset="0%" stop-color="#FFB000"/>
 			<stop offset="100%" stop-color="#FFB000"/>
 		</linearGradient>
-		<linearGradient id="gradient--inactive">
+		<linearGradient id="gradient--unlisted">
 			<stop offset="0%" stop-color="#a5a5a5"/>
 			<stop offset="100%" stop-color="#a5a5a5"/>
 		</linearGradient>
-		<linearGradient id="gradient--unlisted">
+		<linearGradient id="gradient--inactive">
 			<stop offset="0%" stop-color="#e5e5e5"/>
 			<stop offset="100%" stop-color="#e5e5e5"/>
 		</linearGradient>

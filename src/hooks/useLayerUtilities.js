@@ -32,9 +32,14 @@ const layerClassTranslator = {
     icon: `${process.env.PUBLIC_URL}/icons/support-center.svg`,
   },
   toilet: {
-    fullName: "Disabled Toilet",
+    fullName: "Toilet",
     gradientKey: "gradient--toilet",
     icon: `${process.env.PUBLIC_URL}/icons/toilet.svg`,
+  },
+  "accessible-toilet": {
+    fullName: "Accessible Toilet",
+    gradientKey: "gradient--accessible-toilet",
+    icon: `${process.env.PUBLIC_URL}/icons/accessible-toilet.svg`,
   },
   unlisted: {
     fullName: "Unlisted",

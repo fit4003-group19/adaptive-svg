@@ -6,12 +6,12 @@ import "./Controls.scss";
 import Button from "../aria-components/Button";
 import {
   ArrowUpward,
-  ZoomIn,
-  ZoomOut,
+  Add,
+  Remove,
   ArrowBack,
   ArrowDownward,
   ArrowForward,
-  Restore,
+  RotateLeft,
 } from "@material-ui/icons";
 
 const Controls = ({ className }) => {
@@ -54,13 +54,13 @@ const Controls = ({ className }) => {
             onPress={() => mapPanZoom.zoomIn()}
             aria-label="Zoom In on Map"
           >
-            <ZoomIn />
+            <Add />
           </Button>
           <Button
             onPress={() => mapPanZoom.zoomOut()}
             aria-label="Zoom Out on Map"
           >
-            <ZoomOut />
+            <Remove />
           </Button>
           <Button
             onPress={() => {
@@ -69,7 +69,7 @@ const Controls = ({ className }) => {
             }}
             aria-label="Restore Map Zoom"
           >
-            <Restore />
+            <RotateLeft />
           </Button>
         </div>
       )}

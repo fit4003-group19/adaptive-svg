@@ -31,6 +31,12 @@
 		<pattern id="pattern--toilet" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
 			<rect class="toilet" x="0" y="0" width="1" height="1"/>
 		</pattern>
+		<pattern id="pattern--lift" x="0" y="0" width="0.9" height="0.9" patternUnits="userSpaceOnUse">
+			<circle class="lift" cx="0.3" cy="0.3" r="0.3"></circle>
+		</pattern>
+		<pattern id="pattern--accessible-toilet" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+			<rect class="accessible-toilet" x="0" y="0" width="1" height="1"/>
+		</pattern>
 		<pattern id="pattern--support-center" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
 			<rect class="support-center" x="0" y="0" width="1" height="1"/>
 		</pattern>
@@ -56,7 +62,7 @@
 			<stop offset="0%" stop-color="#FFB000"/>
 			<stop offset="100%" stop-color="#FFB000"/>
 		</linearGradient>
-		<linearGradient id="gradient--inactive">
+		<linearGradient id="gradient--unlisted">
 			<stop offset="0%" stop-color="#e5e5e5"/>
 			<stop offset="100%" stop-color="#e5e5e5"/>
 		</linearGradient>
@@ -64,9 +70,9 @@
 			<stop offset="0%" stop-color="#9f9f9f"/>
 			<stop offset="100%" stop-color="#9f9f9f"/>
 		</linearGradient>
-		<linearGradient id="gradient--unlisted">
-			<stop offset="0%" stop-color="#e6f5ff"/>
-			<stop offset="100%" stop-color="#e6f5ff"/>
+		<linearGradient id="gradient--inactive">
+			<stop offset="0%" stop-color="#d7effe"/>
+			<stop offset="100%" stop-color="#d7effe"/>
 		</linearGradient>
 		<!-- Half Colors -->
 		<linearGradient id="gradient--toilet" gradientTransform="rotate(90)">
@@ -74,6 +80,12 @@
 			<stop offset="50%" stop-color="#648FFF"/>
 			<stop offset="50%" stop-color="#FFB000"/>
 			<stop offset="100%" stop-color="#FFB000"/>
+		</linearGradient>
+		<linearGradient id="gradient--accessible-toilet">
+			<stop offset="0%" stop-color="#FFB000"/>
+			<stop offset="50%" stop-color="#FFB000"/>
+			<stop offset="50%" stop-color="#DC267F"/>
+			<stop offset="100%" stop-color="#DC267F"/>
 		</linearGradient>
 		<linearGradient id="gradient--support-center">
 			<stop offset="0%" stop-color="#785EF0"/>
@@ -144,6 +156,14 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 
         [data-layer-pattern="1"] .toilet {
             fill: url(#pattern--toilet)
+        }
+
+		.accessible-toilet{
+            fill: url(#gradient--accessible-toilet)
+        }
+
+        [data-layer-pattern="1"] .accessible-toilet {
+            fill: url(#pattern--accessible-toilet)
         }
 
         .support-center{
@@ -231,9 +251,9 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G169--desc">Store</desc>
 			<path data-layer-type="bg" d="M-30.3740 -4.6458L-30.0001 -5.9638L-31.4720 -6.3814L-31.8458 -5.0637L-30.3740 -4.6458z"/>
 		</g>
-		<g id="G81" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G81--title" aria-describedby="G81--desc">
+		<g id="G81" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" role="img" aria-labelledby="G81--title" aria-describedby="G81--desc">
 			<title id="G81--title">G81</title>
-			<desc id="G81--desc">Staff room</desc>
+			<desc id="G81--desc">Staff room (Under Construction)(Tripping Hazard)</desc>
 			<path data-layer-type="bg" d="M-43.7337 -24.1798L-50.9462 -23.7411L-52.1549 -19.4807L-45.5949 -17.6196L-43.7337 -24.1798z"/>
 		</g>
 		<g id="G135" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G135--title" aria-describedby="G135--desc">
@@ -296,9 +316,9 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G119--desc">Consult Room</desc>
 			<path data-layer-type="bg" d="M-60.3638 -15.4299L-60.8268 -12.2871L-63.3956 -12.6648L-63.0970 -14.6933L-63.1260 -14.6975L-62.9627 -15.8111L-60.3638 -15.4299z"/>
 		</g>
-		<g id="G129" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G129--title" aria-describedby="G129--desc">
+		<g id="G129" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" role="img" aria-labelledby="G129--title" aria-describedby="G129--desc">
 			<title id="G129--title">G129</title>
-			<desc id="G129--desc">Consult Room</desc>
+			<desc id="G129--desc">Consult Room (Under Construction)(Tripping Hazard)</desc>
 			<path data-layer-type="bg" d="M-53.3972 -22.5658L-58.3495 -23.2897L-58.7373 -20.6167L-54.0845 -19.9362L-53.3972 -22.5658z"/>
 		</g>
 		<g id="G66A" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G66A--title" aria-describedby="G66A--desc">
@@ -426,7 +446,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G170--desc">ATM Booth</desc>
 			<path data-layer-type="bg" d="M-40.6250 13.4629L-46.1852 11.8750L-46.8692 14.2858L-41.3035 15.8545L-40.6250 13.4629z"/>
 		</g>
-		<g id="G127" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G127--title" aria-describedby="G127--desc">
+		<g id="G127" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" role="img" aria-labelledby="G127--title" aria-describedby="G127--desc">
 			<title id="G127--title">G127</title>
 			<desc id="G127--desc">Consult Room</desc>
 			<path data-layer-type="bg" d="M-52.7060 -25.2158L-58.1587 -26.0155L-58.5424 -23.4088L-53.3724 -22.6531L-52.7060 -25.2158z"/>
@@ -471,9 +491,9 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G118--desc">Consult Room</desc>
 			<path data-layer-type="bg" d="M-64.9098 -12.1432L-68.9087 -12.7296L-69.2715 -10.2561L-65.2726 -9.6696L-64.9098 -12.1432z"/>
 		</g>
-		<g id="G140" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G140--title" aria-describedby="G140--desc">
+		<g id="G140" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" role="img" aria-labelledby="G140--title" aria-describedby="G140--desc">
 			<title id="G140--title">G140</title>
-			<desc id="G140--desc">Consult Room</desc>
+			<desc id="G140--desc">Consult Room (Under Construction)(Tripping Hazard)</desc>
 			<path data-layer-type="bg" d="M-49.4233 -29.7107L-50.3876 -26.3116L-53.0384 -26.6976L-52.5297 -30.1659L-49.4233 -29.7107z"/>
 		</g>
 		<g id="G168" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G168--title" aria-describedby="G168--desc">
@@ -801,7 +821,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="150B--desc">Airlock</desc>
 			<path data-layer-type="bg" d="M-18.8380 10.4082L-21.4423 9.6704L-21.8025 10.9400L-21.8650 10.9223L-21.7149 10.3932L-22.5807 10.1475L-23.1539 12.1678L-22.2881 12.4134L-22.1379 11.8843L-22.0754 11.9021L-22.2255 12.4312L-20.3321 12.9684L-18.8380 10.4082z"/>
 		</g>
-		<g id="G38" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" data-role="img" aria-labelledby="G38--title" aria-describedby="G38--desc">
+		<g id="G38" class="inactive" tabindex="2" data-layer-type="layer" data-layer-state="0" data-role="img" aria-labelledby="G38--title" aria-describedby="G38--desc">
 			<title id="G38--title">G38</title>
 			<desc id="G38--desc">Artichoke and Whitebait</desc>
 			<path data-layer-type="bg" d="M-1.1159 4.2262L-5.2430 3.0553L-8.6587 4.9612L-10.2192 10.4615L-9.7114 17.4409L-5.2260 18.7134L-1.1159 4.2262z"/>
@@ -1066,7 +1086,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G12--desc">Bookshop Admin Office</desc>
 			<path data-layer-type="bg" d="M66.8385 20.0282L70.3477 21.0237L72.5176 13.3839L73.4042 10.2551L74.0413 8.0056L65.9526 5.7108L65.9526 5.7108L65.9526 5.7108L65.8660 6.0157L65.2513 5.8413L63.2597 12.8613L63.8744 13.0357L63.7309 13.5417L63.1161 13.3673L62.2220 16.5189L62.2220 16.5189L67.4160 17.9925L67.3734 18.1426L67.3424 18.1338L66.8184 19.9809L66.8385 20.0282z"/>
 		</g>
-		<g id="G20" class="toilet" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="21" role="img" aria-labelledby="G20--title" aria-describedby="G20--desc">
+		<g id="G20" class="accessible-toilet" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="21" role="img" aria-labelledby="G20--title" aria-describedby="G20--desc">
 			<title id="G20--title">G20</title>
 			<desc id="G20--desc">All-gender/Accessible Toilet</desc>
 			<path data-layer-type="bg" d="M65.4309 4.6844L66.0043 2.6632L62.9566 1.7985L62.3829 3.8207L65.4309 4.6844L65.4309 4.6844z"/>
@@ -1176,7 +1196,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G55--desc">Boost Juice</desc>
 			<path data-layer-type="bg" d="M33.1141 -35.0548L22.7549 -37.9937L21.7109 -34.3140L21.9062 -34.2586L21.6734 -33.4379L21.4781 -33.4934L19.7177 -27.2882L23.0406 -26.3455L24.8564 -32.7459L30.5660 -31.1261L30.1823 -29.7735L30.4344 -29.7019L30.2905 -29.1950L31.3651 -28.8901L33.1141 -35.0548z"/>
 		</g>
-		<g id="G74" class="toilet" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="21" role="img" aria-labelledby="G74--title" aria-describedby="G74--desc">
+		<g id="G74" class="accessible-toilet" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="21" role="img" aria-labelledby="G74--title" aria-describedby="G74--desc">
 			<title id="G74--title">G74</title>
 			<desc id="G74--desc">Accessible Toilet</desc>
 			<path data-layer-type="bg" d="M-21.8655 -32.2219L-22.3044 -30.6750L-22.2178 -30.6504L-22.4629 -29.7865L-19.4758 -28.9390L-18.9551 -30.7743L-19.7806 -31.0085L-19.6173 -31.5841L-21.8655 -32.2219z"/>
