@@ -5,8 +5,8 @@
     <desc id="svg--desc">Monash Campus Center</desc>
 	<defs>
 		<!-- PATTERN VARIABLES -->
-		<pattern id="pattern--ramp" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
-			<rect class="ramp" x="0" y="0" width="0.6" height="0.6"/>
+		<pattern id="pattern--entry" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
+			<rect class="entry" x="0" y="0" width="0.6" height="0.6"/>
 		</pattern>
 		<pattern id="pattern--lift" x="0" y="0" width="0.9" height="0.9" patternUnits="userSpaceOnUse">
 			<circle class="lift" cx="0.3" cy="0.3" r="0.3"></circle>
@@ -36,7 +36,7 @@
 		</pattern>
 		<!-- COLOR VARIABLES -->
 		<!-- Solid Colors -->
-		<linearGradient id="gradient--ramp">
+		<linearGradient id="gradient--entry">
 			<stop offset="0%" stop-color="#648FFF"/>
 			<stop offset="100%" stop-color="#648FFF"/>
 		</linearGradient>
@@ -106,12 +106,12 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
         }
 
         /* Color Controller */
-        .ramp {
-            fill: url(#gradient--ramp)
+        .entry {
+            fill: url(#gradient--entry)
         }
 
-        [data-layer-pattern="1"] .ramp{
-            fill: url(#pattern--ramp)
+        [data-layer-pattern="1"] .entry{
+            fill: url(#pattern--entry)
         }
 
         .lift {
@@ -201,7 +201,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
     </style>
 	<g data-layer-pattern="0" data-layer-type="root">
 		<title>Space</title>
-		<g id="G-UCA01" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G-UCA01--title" aria-describedby="G-UCA01--desc">
+		<g id="G-UCA01" class="passage" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="127" role="img" aria-labelledby="G-UCA01--title" aria-describedby="G-UCA01--desc">
 			<title id="G-UCA01--title">G-UCA01</title>
 			<desc id="G-UCA01--desc">Undercover walkway</desc>
 			<path data-layer-type="bg" d="M-45.9861 -8.6492L-54.6013 -11.0930L-59.1262 4.8452L-57.6412 5.0630L-57.2664 3.7420L-57.3503 3.7182L-53.9798 -8.1630L-48.3180 -6.5567L-48.4136 -6.2195L-46.8052 -5.7631L-45.9861 -8.6492z"/>
@@ -646,7 +646,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G152A--desc">Print area</desc>
 			<path data-layer-type="bg" d="M-20.3659 13.0263L-22.4867 12.4247L-25.5105 17.6061L-25.1131 17.7188L-23.1769 17.8613L-20.3659 13.0263z"/>
 		</g>
-		<g id="G-UCA03" class="ramp" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="45" role="img" aria-labelledby="G-UCA03--title" aria-describedby="G-UCA03--desc">
+		<g id="G-UCA03" class="stairs" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="77" role="img" aria-labelledby="G-UCA03--title" aria-describedby="G-UCA03--desc">
 			<title id="G-UCA03--title">G-UCA03</title>
 			<desc id="G-UCA03--desc">Entry Porch</desc>
 			<path data-layer-type="bg" d="M-52.8929 24.3278L-52.5991 22.3242L-60.5487 21.1583L-60.8426 23.1618L-52.8929 24.3278z"/>
@@ -956,7 +956,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G64--desc">Store</desc>
 			<path data-layer-type="bg" d="M18.0502 -14.8781L15.2459 -15.6737L14.7055 -13.7688L17.5531 -12.9610L17.8301 -13.9374L17.7868 -13.9497L18.0502 -14.8781L18.0502 -14.8781z"/>
 		</g>
-		<g id="G32" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G32--title" aria-describedby="G32--desc">
+		<g id="G32" class="entry" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="45" role="img" aria-labelledby="G32--title" aria-describedby="G32--desc">
 			<title id="G32--title">G32</title>
 			<desc id="G32--desc">Airlock</desc>
 			<path data-layer-type="bg" d="M40.7553 -19.2675L35.4545 -20.7714L34.0400 -15.7854L39.3408 -14.2816L40.7553 -19.2675z"/>
@@ -1161,7 +1161,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G62--desc">Toilet</desc>
 			<path data-layer-type="bg" d="M6.3842 -29.0679L2.8651 -30.0663L1.6587 -25.8141L2.0435 -25.7049L2.1128 -25.9493L5.0047 -25.1288L5.3595 -26.3795L5.6019 -26.3107L6.3842 -29.0679L6.3842 -29.0679z"/>
 		</g>
-		<g id="G31A" class="unlisted" tabindex="-1" data-layer-type="layer" data-layer-state="-1" role="img" aria-labelledby="G31A--title" aria-describedby="G31A--desc">
+		<g id="G31A" class="entry" class="entry" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="45" role="img" aria-labelledby="G31A--title" aria-describedby="G31A--desc">
 			<title id="G31A--title">G31A</title>
 			<desc id="G31A--desc">Airlock</desc>
 			<path data-layer-type="bg" d="M-7.8328 -28.3437L-12.8685 -29.7723L-13.7692 -26.5976L-9.1514 -25.2875L-7.8328 -28.3437z"/>
@@ -1216,7 +1216,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="G63--desc">Store</desc>
 			<path data-layer-type="bg" d="M12.3971 -36.8669L9.2695 -37.7542L7.4250 -31.2527L10.8470 -30.2819L12.6633 -36.6842L12.3690 -36.7678L12.3971 -36.8669z"/>
 		</g>
-		<g id="G-UCA02" class="ramp" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="45"  role="img" aria-labelledby="G-UCA02--title" aria-describedby="G-UCA02--desc">
+		<g id="G-UCA02" class="entry" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="45"  role="img" aria-labelledby="G-UCA02--title" aria-describedby="G-UCA02--desc">
 			<title id="G-UCA02--title">G-UCA02</title>
 			<desc id="G-UCA02--desc">Entry Porch</desc>
 			<path data-layer-type="bg" d="M-11.9528 -32.9999L-12.8412 -29.8685L-7.7928 -28.4363L-6.4922 -31.4507L-11.9528 -32.9999z"/>

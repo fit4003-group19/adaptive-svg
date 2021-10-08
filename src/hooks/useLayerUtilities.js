@@ -11,10 +11,10 @@ const layerClassTranslator = {
     gradientKey: "gradient--tactile",
     icon: `${process.env.PUBLIC_URL}/icons/tactile.svg`,
   },
-  ramp: {
-    fullName: "Mobility Ramp",
-    gradientKey: "gradient--ramp",
-    icon: `${process.env.PUBLIC_URL}/icons/ramp.svg`,
+  entry: {
+    fullName: "Accesible Entry",
+    gradientKey: "gradient--entry",
+    icon: `${process.env.PUBLIC_URL}/icons/entry.svg`,
   },
   stairs: {
     fullName: "Stairs",

@@ -13,11 +13,11 @@ const useLayerStyles = () => {
   const fontStyleSheet = useMemo(() => {
     return {
       "& [data-layer-type='txt']": {
-        fontFamily: selectedFontFamily,
+        fontFamily: "inherit",
         fontWeight: selectedFontWeight,
       },
     };
-  }, [selectedFontFamily, selectedFontWeight]);
+  }, [selectedFontWeight]);
 
   return {
     selectedFontFamily,
