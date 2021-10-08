@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect } from "react";
 import { LayerContext } from "../../../context/LayerContext";
-import { Button } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
 
 // Change Per Second Limiter (cps)
 // Limits the number of color changes that can be made per second. Prevents
@@ -9,7 +9,12 @@ const _cpsLimiter = 45;
 // Calculates the length of the change window to facilitate the cps, in milliseconds
 const cpsLimiterMs = (1 / _cpsLimiter) * 1000;
 
+const useStyles = makeStyles((theme) => ({
+  header: { fontFamily: theme.fontFamily },
+}));
+
 const OptionColors = () => {
+  const classes = useStyles();
   const { colorPalette, setColorPallete, resetColorPalette } =
     useContext(LayerContext);
   const colorChangeTimeout = useRef(null);
@@ -47,7 +52,9 @@ const OptionColors = () => {
         <>
           {colorPalette.map((color, i) => (
             <label className="input-group" key={`color-options-${i}`}>
-              <span className="u-margin-right-auto">Color #{i}</span>
+              <span className={`u-margin-right-auto ${classes}`}>
+                Color #{i}
+              </span>
               <input
                 type="color"
                 value={color}
