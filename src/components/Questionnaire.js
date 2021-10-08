@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: "black",
     color: "white",
-    marginTop: 5,
-    marginBottom: 10,
+    marginTop: 2.5,
+    marginBottom: 2.5,
   },
   card: {
     backgroundColor: "whitesmoke",
