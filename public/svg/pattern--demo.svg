@@ -3,8 +3,8 @@
     <desc id="svg--desc">Demo SVG</desc>
     <defs>
         <!-- PATTERN VARIABLES -->            
-        <pattern id="pattern--ramp" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect class="ramp" x="5" y="0" width="15" height="15" ></rect>
+        <pattern id="pattern--entry" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect class="entry" x="5" y="0" width="15" height="15" ></rect>
         </pattern>
 <pattern id="pattern--lift" x="0" y="0" width="0.1%" height="0.1%" patternUnits="userSpaceOnUse"><circle class="lift" cx="0.05%" cy="0.05%" r="0.035%"></circle></pattern>
         <pattern id="pattern--reserved" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
@@ -34,7 +34,7 @@
 
         <!-- COLOR VARIABLES -->
         <!-- Solid Colors -->
-        <linearGradient id="gradient--ramp" >
+        <linearGradient id="gradient--entry" >
             <stop offset="0%"  stop-color="#648FFF" />
             <stop offset="100%" stop-color="#648FFF" />
         </linearGradient>
@@ -98,12 +98,12 @@
         }
 
         /* Color Controller */
-        .ramp {
-            fill: url(#gradient--ramp)
+        .entry {
+            fill: url(#gradient--entry)
         }
 
-        [data-layer-pattern="1"] [data-layer-state="1"].ramp {
-            fill: url(#pattern--ramp)
+        [data-layer-pattern="1"] [data-layer-state="1"].entry {
+            fill: url(#pattern--entry)
         }
 
         .lift {
@@ -212,11 +212,11 @@
             <path data-layer-type="bg" d="M412 431H0V622H412V431Z" />
             <text data-layer-type="txt" xml:space="preserve"><tspan x="159" y="538.98">Toilet</tspan></text>
         </g>
-        <g id="ramp-001" class="ramp" data-layer-type="layer" data-layer-state="1" data-layer-flag="16" tabindex="1" role="img" aria-labelledby="ramp-001--title" aria-describedby="ramp-001--desc">
-            <title id="ramp-001--title">Ramp</title>
-            <desc id="ramp-001--desc">Accessibility Ramp</desc>
+        <g id="entry-001" class="entry" data-layer-type="layer" data-layer-state="1" data-layer-flag="16" tabindex="1" role="img" aria-labelledby="entry-001--title" aria-describedby="entry-001--desc">
+            <title id="entry-001--title">Entry</title>
+            <desc id="entry-001--desc">Accessibility entry</desc>
             <path data-layer-type="bg" d="M191 0H0V191H191V0Z" />
-            <text data-layer-type="txt" xml:space="preserve"><tspan x="45" y="106.98">Ramp</tspan></text>
+            <text data-layer-type="txt" xml:space="preserve"><tspan x="45" y="106.98">Entry</tspan></text>
         </g>
         <g id="tactile-001" class="tactile" data-layer-type="layer" data-layer-state="1" data-layer-flag="3" tabindex="1" role="img" aria-labelledby="tactile-001--title" aria-describedby="tactile-001--desc">
             <title id="tactile-001--title">Tactile Flooring</title>
