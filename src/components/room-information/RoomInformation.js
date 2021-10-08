@@ -4,9 +4,11 @@ import { makeStyles } from "@material-ui/styles";
 import SVG from "react-inlinesvg";
 import { LayerContext } from "../../context/LayerContext";
 import { DualColorLabel } from "../color/DualColorLabel";
+import useLayerUtilities from "../../hooks/useLayerUtilities";
 
 const RoomInformation = ({ className }) => {
-  const { layerInfo, getTranslation, layerColors } = useContext(LayerContext);
+  const { layerInfo, layerColors } = useContext(LayerContext);
+  const { getTranslation } = useLayerUtilities();
   const [iconColor, setIconColor] = useState("blue");
 
   const useStyles = makeStyles((theme) => ({

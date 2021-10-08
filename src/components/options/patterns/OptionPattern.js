@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Switch from "../../aria-components/Switch";
 import { MapContext } from "../../../context/MapContext";
-import "./OptionsPattern.scss";
+import "./OptionPattern.scss";
 
-const OptionsPattern = () => {
+const OptionPattern = () => {
   const { patterns, setPatterns } = useContext(MapContext);
   return (
     <div className="options-pattern">
@@ -20,4 +20,4 @@ const OptionsPattern = () => {
   );
 };
 
-export default OptionsPattern;
+export default OptionPattern;

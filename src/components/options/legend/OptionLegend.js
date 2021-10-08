@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { DualColorLabel } from "../../color/DualColorLabel";
 import "./OptionLegend.scss";
 import { LayerContext } from "../../../context/LayerContext";
+import useLayerUtilities from "../../../hooks/useLayerUtilities";
 
 export const OptionLegend = () => {
-  const { layerColors, getTranslation } = useContext(LayerContext);
+  const { layerColors } = useContext(LayerContext);
+  const { getTranslation } = useLayerUtilities();
 
   return (
     <div class="option-legend">

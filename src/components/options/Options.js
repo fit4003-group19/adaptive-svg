@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import OptionColors from "./colors/OptionColors";
 import { OptionLegend } from "./legend/OptionLegend";
 import "./Options.scss";
-import OptionsPattern from "./patterns/OptionsPattern";
+import OptionPattern from "./patterns/OptionPattern";
 import { Divider } from "@material-ui/core";
+import OptionFonts from "./fonts/OptionFonts";
 
 const Options = ({ className }) => {
   return (
@@ -14,8 +15,13 @@ const Options = ({ className }) => {
       </div>
       <Divider />
       <div className="u-margin-top-sm">
+        <h1 className="u-margin-top-0 u-text-align-center">Fonts</h1>
+        <OptionFonts />
+      </div>
+      <Divider />
+      <div className="u-margin-top-sm">
         <h1 className="u-margin-top-0 u-text-align-center">Options</h1>
-        <OptionsPattern />
+        <OptionPattern />
       </div>
       <Divider />
       <div className="u-margin-top-sm">

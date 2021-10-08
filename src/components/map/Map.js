@@ -1,10 +1,17 @@
-import React, { useRef, useContext, useEffect } from "react";
+import React, {
+  useRef,
+  useContext,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
 import { LayerContext } from "../../context/LayerContext";
 import SVG from "react-inlinesvg";
 import MapKeyboardEventHandler from "../MapKeyboardEventHandler";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import { makeStyles } from "@material-ui/core";
 const svgPanZoom = require("svg-pan-zoom");
 
 const Map = ({ className }) => {
@@ -25,8 +32,10 @@ const Map = ({ className }) => {
     layerColors,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
-    updateLayer,
+    fontStyleSheet,
   } = useContext(LayerContext);
+
+  console.log(fontStyleSheet);
 
   useEffect(() => {
     iterateLayers((layer) => {
@@ -45,12 +54,18 @@ const Map = ({ className }) => {
   }, [layerColors]);
 
   // CSS
-  const classes = {
-    svg: {
-      height: "100%",
-      width: "100%",
-    },
-  };
+
+  const svgStyles = makeStyles((theme) => {
+    return {
+      svg: {
+        height: "100%",
+        width: "100%",
+      },
+      font: fontStyleSheet,
+    };
+  });
+
+  const classes = useMemo(() => svgStyles(), [svgStyles]);
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
@@ -135,14 +150,35 @@ const Map = ({ className }) => {
     updatePatterns();
   };
 
-  // const classes = useStyles();
+  // Tabbing Order
+  // Activated Layers -> Neutral Layers -> Inactive Layers
+  const updateLayer = (bitFlag, layer) => {
+    let { layerFlag, layerState } = layer.dataset;
+    layerFlag = parseInt(layerFlag);
+    layerState = parseInt(layerState);
+
+    if (layerState > -1) {
+      // We can dynamically set the tab index to prioritise the tabbing of activated layers
+      // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
+      let isActive = false;
+      if (layerFlag) {
+        isActive = (bitFlag & layerFlag) > 0;
+      }
+      layer.tabIndex = isActive ? "1" : "2";
+      layer.dataset.layerState = isActive ? "1" : "0";
+    } else {
+      // A tabbIndex of 3 will be lower on the tabbing priority compared to a tabIndex of 2
+      layer.tabIndex = "-1";
+      layer.dataset.layerState = "-1";
+    }
+  };
 
   return (
     <div className={`${className} map`}>
       <MapKeyboardEventHandler mapPanZoom={mapPanZoom} />
       <KeyboardEventHandler handleKeys={["esc"]} onKeyEvent={focusRoot}>
         <SVG
-          style={classes.svg}
+          className={`${classes.svg} ${classes.font}`}
           src={svgPath}
           onError={onError}
           onLoad={onLoad}

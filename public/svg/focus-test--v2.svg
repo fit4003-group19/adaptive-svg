@@ -87,7 +87,9 @@
 
         /* Font Controller */
         [data-layer-type="txt"] {
-            font: bold 36px Arial;
+            font-weight: bold;
+            font-size: 36px;
+            font-family: Arial;
             letter-spacing: 0.02em;
             fill: white;
             paint-order: stroke;
@@ -188,7 +190,7 @@
             <path data-layer-type="bg" d="M855 218H664V409H855V218Z" />
             <text data-layer-type="txt"  xml:space="preserve"><tspan x="715" y="325.98">Bank</tspan></text>
         </g>
-        <g id="g60-001" class="unlisted" data-layer-type="layer" data-layer-state="-1" tabindex="3"  role="img" aria-labelledby="g60-001--title" aria-describedby="g60-001--desc">
+        <g id="g60-001" class="unlisted" data-layer-type="layer" data-layer-state="-1" tabindex="2"  role="img" aria-labelledby="g60-001--title" aria-describedby="g60-001--desc">
             <title id="g60-001--title">G60</title>
             <desc id="g60-001--desc">Restaurant</desc>
             <path data-layer-type="bg" d="M634 0H443V412H634V0Z"/>
