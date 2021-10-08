@@ -8,7 +8,7 @@ import Options from "./components/options/Options";
 import Shortcuts from "./components/shortcuts/Shortcuts";
 import Title from "./components/title/Title";
 import { LayerContext } from "./context/LayerContext";
-import { MuiThemeProvider, createTheme, Theme } from "@material-ui/core/styles";
+import { MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 
 const Dashboard = () => {
   const { selectedFontFamily } = useContext(LayerContext);
@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   return (
     <MuiThemeProvider theme={THEME}>
-      <div className="dashboard">
+      <div className="dashboard" style={{ fontFamily: selectedFontFamily }}>
         <Title className="dashboard-title"></Title>
         <Map className="dashboard-map"></Map>
         <Controls className="dashboard-controls"></Controls>

@@ -1,4 +1,6 @@
 import { useState, useMemo } from "react";
+import { makeStyles } from "@material-ui/core";
+
 const layerFontFamilies = ["Arial", "Atkinson Hyperlegible", "OpenDyslexic"];
 const layerFontWeights = ["bold", "normal"];
 
@@ -10,15 +12,6 @@ const useLayerStyles = () => {
     layerFontWeights[0]
   );
 
-  const fontStyleSheet = useMemo(() => {
-    return {
-      "& [data-layer-type='txt']": {
-        fontFamily: selectedFontFamily,
-        fontWeight: selectedFontWeight,
-      },
-    };
-  }, [selectedFontFamily, selectedFontWeight]);
-
   return {
     selectedFontFamily,
     setSelectedFontFamily,
@@ -26,7 +19,6 @@ const useLayerStyles = () => {
     selectedFontWeight,
     setSelectedFontWeight,
     layerFontWeights,
-    fontStyleSheet,
   };
 };
 

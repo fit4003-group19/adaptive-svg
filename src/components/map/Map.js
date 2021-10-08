@@ -34,7 +34,7 @@ const Map = ({ className }) => {
     layerColors,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
-    fontStyleSheet,
+    selectedFontWeight,
   } = useContext(LayerContext);
 
   useEffect(() => {
@@ -54,18 +54,18 @@ const Map = ({ className }) => {
   }, [layerColors]);
 
   // CSS
-
-  const svgStyles = makeStyles((theme) => {
+  const useStyles = makeStyles((theme) => {
     return {
-      svg: {
-        height: "100%",
-        width: "100%",
+      font: {
+        "& [data-layer-type='txt']": {
+          fontFamily: theme.typography.fontFamily,
+          fontWeight: selectedFontWeight,
+        },
       },
-      font: fontStyleSheet,
     };
   });
 
-  const classes = useMemo(() => svgStyles(), [svgStyles]);
+  const layerStyleSheet = useStyles();
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
@@ -178,7 +178,7 @@ const Map = ({ className }) => {
       <MapKeyboardEventHandler mapPanZoom={mapPanZoom} />
       <KeyboardEventHandler handleKeys={["esc"]} onKeyEvent={focusRoot}>
         <SVG
-          className={`${classes.svg} ${classes.font}`}
+          className={`map-svg ${layerStyleSheet.font}`}
           src={svgPath}
           onError={onError}
           onLoad={onLoad}

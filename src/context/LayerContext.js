@@ -29,7 +29,7 @@ const LayerProvider = (props) => {
     layerFontWeights,
     selectedFontWeight,
     setSelectedFontWeight,
-    fontStyleSheet,
+    layerStyleSheet,
   } = useLayerStyles();
   //   const [colorPalette, setColorPalette] = useState([
   //     "#648FFF",
@@ -57,7 +57,7 @@ const LayerProvider = (props) => {
         layerFontFamilies,
         selectedFontFamily,
         setSelectedFontFamily,
-        fontStyleSheet,
+        layerStyleSheet,
         // colorPalette,
         // setColorPalette,
       }}
