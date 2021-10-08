@@ -5,6 +5,8 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
+import "./Map.scss";
+
 import { MapContext } from "../../context/MapContext";
 import { QuestionnaireContext } from "../../context/QuestionnaireContext";
 import { LayerContext } from "../../context/LayerContext";

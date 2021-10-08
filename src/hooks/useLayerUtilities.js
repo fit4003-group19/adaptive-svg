@@ -46,6 +46,11 @@ const layerClassTranslator = {
     gradientKey: "gradient--inactive",
     icon: `${process.env.PUBLIC_URL}/icons/poi.svg`,
   },
+  passage: {
+    fullName: "Passage",
+    gradientKey: "gradient--passage",
+    icon: `${process.env.PUBLIC_URL}/icons/passage.svg`,
+  },
 };
 
 const useLayerUtilities = () => {
