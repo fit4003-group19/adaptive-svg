@@ -801,7 +801,7 @@ var locLong = new Array('CL 10.G-UCA01','CL 10.G137','CL 10.G137A','CL 10.PS06',
 			<desc id="150B--desc">Airlock</desc>
 			<path data-layer-type="bg" d="M-18.8380 10.4082L-21.4423 9.6704L-21.8025 10.9400L-21.8650 10.9223L-21.7149 10.3932L-22.5807 10.1475L-23.1539 12.1678L-22.2881 12.4134L-22.1379 11.8843L-22.0754 11.9021L-22.2255 12.4312L-20.3321 12.9684L-18.8380 10.4082z"/>
 		</g>
-		<g id="G38" class="inactive" tabindex="2" data-layer-type="layer" data-layer-state="0" role="img" aria-labelledby="G38--title" aria-describedby="G38--desc">
+		<g id="G38" class="obstacle" tabindex="1" data-layer-type="layer" data-layer-state="1" data-layer-flag="32" data-role="img" aria-labelledby="G38--title" aria-describedby="G38--desc">
 			<title id="G38--title">G38</title>
 			<desc id="G38--desc">Artichoke and Whitebait</desc>
 			<path data-layer-type="bg" d="M-1.1159 4.2262L-5.2430 3.0553L-8.6587 4.9612L-10.2192 10.4615L-9.7114 17.4409L-5.2260 18.7134L-1.1159 4.2262z"/>

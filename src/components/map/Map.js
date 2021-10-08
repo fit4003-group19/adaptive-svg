@@ -65,7 +65,7 @@ const Map = ({ className }) => {
     };
   });
 
-  const classes = svgStyles();
+  const classes = useMemo(() => svgStyles(), [svgStyles]);
 
   // Layer Iterator
   // Includes a guard clause to prevent iterating through layers if they are not set
