@@ -157,6 +157,13 @@ const Map = ({ className }) => {
     layerFlag = parseInt(layerFlag);
     layerState = parseInt(layerState);
 
+    // Handling .passage edge case
+    if (layer.classList.contains("passage")) {
+      layer.tabIndex = "-1";
+      layer.dataset.layerState = "1";
+      return;
+    }
+
     if (layerState > -1) {
       // We can dynamically set the tab index to prioritise the tabbing of activated layers
       // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
@@ -164,6 +171,7 @@ const Map = ({ className }) => {
       if (layerFlag) {
         isActive = (bitFlag & layerFlag) > 0;
       }
+
       layer.tabIndex = isActive ? "1" : "2";
       layer.dataset.layerState = isActive ? "1" : "0";
     } else {
