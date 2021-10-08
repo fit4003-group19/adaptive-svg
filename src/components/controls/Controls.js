@@ -73,6 +73,7 @@ const Controls = ({ className }) => {
           </Button>
         </div>
       )}
+      <h1 class="u-margin-left-auto u-margin-right-md">Change Floor Plan</h1>
       <FileUploader className={"controls-file-uploader"} />
     </div>
   );
