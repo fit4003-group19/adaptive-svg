@@ -17,6 +17,7 @@ const LayerProvider = (props) => {
     setLayerColors,
     colorPalette,
     setColorPallete,
+    resetColorPalette,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
   } = useLayerColors();
@@ -50,6 +51,7 @@ const LayerProvider = (props) => {
         setSelectedFontWeight,
         colorPalette,
         setColorPallete,
+        resetColorPalette,
         pullLayerStylesFromSVG,
         pushLayerStylesToSVG,
         layerFontFamilies,

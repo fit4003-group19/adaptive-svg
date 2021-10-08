@@ -3,6 +3,7 @@ import useLayerUtilities from "./useLayerUtilities";
 
 const useLayerColors = () => {
   const layerColorIndexMap = useRef(null);
+  const originalColorPalette = useRef(null);
   const [layerColors, setLayerColors] = useState(null);
   const [colorPalette, setColorPallete] = useState(null);
   const { getLayerClassIterator, getClassKeys } = useLayerUtilities();
@@ -52,6 +53,7 @@ const useLayerColors = () => {
     });
 
     layerColorIndexMap.current = _layerColorIndexMap;
+    originalColorPalette.current = _colorIndex;
     setColorPallete(_colorIndex);
   };
 
@@ -70,6 +72,10 @@ const useLayerColors = () => {
       _layerColors[key].secondary = palette[value.secondary];
     });
     return _layerColors;
+  };
+
+  const resetColorPalette = () => {
+    setColorPallete(originalColorPalette.current);
   };
 
   const pushLayerStylesToSVG = (svgEl, _layerColors) => {
@@ -147,6 +153,7 @@ const useLayerColors = () => {
     setLayerColors,
     colorPalette,
     setColorPallete,
+    resetColorPalette,
     pullLayerStylesFromSVG,
     pushLayerStylesToSVG,
   };

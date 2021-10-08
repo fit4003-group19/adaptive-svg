@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect } from "react";
 import { LayerContext } from "../../../context/LayerContext";
+import { Button } from "@material-ui/core";
 
 // Change Per Second Limiter (cps)
 // Limits the number of color changes that can be made per second. Prevents
@@ -9,7 +10,8 @@ const _cpsLimiter = 45;
 const cpsLimiterMs = (1 / _cpsLimiter) * 1000;
 
 const OptionColors = () => {
-  const { colorPalette, setColorPallete } = useContext(LayerContext);
+  const { colorPalette, setColorPallete, resetColorPalette } =
+    useContext(LayerContext);
   const colorChangeTimeout = useRef(null);
 
   const onChange = (e, i) => {
@@ -41,19 +43,25 @@ const OptionColors = () => {
 
   return (
     <div>
-      {colorPalette &&
-        colorPalette.map((color, i) => (
-          <label className="input-group" key={`color-options-${i}`}>
-            <span className="u-margin-right-auto">Color #{i}</span>
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => {
-                onChange(e, i);
-              }}
-            ></input>
-          </label>
-        ))}
+      {colorPalette && (
+        <>
+          {colorPalette.map((color, i) => (
+            <label className="input-group" key={`color-options-${i}`}>
+              <span className="u-margin-right-auto">Color #{i}</span>
+              <input
+                type="color"
+                value={color}
+                onChange={(e) => {
+                  onChange(e, i);
+                }}
+              ></input>
+            </label>
+          ))}
+          <Button variant="contained" onClick={resetColorPalette}>
+            Reset Colors
+          </Button>
+        </>
+      )}
     </div>
   );
 };
