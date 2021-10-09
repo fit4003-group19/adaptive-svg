@@ -20,11 +20,15 @@ export default function useQuestions() {
       response: null,
     },
     {
-      question: "Do you have difficulties operating doors?",
+      question: "Do you have difficulty operating doors?",
       response: null,
     },
     {
       question: "Do obstacles disrupt your indoor navigation?",
+      response: null,
+    },
+    {
+      question: "Do you have difficulty locating toilets in large buildings?",
       response: null,
     },
   ];
