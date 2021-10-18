@@ -33,7 +33,7 @@ const QuestionnaireProvider = (props) => {
     }
   };
 
-  const questionnaireBitField = useMemo(
+  const questBitField = useMemo(
     () => (commitedResponse ? calculateBitField(commitedResponse) : 0),
     [commitedResponse]
   );
@@ -46,7 +46,7 @@ const QuestionnaireProvider = (props) => {
         makeEdits,
         commitEdits,
         resetEdits,
-        questionnaireBitField,
+        questBitField,
       }}
     >
       {props.children}

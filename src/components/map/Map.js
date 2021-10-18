@@ -28,7 +28,7 @@ const Map = ({ className }) => {
     patterns,
     setMapTitle,
   } = useContext(MapContext);
-  const { questionnaireBitField } = useContext(QuestionnaireContext);
+  const { questBitField } = useContext(QuestionnaireContext);
   const {
     setLayerInfo,
     layerColors,
@@ -39,9 +39,9 @@ const Map = ({ className }) => {
 
   useEffect(() => {
     iterateLayers((layer) => {
-      updateLayer(questionnaireBitField, layer);
+      updateLayer(questBitField, layer);
     });
-  }, [questionnaireBitField]);
+  }, [questBitField]);
 
   useEffect(() => {
     updatePatterns();
@@ -143,7 +143,7 @@ const Map = ({ className }) => {
     iterateLayers((layer) => {
       layer.addEventListener("focus", onLayerFocus);
       layer.addEventListener("blur", onLayerBlur);
-      updateLayer(questionnaireBitField, layer);
+      updateLayer(questBitField, layer);
     });
 
     // Update Global
@@ -152,7 +152,7 @@ const Map = ({ className }) => {
 
   // Tabbing Order
   // Activated Layers -> Neutral Layers -> Inactive Layers
-  const updateLayer = (questionnaireBitField, layer) => {
+  const updateLayer = (questBitField, layer) => {
     let { layerBitField, layerState } = layer.dataset;
     layerBitField = parseInt(layerBitField);
     layerState = parseInt(layerState);
@@ -169,7 +169,7 @@ const Map = ({ className }) => {
       // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
       let isActive = false;
       if (layerBitField) {
-        isActive = (questionnaireBitField & layerBitField) > 0;
+        isActive = (questBitField & layerBitField) > 0;
       }
 
       layer.tabIndex = isActive ? "1" : "2";
