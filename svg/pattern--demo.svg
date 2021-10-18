@@ -6,7 +6,7 @@
         <pattern id="pattern--entry" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
             <rect class="entry" x="5" y="0" width="15" height="15" ></rect>
         </pattern>
-<pattern id="pattern--lift" x="0" y="0" width="0.1%" height="0.1%" patternUnits="userSpaceOnUse"><circle class="lift" cx="0.05%" cy="0.05%" r="0.035%"></circle></pattern>
+        <pattern id="pattern--lift" x="0" y="0" width="0.1%" height="0.1%" patternUnits="userSpaceOnUse"><circle class="lift" cx="0.05%" cy="0.05%" r="0.035%"></circle></pattern>
         <pattern id="pattern--reserved" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
             <g id="hexagon" class="obstacle">
                 <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"></path>
@@ -194,42 +194,50 @@
             <path data-layer-type="bg" d="M634 0H443V412H634V0Z"/>
             <text data-layer-type="txt" xml:space="preserve"><tspan x="504" y="217.98">G60</tspan></text>
         </g>
-        <g id="lift-001" class="lift" data-layer-type="layer" data-layer-state="0" data-layer-flag="4" tabindex="1" role="img" aria-labelledby="lift-001--title" aria-describedby="lift-001--desc">
+        <g id="lift-001" class="lift" data-layer-type="layer" data-layer-state="0" data-layer-bit-field="4" tabindex="1" role="img" aria-labelledby="lift-001--title" aria-describedby="lift-001--desc">
             <title id="lift-001--title">Lift</title>
             <desc id="lift-001--desc">Lift Floor 1-3</desc>
             <path data-layer-type="bg" d="M412 0H221V191H412V0Z"/>
             <text data-layer-type="txt" xml:space="preserve"><tspan x="288" y="106.98">Lift</tspan></text>
         </g>
-        <g id="support-center-001" class="support-center" data-layer-type="layer" data-layer-state="1" data-layer-flag="16" tabindex="1" role="img" aria-labelledby="support-center-001--title" aria-describedby="support-center-001--desc">
+        <g id="support-center-001" class="support-center" data-layer-type="layer" data-layer-state="1" data-layer-bit-field="16" tabindex="1" role="img" aria-labelledby="support-center-001--title" aria-describedby="support-center-001--desc">
             <title id="support-center-001--title">Support Center</title>
             <desc id="support-center-001--desc">MSA Disability Support Center</desc>
             <path data-layer-type="bg" d="M412 221H0V412H412V221Z" />
             <text data-layer-type="txt" xml:space="preserve"><tspan x="74" y="327.98">Support Center</tspan></text>
         </g>
-        <g id="toilet-001" class="toilet" data-layer-type="layer" data-layer-state="1" data-layer-flag="8" tabindex="1" role="img" aria-labelledby="toilet-001--title" aria-describedby="toilet-001--desc">
+        <g id="toilet-001" class="toilet" data-layer-type="layer" data-layer-state="1" 
+           data-layer-bit-field="8" tabindex="1"  
+            role="img" aria-labelledby="toilet-001--title" aria-describedby="toilet-001--desc">
             <title id="toilet-001--title">Toilet</title>
             <desc id="toilet-001--desc">Disabled Toilet</desc>
             <path data-layer-type="bg" d="M412 431H0V622H412V431Z" />
-            <text data-layer-type="txt" xml:space="preserve"><tspan x="159" y="538.98">Toilet</tspan></text>
+            <text data-layer-type="txt" xml:space="preserve">
+                <tspan x="159" y="538.98">Toilet</tspan>
+            </text>
         </g>
-        <g id="entry-001" class="entry" data-layer-type="layer" data-layer-state="1" data-layer-flag="16" tabindex="1" role="img" aria-labelledby="entry-001--title" aria-describedby="entry-001--desc">
+        <g id="entry-001" class="entry" data-layer-type="layer" data-layer-state="1" 
+           data-layer-bit-field="16" tabindex="1" role="img" aria-labelledby="entry-001--title"
+           aria-describedby="entry-001--desc">
             <title id="entry-001--title">Entry</title>
             <desc id="entry-001--desc">Accessibility entry</desc>
             <path data-layer-type="bg" d="M191 0H0V191H191V0Z" />
-            <text data-layer-type="txt" xml:space="preserve"><tspan x="45" y="106.98">Entry</tspan></text>
+            <text data-layer-type="txt" xml:space="preserve">
+                <tspan x="45" y="106.98">Entry</tspan>
+            </text>
         </g>
-        <g id="tactile-001" class="tactile" data-layer-type="layer" data-layer-state="1" data-layer-flag="3" tabindex="1" role="img" aria-labelledby="tactile-001--title" aria-describedby="tactile-001--desc">
+        <g id="tactile-001" class="tactile" data-layer-type="layer" data-layer-state="1" data-layer-bit-field="3" tabindex="1" role="img" aria-labelledby="tactile-001--title" aria-describedby="tactile-001--desc">
             <title id="tactile-001--title">Tactile Flooring</title>
             <desc id="tactile-001--desc">East of Location X</desc>
             <path data-layer-type="bg" d="M644 27.5V0H855V208.5H828V27.5H644Z"/>
         </g>
-        <g id="stairs-001" class="stairs" data-layer-type="layer" data-layer-state="1" data-layer-flag="5" tabindex="1" role="img" aria-labelledby="stairs-001--title" aria-describedby="stairs-001--desc">
+        <g id="stairs-001" class="stairs" data-layer-type="layer" data-layer-state="1" data-layer-bit-field="5" tabindex="1" role="img" aria-labelledby="stairs-001--title" aria-describedby="stairs-001--desc">
             <title id="stairs-001--title">Stairs</title>
             <desc id="stairs-001--desc">Big Stairs</desc>
             <path data-layer-type="bg" d="M858 431H664V622H858V431Z"/>
             <text data-layer-type="txt" xml:space="preserve"><tspan x="711.438" y="538.98">Stairs</tspan></text>
         </g>
-        <g id="obstacle-001" class="obstacle" data-layer-type="layer" data-layer-state="1" data-layer-flag="6" tabindex="1" role="img" aria-labelledby="obstacle-001--title" aria-describedby="obstacle-001--desc">
+        <g id="obstacle-001" class="obstacle" data-layer-type="layer" data-layer-state="1" data-layer-bit-field="6" tabindex="1" role="img" aria-labelledby="obstacle-001--title" aria-describedby="obstacle-001--desc">
             <title id="obstacle-001--title">Obstacle</title>
             <desc id="obstacle-001--desc">Construction</desc>
             <path data-layer-type="bg"  d="M543 520L507 484L497 494L533 530L496 567L507 578L543 542L579 578L590 567L553 530L589 494L579 484L543 520Z"/>
