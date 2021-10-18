@@ -13,7 +13,7 @@ const QuestionnaireProvider = (props) => {
     resetEdits,
   } = useQuestions();
 
-  const calculateBitFlag = (response) => {
+  const calculateBitField = (response) => {
     if (response) {
       // acm => Accumulator
       let acm = 0;
@@ -33,8 +33,8 @@ const QuestionnaireProvider = (props) => {
     }
   };
 
-  const bitFlag = useMemo(
-    () => (commitedResponse ? calculateBitFlag(commitedResponse) : 0),
+  const questionnaireBitField = useMemo(
+    () => (commitedResponse ? calculateBitField(commitedResponse) : 0),
     [commitedResponse]
   );
 
@@ -46,7 +46,7 @@ const QuestionnaireProvider = (props) => {
         makeEdits,
         commitEdits,
         resetEdits,
-        bitFlag,
+        questionnaireBitField,
       }}
     >
       {props.children}
