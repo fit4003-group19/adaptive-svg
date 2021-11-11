@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Getting started with the SVG conversion tool.
+
+By using the Get_id class, you can convert that layer 0 of a SVG map into a SVG map that can be interpreted by our React tool.
+
+In order to use the Get_id class, you need to have the layer 0 SVG file itself, the room description file for said SVG, the opening1.txt, opening2.txt, and the layerMap.csv file.
+
+The layerMap.csv file contains all the information which are on our structure.
+
+The convert_79.py and convert_monash.py files are examples.
