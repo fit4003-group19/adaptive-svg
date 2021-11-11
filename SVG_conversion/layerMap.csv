@@ -1,0 +1,12 @@
+class,tabindex,data-layer-type,data-layer-state,data-layer-bit-field,role
+passage,-1,layer,1,127,img
+unlisted,-1,layer,-1,N/A,img
+toilet,1,layer,1,64,img
+inactive,2,layer,0,N/A,img
+stairs,1,layer,1,21,img
+accessible-toilet,1,layer,1,69,img
+lift,1,layer,1,21,img
+obstacle,1,layer,1,47,img
+support-center,1,layer,1,63,img
+tactile,1,layer,1,21,img
+entry,1,layer,1,21,img

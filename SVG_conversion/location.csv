@@ -1,0 +1,481 @@
+1-UCA01,Outdoor sitting                 ,Non UFA                                      
+1-UCA02,Outdoor Sitting                 ,Non UFA                                      
+1-UCA03,Outdoor Sitting                 ,Non UFA                                      
+1-UCA04,Outdoor Sitting                 ,Non UFA                                      
+1-UCA05,Outdoor Sitting                 ,Non UFA                                      
+1-UCA06,Outdoor Passage                 ,Non UFA                                      
+1-VD01,Void                            ,Non UFA                                      
+101,Office                          ,Monash Student Organisations            
+101A,Lounge                          ,Monash Student Organisations            
+101B,Quiet Study Area                ,Monash Student Organisations            
+101C,Office                          ,Monash Student Organisations            
+102,Office                          ,Monash Student Organisations            
+103,Office                          ,Monash Student Organisations            
+105,Office                          ,Monash Student Organisations            
+106,Store                           ,Monash Student Organisations            
+107,Office,Monash Student Organisations            
+108,Lots Wife,Monash Student Organisations            
+109,Store                           ,Monash Student Organisations            
+110,Office,Monash Student Organisations            
+1101,Store                           ,Buildings & Property Division           
+1102,Staff Room                      ,Buildings & Property Division           
+1103,Female Toilet,Non UFA                                      
+1104,Male Toilet                     ,Non UFA                                      
+1105,Accessible Toilet,Non UFA                                      
+1106,Plantroom                       ,Non UFA                                      
+1107,Passage                         ,Non UFA                                      
+1108,Ticket Office                   ,Monash Student Organisations            
+1109,Office                          ,Monash Student Organisations            
+1110,Store                           ,Monash University                       
+1111,Corridor                        ,Non UFA                                      
+1112,Plant room                      ,Non UFA                                      
+1113,Projectionist                   ,Monash University                       
+1114,All-gender toilet,Non UFA                                      
+1115,Gallery                         ,Monash University                       
+1116,Female Toilet,Non UFA                                      
+1117,Male Toilet,Non UFA                                      
+1118,Kitchen and prep                ,Food & Beverage                              
+1119,Staff Toilet                    ,Non UFA                                      
+112,Lot's Wife Lounge,Monash Student Organisations            
+1120,Sir Johns Bar                   ,Food & Beverage                              
+1121,Sitting                         ,Food & Beverage                              
+1121A,Toilet                          ,Non UFA                                      
+1122,Band Room                       ,Monash Student Organisations            
+1122A,Control Room                    ,Monash Student Organisations            
+1123,Reception/ Waiting              ,Monash Student Organisations            
+1124,Office                          ,Monash Student Organisations            
+1125,Broadcast Room                  ,Monash Student Organisations            
+1126,Store                           ,Monash Student Organisations            
+1127,Office                          ,Monash Student Organisations            
+1128,General Office                  ,Monash Student Organisations            
+1129,Office                          ,Monash Student Organisations            
+113,Women's Lounge                  ,Monash Student Organisations            
+1130,MUISS Lounge                    ,Monash Student Organisations            
+1130A,Kitchen                         ,Monash Student Organisations            
+1131,Conference Room                 ,Monash University                       
+1133,Store                           ,Monash University                       
+1134,Conference Store                ,Monash University                       
+1135,Office                          ,Monash Student Organisations            
+1136,Office                          ,Monash Student Organisations            
+1137,Office                          ,Monash Student Organisations            
+1138,Lounge/Waiting                  ,Monash Student Organisations            
+1139,Office                          ,Monash Student Organisations            
+114,Breastfeeding / Quiet Room      ,Monash Student Organisations            
+1140,Office                          ,Monash Student Organisations            
+1141,General Office                  ,Monash Student Organisations            
+1143,Meeting Room                    ,Monash Student Organisations            
+1144,Office                          ,Monash Student Organisations            
+1145,Office                          ,Monash Student Organisations            
+1146,Office                          ,Monash Student Organisations            
+1147,Office                          ,Monash Student Organisations            
+1149,Office                          ,Campus Community Division               
+1150,Store                           ,Campus Community Division               
+1151,Office                          ,Campus Community Division               
+1152,Store                           ,Campus Community Division               
+1153,Office                          ,Campus Community Division               
+1154,Toilet,Non UFA                                      
+1155,Office                          ,Campus Community Division               
+1156,Staff Room,Campus Community Division               
+1157,Office                          ,Campus Community Division               
+1158,Meeting Room                    ,Campus Community Division               
+1159,Office                          ,Campus Community Division               
+116,Meeting Rm                      ,Monash Student Organisations            
+1160,Office                          ,Campus Community Division               
+1160A,Office                          ,Campus Community Division               
+1161,Office                          ,Campus Community Division               
+1162,Office                          ,Campus Community Division               
+1163,Office                          ,Campus Community Division               
+1164,Office                          ,Campus Community Division               
+1165,Office                          ,Campus Community Division               
+1166,Reception                       ,Campus Community Division               
+1167,General Office                  ,Campus Community Division               
+1168,Photocopy                       ,Campus Community Division               
+1169,Office                          ,Campus Community Division               
+117,Office                          ,Monash Student Organisations            
+1170,Office                          ,Campus Community Division               
+1171,Seminar Room                    ,Campus Community Division               
+1172,Office                          ,Campus Community Division               
+1172A,Photocopy                       ,Campus Community Division               
+1173,Tea Room                        ,Monash University                       
+1174,Office                          ,Campus Community Division               
+1175,Office                          ,Campus Community Division               
+1176,Office                          ,Campus Community Division               
+1177,Office                          ,Campus Community Division               
+1178,Office                          ,Campus Community Division               
+1179,Consultation                    ,Campus Community Division               
+118,Waiting Lounge                  ,Monash Student Organisations            
+119,Office                          ,Monash Student Organisations            
+120,Meeting Room                    ,Monash Student Organisations            
+121,Staff Room                      ,Monash Student Organisations            
+123,Office                          ,Monash Student Organisations            
+124,Office                          ,Monash Student Organisations            
+125,Office                          ,Monash Student Organisations            
+126,Office                          ,Monash Student Organisations            
+127,Office                          ,Monash Student Organisations            
+128,Survival Room                   ,Monash Student Organisations            
+129,Store                           ,Monash Student Organisations            
+130,General Office                  ,Monash Student Organisations            
+135,Waiting                         ,Monash Student Organisations            
+136,Office                          ,Monash Student Organisations            
+137,Office                          ,Monash Student Organisations            
+138,Office                          ,Monash Student Organisations            
+140,Staffroom                       ,DVC (Global Engagement)                 
+141,Meeting                         ,DVC (Global Engagement)                 
+142,Reception                       ,DVC (Global Engagement)                 
+144,Entry/Waiting                   ,DVC (Global Engagement)                 
+145,Office                          ,DVC (Global Engagement)                 
+146,Office                          ,DVC (Global Engagement)                 
+147,Office                          ,DVC (Global Engagement)                 
+148,Office                          ,Monash Student Organisations            
+149,Shared Office                   ,Monash Student Organisations            
+151,Office                          ,Monash Student Organisations            
+152,St Common Rm                    ,Monash Student Organisations            
+153,Passage Way                     ,Non UFA                                      
+153A,Circulation                     ,Non UFA                                      
+154,Meeting Rm 02                   ,Monash Student Organisations            
+155,Meeting Rm 01                   ,Monash Student Organisations            
+156,Reception                       ,Monash Student Organisations            
+157,Waiting Rm                      ,Monash Student Organisations            
+158,Store rm                        ,Monash Student Organisations            
+159,Campus Cntr Mgmnt               ,Monash Student Organisations            
+159B,Office                          ,Monash Student Organisations            
+159C,Kitchen                         ,Monash Student Organisations            
+160,Office                          ,Monash Student Organisations            
+161,Meeting Room                    ,Monash Student Organisations            
+162,Office                          ,Monash Student Organisations            
+163,Medley Library,Monash Student Organisations            
+164,Store/ Tea Rm                   ,Monash Student Organisations            
+165,Library Office                  ,Monash Student Organisations            
+166,Wholefood restaurant            ,Monash Student Organisations            
+166A,Cold Store                      ,Monash Student Organisations            
+166B,Passage,Non UFA                                      
+167,Servery                         ,Monash Student Organisations            
+168,Male Toilet                     ,Non UFA                                      
+169,Female Toilet                   ,Non UFA                                      
+170,Post Grad Lounge                ,Monash Student Organisations            
+171A,Office                          ,Monash Student Organisations            
+171B,Office                          ,Monash Student Organisations            
+171C,Office                          ,Monash Student Organisations            
+172,East lobby,Non UFA                                      
+172A,Entry Airlock                   ,Non UFA                                      
+172B,Informal sitting,Monash University                       
+173,Airport Lounge/Band,Monash University                       
+174,Cold Store                      ,Reserved Spaces
+175,Dry Store                       ,Reserved Spaces
+176,Cleaner                         ,Non UFA                                      
+177,Prep Area                       ,Reserved Spaces
+178,Tmp Borrow Cup,Reserved Spaces
+178A,Dry Store                       ,Reserved Spaces
+179,Dishwashing                     ,Reserved Spaces
+180,Wholefood Prep                  ,Monash Student Organisations            
+181,Wholefood Servery               ,Monash Student Organisations            
+182,Food Preparation                ,Reserved Spaces
+183,Clr                             ,Non UFA                                      
+184,Office                          ,Reserved Spaces
+185,Cold Room                       ,Food & Beverage                              
+185A,Store                           ,Reserved Spaces
+186,Store                           ,Reserved Spaces
+186A,Cold Room                       ,Reserved Spaces
+187,Store                           ,Reserved Spaces
+188,East Banquet                    ,Monash University                       
+189,Centre Banquet                  ,Monash University                       
+190,West Banquet                    ,Monash University                       
+191,Store                           ,Monash Student Organisations            
+192,Passages                        ,Non UFA                                      
+192A,Store                           ,Monash University                       
+193,Male Toilet                     ,Non UFA                                      
+194,Female Toilet                   ,Non UFA                                      
+195,Accessible Toilet               ,Non UFA                                      
+196,Dining room                     ,Monash University                       
+196A,Store                           ,Monash University                       
+197,Drink servery                   ,Buildings & Property Division           
+198,Store                           ,Buildings & Property Division           
+199,Grain Express                   ,Reserved Spaces
+LF01,Lift 01,Non UFA                                      
+LF02,Lift 02,Non UFA                                      
+LF03,Lift 03,Non UFA                                      
+LF04,Lift 04,Non UFA                                      
+PS01,Passage 01                      ,Non UFA                                      
+PS02,Passage 02                      ,Non UFA                                      
+PS03,Passage03                       ,Non UFA                                      
+ST09,Stair 09,Non UFA                                      
+ST10,Stair 10,Non UFA                                      
+ST11,Stair 11,Non UFA                                      
+ST12,Stair 12,Non UFA                                      
+ST13,Stair 13,Non UFA                                      
+ST14,Stair 14,Non UFA                                      
+ST15,Stair 15,Non UFA                                      
+ST17,Stair 17,Non UFA                                      
+ST19,Stair 19,Non UFA                                      
+B01,Fan Room                        ,Non UFA                                      
+B02,Pharmacy Store                  ,Retail                                       
+B03,Air Chamber                     ,Non UFA                                      
+B04,Store                           ,Retail                                       
+B05,Metre Room                      ,Non UFA                                      
+B06,Gift Shop Store                 ,Retail                                       
+B07,Store                           ,Buildings & Property Division           
+B08,LMR                             ,Non UFA                                      
+B09,Food Store                      ,Buildings & Property Division           
+B10,Plant Room                      ,Non UFA                                      
+B102,Store                           ,Food & Beverage                              
+B103,LMR                             ,Non UFA                                      
+B104,Store                           ,Food & Beverage                              
+B105,Store                           ,Food & Beverage                              
+B106,Coolroom                        ,Food & Beverage                              
+B11,Substation/ Switch              ,Non UFA                                      
+B12,Store                           ,Buildings & Property Division           
+B13,Plant Room                      ,Non UFA                                      
+B14,Plant Room                      ,Non UFA                                      
+B15,Delivery                        ,Non UFA                                      
+B16,Wash Station                    ,Non UFA                                      
+B17,Passage                         ,Non UFA                                      
+B18,Store                           ,Buildings & Property Division           
+B19,Store                           ,Monash Student Organisations            
+B20,Store Room                      ,Monash Student Organisations            
+B21,Yoga Room                       ,Monash Student Organisations            
+B22,Econ and Comm Society             ,Monash Student Organisations            
+B23,Music Prac 7                    ,Monash Student Organisations            
+B24,Music Prac 6                    ,Monash Student Organisations            
+B25,Music Prac 8                    ,Monash Student Organisations            
+B25A,Music Prac 9                    ,Monash Student Organisations            
+B26,Plant room                      ,Non UFA                                      
+B27,Music Prac 5,Monash University                       
+B28,Music Prac 3,Monash University                       
+B29,Music Prac 4,Monash University                       
+B30,Music Prac 1                    ,Monash University                       
+B31,Music Prac 2,Monash Student Organisations            
+B32,Store                           ,Buildings & Property Division           
+B33,Open Computer Lab               ,Monash University                       
+B33A,Esport,Monash University                       
+B33B,Store,Monash University                       
+B34,Rehersal Room                   ,Monash University                       
+B34A,Store                           ,Monash University                       
+B35,Store                           ,Buildings & Property Division           
+B36,LMR                             ,Non UFA                                      
+LF01,Lift 01,Non UFA                                      
+LF02,Lift 02,Non UFA                                      
+LF03,Lift 03,Non UFA                                      
+LF04,Lift 04,Non UFA                                      
+PS01,Passage 01                      ,Non UFA                                      
+PS02,Passage 02                      ,Non UFA                                      
+ST12,Stair 12,Non UFA                                      
+ST13,Lobby/ Stair 13,Non UFA                                      
+ST14,Lobby/ Stair 14,Non UFA                                      
+150B,Airlock,Non UFA                                      
+G-PS10,Passage                         ,Non UFA                                      
+G-TL01,Male Toilet                     ,Non UFA                                      
+G-TL02,Female Toilet                   ,Non UFA                                      
+G-UCA01,Undercover walkway              ,Non UFA                                      
+G-UCA02,Entry Porch,Non UFA                                      
+G-UCA03,Entry Porch                     ,Non UFA                                      
+G-UCA04,Covered Walkway                 ,Non UFA                                      
+G07,New Post office,Retail                                       
+G08,Unisuper,Retail                                       
+G09,Comm Bank,Retail                                       
+G10,Westpac                         ,Retail                                       
+G101,Pharmacy,Retail                                       
+G102,Common Room                     ,Monash Student Organisations            
+G103,Office                          ,Monash Student Organisations            
+G104,Passage,Non UFA                                      
+G105,Foyer,Campus Community Division               
+G106,Seminar Room,Campus Community Division               
+G107,Staff room,Campus Community Division               
+G108,open Office,Campus Community Division               
+G109,Store,Monash University                       
+G109A,Toilet,Non UFA                                      
+G11,Uni Bookshop,Retail                                       
+G110,Office,Campus Community Division               
+G111,Office,Campus Community Division               
+G112,Office,Campus Community Division               
+G113,Office                          ,Campus Community Division               
+G114,Office rm,Campus Community Division               
+G115,Office rm,Campus Community Division               
+G116,Meeting Room,Campus Community Division               
+G117,Consult Room                    ,Campus Community Division               
+G118,Consult Room                    ,Campus Community Division               
+G119,Consult Room,Campus Community Division               
+G12,Bookshop Admin Office,Retail                                       
+G120,Consult Room,Campus Community Division               
+G121,Consult Room                    ,Campus Community Division               
+G122,Consult Room,Campus Community Division               
+G123A,Toilet                          ,Non UFA                                      
+G123B,Toilet                          ,Non UFA                                      
+G124,Consult Room,Campus Community Division               
+G125,Consult Room                    ,Campus Community Division               
+G126,Consult Room,Campus Community Division               
+G127,Consult Room                    ,Campus Community Division               
+G128,Consult Room                    ,Campus Community Division               
+G129,Consult Room                    ,Campus Community Division               
+G12A,Kitchenette,Retail                                       
+G12B,Office,Retail                                       
+G12C,Meeting Rm,Retail                                       
+G12D,Office,Retail                                       
+G130,Consult Room                    ,Campus Community Division               
+G131,Consult Room                    ,Campus Community Division               
+G132,Consult Room                    ,Campus Community Division               
+G133,Consult Room                    ,Campus Community Division               
+G134,Consult Room                    ,Campus Community Division               
+G135,Consult Room                    ,Campus Community Division               
+G136,Consult Room                    ,Campus Community Division               
+G137,Consult Room                    ,Campus Community Division               
+G137A,Consult Room                    ,Campus Community Division               
+G138,Consult Room                    ,Campus Community Division               
+G139,Meeting Room                    ,Campus Community Division               
+G14,Guzman Y Gomez,Food & Beverage                              
+G140,Consult Room                    ,Campus Community Division               
+G141,Rehearsal,Monash Student Organisations            
+G142,Theatre Office,Monash Student Organisations            
+G143,Theatre Office,Monash Student Organisations            
+G144,Female Toilet                   ,Non UFA                                      
+G145,Male Toilet                     ,Non UFA                                      
+G146,Accessible/Baby Change          ,Non UFA                                      
+G147B,Parenting Rm,Campus Community Division               
+G148,Foyer to Theatre,Non UFA                                      
+G149,Theatre,Monash University                       
+G15,PappaRich,Food & Beverage                              
+G150,Conference Rm,Monash University                       
+G151,Kitchentte,Monash Connect                          
+G152,Open Office,Monash Connect                          
+G152A,Print area,Monash Connect                          
+G152B,Store                           ,Monash Connect                          
+G153,Office,Monash Connect                          
+G154,Office,Monash Connect                          
+G155,Meeting Rm,Monash Connect                          
+G156,Store                           ,Buildings & Property Division           
+G157,Vacant,Reserved Spaces
+G158,Fish and Chip Shop,Food & Beverage                              
+G158A,Cool Room,Food & Beverage                              
+G158B,Freezer Rm,Food & Beverage                              
+G158C,Switchboard Rm,Food & Beverage                              
+G158D,Store,Food & Beverage                              
+G159,Lockers                         ,Chief Operating Officer & Senior VP     
+G159A,Safe Rm,Chief Operating Officer & Senior VP     
+G159B,Staff Rm,Chief Operating Officer & Senior VP     
+G159C,Leaders Office,Chief Operating Officer & Senior VP     
+G159D,Hot Desk,Chief Operating Officer & Senior VP     
+G16,Roll'd,Food & Beverage                              
+G160,Consulting rm,Chief Operating Officer & Senior VP     
+G161,Career Connect,Campus Community Division               
+G161A,Office - Consult,Campus Community Division               
+G162,Office - Consult,Campus Community Division               
+G163,Service Counter,Chief Operating Officer & Senior VP     
+G163A,Service Counter,Chief Operating Officer & Senior VP     
+G163B,Service Counter,Chief Operating Officer & Senior VP     
+G163C,Service Counter,Chief Operating Officer & Senior VP     
+G164,Consult Room                    ,Campus Community Division               
+G165,Equip Room                      ,Campus Community Division               
+G166,Consult Room - Dental,Campus Community Division               
+G167,Consult Room - Dental,Campus Community Division               
+G168,Office                          ,Campus Community Division               
+G169,Store                           ,Campus Community Division               
+G170,ATM Booth,Monash University                       
+G171,P O Box,Monash University                       
+G18,Comms Existing,Non UFA                                      
+G19,Comms rm                        ,Non UFA                                      
+G20,All-gender/Accessible Toilet,Non UFA                                      
+G21,Female Toilet                   ,Non UFA                                      
+G23,Parenting Room,Monash University                       
+G23A,Feeding room,Monash University                       
+G23B,Feeding room,Monash University                       
+G24,Male Toilet                     ,Non UFA                                      
+G25,Subway,Food & Beverage                              
+G26,Optus phone shop,Retail                                       
+G27,STA Travel,Retail                                       
+G28,Grafali,Food & Beverage                              
+G29,Sushi Sushi,Food & Beverage                              
+G30,Noodle Noodle,Food & Beverage                              
+G31A,Airlock                         ,Non UFA                                      
+G32,Airlock                         ,Non UFA                                      
+G34,Office,Retail                                       
+G35,Store,Retail                                       
+G36,MU Convenient Store,Retail                                       
+G36A,Office,Retail                                       
+G37,Hair Dresser,Retail                                       
+G38,Artichoke and Whitebait,Food & Beverage                              
+G39,Main Kitchen/ Servery,Food & Beverage                              
+G39A,Corridor,Non UFA                                      
+G40,Cool Room,Food & Beverage                              
+G41,Store,Food & Beverage                              
+G42,Cool Room,Food & Beverage                              
+G42A,Cool Room,Food & Beverage                              
+G45,Service Riser                   ,Non UFA                                      
+G46,Passage,Non UFA                                      
+G47,Store,Food & Beverage                              
+G48,Store,Food & Beverage                              
+G49,Peri Peri,Food & Beverage                              
+G50,Meeting Point Cafe,Food & Beverage                              
+G50A,Seating Area                    ,Monash University                       
+G51,Kitchen,Food & Beverage                              
+G51A,Store,Food & Beverage                              
+G52,Store/Coolroom,Food & Beverage                              
+G53,Office,Food & Beverage                              
+G54,Cleaner                         ,Non UFA                                      
+G55,Boost Juice,Food & Beverage                              
+G56,Student Kitchen                 ,Monash University                       
+G57,Super Natural,Food & Beverage                              
+G58,Servery                         ,Monash University                       
+G59,Store                           ,Food & Beverage                              
+G60,Student Lounge,Monash University                       
+G60A,Store                           ,Monash University                       
+G60B,Store                           ,Monash University                       
+G61,The Den,Food & Beverage                              
+G62,Toilet,Non UFA                                      
+G63,Store,Retail                                       
+G64,Store                           ,Food & Beverage                              
+G65,Optometrist,Retail                                       
+G65A,Store                           ,Buildings & Property Division           
+G65B,Store                           ,Buildings & Property Division           
+G66,Waiting,Campus Community Division               
+G66A,Waiting                         ,Campus Community Division               
+G67,Consultant                      ,Campus Community Division               
+G68,Consultant                      ,Campus Community Division               
+G69,TELSTRA Room,Tenant                                       
+G70,Consultant                      ,Campus Community Division               
+G71,Waiting                         ,Campus Community Division               
+G73,Consultant Rm                   ,Campus Community Division               
+G74,Accessible Toilet               ,Non UFA                                      
+G75,Print Room,Campus Community Division               
+G77,Practice manager                ,Campus Community Division               
+G77B,Store Room                      ,Campus Community Division               
+G77C,Toilet                          ,Non UFA                                      
+G78,Reception,Campus Community Division               
+G81,Staff room                      ,Campus Community Division               
+G82,Consult Room                    ,Campus Community Division               
+G83,Consult Room                    ,Campus Community Division               
+G84,Consult Room                    ,Campus Community Division               
+G85,Consult Room                    ,Campus Community Division               
+G86,Consult Room                    ,Campus Community Division               
+G87,Male Toilet                     ,Non UFA                                      
+G88,Female Toilet                   ,Non UFA                                      
+G89,Holding                         ,Campus Community Division               
+G90,Holding                         ,Campus Community Division               
+G91,Holding                         ,Campus Community Division               
+G93,Treatment Room                  ,Campus Community Division               
+G94,Emergency Room                  ,Campus Community Division               
+G95,Pathology                       ,Campus Community Division               
+G96,Office,Campus Community Division               
+G97,Store                           ,Campus Community Division               
+G99,Holding Room                    ,Campus Community Division               
+LF01,Lift 01,Non UFA                                      
+LF03,Lift 03,Non UFA                                      
+LF04,Lift 04,Non UFA                                      
+PS01,Passage                         ,Non UFA                                      
+PS02,Internal corridor               ,Non UFA                                      
+PS03,Circulation                     ,Non UFA                                      
+PS04,Passage,Non UFA                                      
+PS05,Passage                         ,Non UFA                                      
+PS06,Passage                         ,Non UFA                                      
+PS07,Foyer                           ,Non UFA                                      
+PS08,Passage                         ,Non UFA                                      
+PS09,Passage                         ,Non UFA                                      
+PS10,Passage                         ,Non UFA                                      
+PS11,Passage,Non UFA                                      
+ST017,Stair 17,Non UFA                                      
+ST10,Stair 10,Non UFA                                      
+ST11,Stair 11,Non UFA                                      
+ST12,Stair 12,Non UFA                                      
+ST13,Stair 13,Non UFA                                      
+ST14,Stair 14,Non UFA                                      
+ST15,Stair 15,Non UFA                                      
+ST16,Stair 16,Non UFA                                      
+ST19,Stair 19,Non UFA                                      

@@ -1,0 +1,211 @@
+	<defs>
+		<!-- PATTERN VARIABLES -->
+		<pattern id="pattern--entry" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
+			<rect class="entry" x="0" y="0" width="0.6" height="0.6"/>
+		</pattern>
+		<pattern id="pattern--lift" x="0" y="0" width="0.9" height="0.9" patternUnits="userSpaceOnUse">
+			<circle class="lift" cx="0.3" cy="0.3" r="0.3"></circle>
+		</pattern>
+		<!-- Difficult -->
+		<pattern id="pattern--reserved" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
+			<g id="hexagon" class="reserved">
+				<path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"/>
+				<path d="M112-222.5c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2l-53.4,30.5 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C111-222.4,111.5-222.5,112-222.5L112-222.5z"/>
+				<path d="M168-317.8c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-191 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C167-317.7,167.5-317.8,168-317.8L168-317.8z"/>
+			</g>
+		</pattern>
+		<pattern id="pattern--stairs" x="0" y="0" patternUnits="userSpaceOnUse" width="1" height="1" viewBox="0 0 0.5 0.3">
+			<g class="stairs" id="chevron">
+				<path d="M0 0l5 3v5l-5 -3z"></path>
+				<path d="M10 0l-5 3v5l5 -3"></path>
+			</g>
+		</pattern>
+		<pattern id="pattern--passage" x="0" y="0" width="0.8" height="0.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+			<rect class="passage" x="0" y="0" width="0.4" height="0.4"/>
+		</pattern>
+		<pattern id="pattern--toilet" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
+			<rect class="toilet" x="0" y="0" width="1" height="1"/>
+		</pattern>
+		<pattern id="pattern--lift" x="0" y="0" width="0.9" height="0.9" patternUnits="userSpaceOnUse">
+			<circle class="lift" cx="0.3" cy="0.3" r="0.3"></circle>
+		</pattern>
+		<pattern id="pattern--accessible-toilet" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+			<rect class="accessible-toilet" x="0" y="0" width="1" height="1"/>
+		</pattern>
+		<pattern id="pattern--support-center" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
+			<rect class="support-center" x="0" y="0" width="1" height="1"/>
+		</pattern>
+		<!-- COLOR VARIABLES -->
+		<!-- Solid Colors -->
+		<linearGradient id="gradient--entry">
+			<stop offset="0%" stop-color="#648FFF"/>
+			<stop offset="100%" stop-color="#648FFF"/>
+		</linearGradient>
+		<linearGradient id="gradient--lift">
+			<stop offset="0%" stop-color="#785EF0"/>
+			<stop offset="100%" stop-color="#785EF0"/>
+		</linearGradient>
+		<linearGradient id="gradient--obstacle">
+			<stop offset="0%" stop-color="#DC267F"/>
+			<stop offset="100%" stop-color="#DC267F"/>
+		</linearGradient>
+		<linearGradient id="gradient--stairs">
+			<stop offset="0%" stop-color="#FE6100"/>
+			<stop offset="100%" stop-color="#FE6100"/>
+		</linearGradient>
+		<linearGradient id="gradient--tactile">
+			<stop offset="0%" stop-color="#FFB000"/>
+			<stop offset="100%" stop-color="#FFB000"/>
+		</linearGradient>
+		<linearGradient id="gradient--unlisted">
+			<stop offset="0%" stop-color="#e5e5e5"/>
+			<stop offset="100%" stop-color="#e5e5e5"/>
+		</linearGradient>
+		<linearGradient id="gradient--passage">
+			<stop offset="0%" stop-color="#9f9f9f"/>
+			<stop offset="100%" stop-color="#9f9f9f"/>
+		</linearGradient>
+		<linearGradient id="gradient--inactive">
+			<stop offset="0%" stop-color="#d7effe"/>
+			<stop offset="100%" stop-color="#d7effe"/>
+		</linearGradient>
+		<!-- Half Colors -->
+		<linearGradient id="gradient--toilet" gradientTransform="rotate(90)">
+			<stop offset="0%" stop-color="#648FFF"/>
+			<stop offset="50%" stop-color="#648FFF"/>
+			<stop offset="50%" stop-color="#FFB000"/>
+			<stop offset="100%" stop-color="#FFB000"/>
+		</linearGradient>
+		<linearGradient id="gradient--accessible-toilet">
+			<stop offset="0%" stop-color="#FFB000"/>
+			<stop offset="50%" stop-color="#FFB000"/>
+			<stop offset="50%" stop-color="#DC267F"/>
+			<stop offset="100%" stop-color="#DC267F"/>
+		</linearGradient>
+		<linearGradient id="gradient--support-center">
+			<stop offset="0%" stop-color="#785EF0"/>
+			<stop offset="50%" stop-color="#785EF0"/>
+			<stop offset="50%" stop-color="#FE6100"/>
+			<stop offset="100%" stop-color="#FE6100"/>
+		</linearGradient>
+	</defs>
+	<style type="text/css"><![CDATA[.C1{fill:#666666;fill-opacity:0.8}]]></style>
+	<style>
+        /*
+            Base Functionality
+                These CSS values provide a rudimentary level of accessibility to indoor maps. This is in the case that
+                a user opens the raw SVG in their browser, without any assistive tools. 
+        */
+
+        /* Font Controller */
+        text {
+			font-weight:bold;
+			font-family:arial;
+            letter-spacing: 0.02em;
+            fill: black;
+			
+        }
+
+        /* Color Controller */
+        .entry {
+            fill: url(#gradient--entry)
+        }
+
+        [data-layer-pattern="1"] .entry{
+            fill: url(#pattern--entry)
+        }
+
+        .lift {
+            fill: url(#gradient--lift)
+        }
+
+        [data-layer-pattern="1"] .lift{
+            fill: url(#pattern--lift)
+        }
+
+        .obstacle {
+            fill: url(#gradient--obstacle)
+        }
+
+        .stairs{
+            fill: url(#gradient--stairs)
+        }
+
+        [data-layer-pattern="1"] .stairs {
+            fill: url(#pattern--stairs)
+        }
+
+        .tactile{
+            fill: url(#gradient--tactile)
+        }
+
+        .toilet{
+            fill: url(#gradient--toilet)
+        }
+
+        [data-layer-pattern="1"] .toilet {
+            fill: url(#pattern--toilet)
+        }
+
+		.accessible-toilet{
+            fill: url(#gradient--accessible-toilet)
+        }
+
+        [data-layer-pattern="1"] .accessible-toilet {
+            fill: url(#pattern--accessible-toilet)
+        }
+
+        .support-center{
+            fill: url(#gradient--support-center)
+        }
+
+        [data-layer-pattern="1"] .support-center {
+            fill: url(#pattern--support-center)
+        }
+
+		.passage{
+            fill: url(#gradient--passage)
+        }
+
+        [data-layer-pattern="1"] .passage {
+            fill: url(#pattern--passage)
+        }
+
+        [data-layer-state="0"] [data-layer-type="bg"], .inactive [data-layer-type="bg"] {
+            fill: url(#gradient--inactive);
+        }
+
+		[data-layer-state="-1"] [data-layer-type="bg"] {
+            fill: url(#gradient--unlisted);
+        }
+
+
+        // Do not activate pattern on obstacle or tactile flooring as the icon is
+        // significant differientiation
+        [data-layer-pattern="1"] [data-layer-state="0"]:not(.obstacle):not(.tactile) {
+            fill: url(#pattern--inactive)
+        }
+
+        .unlisted {
+            fill: url(#gradient--unlisted)
+        }
+
+		[data-layer-type="layer"]:focus {
+			outline: none;
+		}
+        [data-layer-type="layer"]:focus path  {
+            fill: black;
+        }
+
+        /* Focus Controller */
+        [data-layer-type="layer"]:focus path {
+            animation: focus-flash 3s infinite;
+        }
+
+        @keyframes focus-flash {
+            50% {
+                fill: white;
+            }          
+        }
+    </style>
+	<g data-layer-pattern="0" data-layer-type="root">
