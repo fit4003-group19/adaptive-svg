@@ -28,7 +28,7 @@ const Map = ({ className }) => {
     patterns,
     setMapTitle,
   } = useContext(MapContext);
-  const { bitFlag } = useContext(QuestionnaireContext);
+  const { questBitField } = useContext(QuestionnaireContext);
   const {
     setLayerInfo,
     layerColors,
@@ -39,9 +39,9 @@ const Map = ({ className }) => {
 
   useEffect(() => {
     iterateLayers((layer) => {
-      updateLayer(bitFlag, layer);
+      updateLayer(questBitField, layer);
     });
-  }, [bitFlag]);
+  }, [questBitField]);
 
   useEffect(() => {
     updatePatterns();
@@ -91,7 +91,7 @@ const Map = ({ className }) => {
   // ****** Focus + Blur Fuctions (START) ******
   const onLayerFocus = (e) => {
     const layer = e.target;
-    const { layerFlag } = layer.dataset;
+    const { layerBitField } = layer.dataset;
     const roomLabelledBy = layer.getAttribute("aria-labelledby");
     const roomDescribedBy = layer.getAttribute("aria-describedby");
     const roomTitle = svgEl.current.getElementById(roomLabelledBy);
@@ -143,7 +143,7 @@ const Map = ({ className }) => {
     iterateLayers((layer) => {
       layer.addEventListener("focus", onLayerFocus);
       layer.addEventListener("blur", onLayerBlur);
-      updateLayer(bitFlag, layer);
+      updateLayer(questBitField, layer);
     });
 
     // Update Global
@@ -152,9 +152,9 @@ const Map = ({ className }) => {
 
   // Tabbing Order
   // Activated Layers -> Neutral Layers -> Inactive Layers
-  const updateLayer = (bitFlag, layer) => {
-    let { layerFlag, layerState } = layer.dataset;
-    layerFlag = parseInt(layerFlag);
+  const updateLayer = (questBitField, layer) => {
+    let { layerBitField, layerState } = layer.dataset;
+    layerBitField = parseInt(layerBitField);
     layerState = parseInt(layerState);
 
     // Handling .passage edge case
@@ -168,8 +168,8 @@ const Map = ({ className }) => {
       // We can dynamically set the tab index to prioritise the tabbing of activated layers
       // A tabbIndex of 1 will be higher on the tabbing priority compared to a tabIndex of 2
       let isActive = false;
-      if (layerFlag) {
-        isActive = (bitFlag & layerFlag) > 0;
+      if (layerBitField) {
+        isActive = (questBitField & layerBitField) > 0;
       }
 
       layer.tabIndex = isActive ? "1" : "2";
